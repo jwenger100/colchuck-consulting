@@ -18,7 +18,9 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "relative",
     zIndex: 1,
-    marginBottom: "0 !important",
+    marginBottom: 0,
+    backgroundColor: "transparent",
+    borderBottom: 0,
   },
 
   dropdown: {
@@ -47,6 +49,28 @@ const useStyles = createStyles((theme) => ({
   links: {
     [theme.fn.smallerThan("sm")]: {
       display: "none",
+    },
+    a: {
+      color: "white",
+      backgroundColor: "transparent !important",
+      "&::after": {
+        display: "block",
+        margin: "0 auto",
+        marginTop: "5px",
+        width: 0,
+        height: "2px",
+        backgroundColor: "#a8c196",
+        content: '""',
+        opacity: 0,
+        transition: "width 0.6s, opacity 0.8s",
+      },
+      "&:hover::after": {
+        width: "100%",
+        opacity: 1,
+      },
+      "&:hover": {
+        color: "#a8c196",
+      },
     },
   },
 
@@ -124,7 +148,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
     <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
       <Container className={classes.header}>
         <Image
-          src="/cc-green-logo.png"
+          src="/cc-white-logo.png"
           height={100}
           width={200}
           alt="Colchuck Consulting Logo"

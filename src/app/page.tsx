@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 import { HeaderResponsive } from "./components/Header";
-import { Image } from "@mantine/core";
+import { Image, Card, Text, Badge, Button, Group } from "@mantine/core";
 
 const links = [
   { label: "Home", link: "/" },
@@ -14,8 +14,9 @@ const links = [
 export default function Home() {
   return (
     <main className={styles.main}>
+      <div className={styles.backgroundImage}></div>
       <HeaderResponsive links={links} />
-      <Image src="/colchuck-lake.jpeg" />
+      <div>Hello darkness my old friend I've come to talk with you again</div>
     </main>
   );
 }
