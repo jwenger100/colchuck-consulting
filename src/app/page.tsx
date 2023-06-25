@@ -18,9 +18,9 @@ import { TypewriterComponent } from "./components/Typewriter";
 
 const links = [
   { label: "Home", link: "/" },
-  { label: "About", link: "/about" },
-  { label: "Projects", link: "/projects" },
-  { label: "Contact", link: "/contact" },
+  { label: "About", link: "about" },
+  { label: "Projects", link: "projects" },
+  { label: "Contact", link: "contact" },
 ];
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
         <TypewriterComponent />
         <div className={styles.cardContainer}>
           {/* About */}
-          <div className={styles.aboutUs} id="aboutUs">
+          <div className={styles.aboutUs} id="about">
             <Title order={2}>About Us</Title>
             <br />
             <br />
@@ -84,6 +84,50 @@ export default function Home() {
           </div>
           <div className={styles.projects} id="projects">
             <Title order={2}>Projects</Title>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
+          <div className={styles.contact} id="contact">
+            <Title order={2}>Contact</Title>
             <br />
             <br />
             <br />

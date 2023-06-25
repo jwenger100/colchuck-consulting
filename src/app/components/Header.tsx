@@ -137,9 +137,15 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
       })}
       onClick={(event) => {
         event.preventDefault();
-        setActive(link.link);
         close();
-        // useScrollIntoView();
+        // scroll to element with id equal to link.link or to top of the page
+        // scrollIntoView API https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+        const element = document.getElementById(link.link) || document.body;
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
       }}
     >
       {link.label}
