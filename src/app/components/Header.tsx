@@ -11,12 +11,13 @@ import {
   Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { useScrollIntoView } from "@mantine/hooks";
 
 const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "relative",
+    position: "fixed",
     zIndex: 1,
     marginBottom: 0,
     backgroundColor: "transparent",
@@ -138,6 +139,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         event.preventDefault();
         setActive(link.link);
         close();
+        // useScrollIntoView();
       }}
     >
       {link.label}
@@ -163,6 +165,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
           onClick={toggle}
           className={classes.burger}
           size="sm"
+          color="white"
         />
 
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
