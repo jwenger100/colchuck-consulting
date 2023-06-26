@@ -1,17 +1,9 @@
 import React from "react";
-import { Typewriter } from "react-simple-typewriter";
+
+import { Typewriter } from "react-simple-typewriter"; // https://www.npmjs.com/package/react-simple-typewriter
 import { Text } from "@mantine/core";
 
 const TypewriterComponent = () => {
-  const handleType = (count: number) => {
-    // access word count number
-    console.log(count);
-  };
-
-  const handleDone = () => {
-    console.log(`Done after 5 loops!`);
-  };
-
   return (
     <div>
       <Text fz="xl" color="white">
@@ -33,8 +25,6 @@ const TypewriterComponent = () => {
           typeSpeed={50}
           deleteSpeed={50}
           delaySpeed={1000}
-          onLoopDone={handleDone}
-          onType={handleType}
           cursorColor="#FFFFFF"
         />
       </Text>

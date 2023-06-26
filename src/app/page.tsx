@@ -1,25 +1,25 @@
 // https://stackoverflow.com/questions/74965849/youre-importing-a-component-that-needs-usestate-it-only-works-in-a-client-comp
 "use client"; // This is a client component 👈🏽
 
+// css styling
 import styles from "./page.module.css";
+// local components
 import { HeaderResponsive } from "./components/Header";
-import {
-  Image,
-  Card,
-  Text,
-  Badge,
-  Button,
-  Group,
-  Title,
-  BackgroundImage,
-} from "@mantine/core";
+import { About } from "./components/About";
+import { Skills } from "./components/Skills";
 
+// mantine components
+import { Title, BackgroundImage } from "@mantine/core";
+// react typewriter component from https://www.npmjs.com/package/react-typewriter-effect
 import { TypewriterComponent } from "./components/Typewriter";
 
 const links = [
   { label: "Home", link: "/" },
   { label: "About", link: "about" },
+  { label: "Skills", link: "skills" },
   { label: "Projects", link: "projects" },
+  //TODO: Add logos of clients
+  // { label: "Clients", link: "clients"}
   { label: "Contact", link: "contact" },
 ];
 
@@ -36,140 +36,9 @@ export default function Home() {
           Colchuck Consulting
         </Title>
         <TypewriterComponent />
-        <div className={styles.cardContainer}>
-          {/* About */}
-          <div className={styles.aboutUs} id="about">
-            <Title order={2}>About Us</Title>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <div className={styles.projects} id="projects">
-            <Title order={2}>Projects</Title>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <div className={styles.contact} id="contact">
-            <Title order={2}>Contact</Title>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
+        <div className={styles.sectionsContainer}>
+          <About />
+          <Skills title="Skills" description="Our amazing skills! MONEY IN!" />
         </div>
       </div>
     </main>
