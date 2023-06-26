@@ -9,7 +9,6 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
-// icons not rendering????
 import { Gauge, Cookie, User, Message2, Lock } from "tabler-icons-react";
 
 export const MOCKDATA = [
@@ -55,7 +54,7 @@ export function Feature({ icon: Icon, title, description }: FeatureProps) {
   return (
     <div>
       <ThemeIcon variant="light" size={40} radius={40}>
-        <Icon size="1.1rem" stroke={1.5} />
+        <Icon size="1.1rem" />
       </ThemeIcon>
       <Text mt="sm" mb={7}>
         {title}
