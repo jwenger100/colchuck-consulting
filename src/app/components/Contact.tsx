@@ -119,13 +119,13 @@ export function Contact() {
             placeholder="Thomas Carlyle"
             required
             //“Our main business is not to see what lies dimly in the distance but to do what lies clearly at hand.” -Carlyle
-            mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
             label="Email"
             placeholder="your@email.com"
             required
+            mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
