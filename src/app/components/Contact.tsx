@@ -115,15 +115,23 @@ export function Contact() {
         </div>
         <div className={classes.form}>
           <TextInput
+            label="Name"
+            placeholder="Thomas Carlyle"
+            required
+            //“Our main business is not to see what lies dimly in the distance but to do what lies clearly at hand.” -Carlyle
+            mt="md"
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+          />
+          <TextInput
             label="Email"
             placeholder="your@email.com"
             required
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
-            label="Name"
-            placeholder="Thomas Carlyle"
-            //“Our main business is not to see what lies dimly in the distance but to do what lies clearly at hand.” -Carlyle
+            label="Subject"
+            placeholder="Subject"
+            required
             mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
