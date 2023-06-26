@@ -7,17 +7,16 @@ import styles from "./page.module.css";
 import { HeaderResponsive } from "./components/Header";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
-
+import { Contact } from "./components/Contact";
+import { TypewriterComponent } from "./components/Typewriter";
 // mantine components
 import { Title, BackgroundImage } from "@mantine/core";
-// react typewriter component from https://www.npmjs.com/package/react-typewriter-effect
-import { TypewriterComponent } from "./components/Typewriter";
 
 const links = [
   { label: "Home", link: "/" },
   { label: "About", link: "about" },
   { label: "Skills", link: "skills" },
-  { label: "Projects", link: "projects" },
+  // { label: "Projects", link: "projects" },
   //TODO: Add logos of clients
   // { label: "Clients", link: "clients"}
   { label: "Contact", link: "contact" },
@@ -39,6 +38,7 @@ export default function Home() {
         <div className={styles.sectionsContainer}>
           <About />
           <Skills title="Skills" description="Our amazing skills! MONEY IN!" />
+          <Contact />
         </div>
       </div>
     </main>
