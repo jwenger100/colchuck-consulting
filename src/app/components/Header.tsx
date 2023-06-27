@@ -142,7 +142,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
     <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
       <Container className={classes.header}>
         <Image
-          src="/cc-white-logo.png"
+          src="/cc-white-mtn.svg"
           height={100}
           width={200}
           alt="Colchuck Consulting Logo"

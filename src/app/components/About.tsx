@@ -9,7 +9,7 @@ import {
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    backgroundImage: "linear-gradient(-60deg, #a8c196 0%, #566e57 100%)",
+    background: "linear-gradient(-60deg, #00873d 0%, #00a86b 100%)",
   },
   inner: {
     display: "flex",
