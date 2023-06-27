@@ -113,29 +113,40 @@ export function Contact() {
 
           <Group mt="xl">{icons}</Group>
         </div>
-        <div className={classes.form}>
+        <form
+          className={classes.form}
+          method="POST"
+          action="https://usebasin.com/f/a2ec02428985"
+          encType="multipart/form-data"
+        >
           <TextInput
+            name="name"
             label="Name"
             placeholder="Thomas Carlyle"
             required
-            //“Our main business is not to see what lies dimly in the distance but to do what lies clearly at hand.” -Carlyle
+            type="text"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
+            name="email"
             label="Email"
             placeholder="your@email.com"
             required
+            type="email"
             mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <TextInput
+            name="subject"
             label="Subject"
             placeholder="Subject"
             required
             mt="md"
+            type="text"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
           <Textarea
+            name="message"
             required
             label="Your message"
             placeholder="Hello, I would like to discuss ..."
@@ -145,9 +156,11 @@ export function Contact() {
           />
 
           <Group position="right" mt="md">
-            <Button className={classes.control}>Send message</Button>
+            <Button className={classes.control} type="submit">
+              Send message
+            </Button>
           </Group>
-        </div>
+        </form>
       </SimpleGrid>
     </div>
   );
