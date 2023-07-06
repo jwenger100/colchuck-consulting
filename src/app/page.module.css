@@ -26,11 +26,11 @@
 .pageTitle {
   color: white;
   /* Add this font get from google?? */
-  /* font-family: "Russo One"; */
   justify-content: center;
   margin-top: 175px;
   font-weight: 700;
   font-size: 4rem;
+  text-align: center;
 }
 
 .sectionsContainer {

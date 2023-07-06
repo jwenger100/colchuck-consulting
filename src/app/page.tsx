@@ -37,7 +37,10 @@ export default function Home() {
         <TypewriterComponent />
         <div className={styles.sectionsContainer}>
           <About />
-          <Skills title="Skills" description="Our amazing skills! MONEY IN!" />
+          <Skills
+            title="Skills"
+            description="Mastering the digital sphere with exceptional web development, intuitive UI/UX design, cutting-edge coding practices, and thorough performance testing for seamless user experiences."
+          />
           <Contact />
         </div>
       </div>

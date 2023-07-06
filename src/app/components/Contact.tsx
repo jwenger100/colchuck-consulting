@@ -78,11 +78,14 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    backgroundColor: theme.colors[theme.primaryColor][6],
+    backgroundColor: "#1e9757",
+    "&:hover": {
+      backgroundColor: "#00a86b",
+    },
   },
 }));
 
-const social = [BrandFacebook, BrandLinkedin, BrandInstagram, BrandTwitter];
+const social = [BrandFacebook, BrandLinkedin];
 
 export function Contact() {
   const { classes } = useStyles();

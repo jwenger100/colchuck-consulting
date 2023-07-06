@@ -9,7 +9,7 @@ import {
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    background: "linear-gradient(-60deg, #00873d 0%, #00a86b 100%)",
+    background: "linear-gradient(to bottom right, white, green)",
   },
   inner: {
     display: "flex",
@@ -78,7 +78,7 @@ export function About() {
               Enchantments of Washington State in 2018. We were inspired by the
               beauty of the lake, and the surrounding mountains. We wanted to
               bring that same beauty to our software. Founded by two industry
-              expoerts, with a combined 40 years of experience, ready to make
+              experts, with a combined 40 years of experience, ready to make
               your dreams a reality.
             </Text>
             <Text color="white" mt="md">

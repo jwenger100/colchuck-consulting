@@ -7,38 +7,52 @@ import {
   createStyles,
   rem,
 } from "@mantine/core";
-import { Gauge, Cookie, User, Message2, Lock } from "tabler-icons-react";
+import {
+  SourceCode,
+  Server2,
+  CloudComputing,
+  Devices,
+  Seo,
+  Message2,
+  Users,
+} from "tabler-icons-react";
 
 export const MOCKDATA = [
   {
-    icon: Gauge,
-    title: "Extreme performance",
+    icon: SourceCode,
+    title: "Custom Web Applications",
     description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
+      "We are a professional web application development company, we prodvide top notch custom web development services.",
   },
   {
-    icon: User,
-    title: "Privacy focused",
+    icon: Devices,
+    title: "Responsive Web Design",
     description:
-      "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
+      "We provide complete mobile, tablet, and desktop support for your website, so it looks perfect on every device.",
   },
   {
-    icon: Cookie,
-    title: "No third parties",
+    icon: Server2,
+    title: "Hosting and Maintenance",
     description:
-      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
+      "We make hosting websites for our clients' easy and painless. We also provide maintenace so that every site is performing at the highest level.",
   },
   {
-    icon: Lock,
-    title: "Secure by default",
+    icon: CloudComputing,
+    title: "Robust Web Services",
     description:
-      "Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right",
+      "We are skilled at building scalabe web services on a variety of cloud platforms.",
   },
   {
-    icon: Message2,
-    title: "24/7 Support",
+    icon: Seo,
+    title: "SEO",
     description:
-      "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail",
+      "Our custom websites come with custom SEO to suit the indiviual needs of each client.",
+  },
+  {
+    icon: Users,
+    title: "Customer Focused",
+    description:
+      "We are 100% customer focused and transaprent. We aim to deliver the optimum solution that fits your business needs.",
   },
 ];
 
