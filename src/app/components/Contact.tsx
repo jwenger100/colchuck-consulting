@@ -22,7 +22,9 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     minHeight: 400,
     boxSizing: "border-box",
-    backgroundImage: "linear-gradient(-60deg, #566e57 0%, #a8c196 100%)",
+    backgroundImage: `url("./bg.svg")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
     borderRadius: theme.radius.md,
     padding: `calc(${theme.spacing.xl} * 2.5)`,
 
