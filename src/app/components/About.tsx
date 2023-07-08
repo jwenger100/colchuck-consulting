@@ -5,6 +5,7 @@ import {
   Title,
   Text,
   rem,
+  Anchor,
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
@@ -71,12 +72,18 @@ export function About() {
           <div className={classes.content}>
             <Title className={classes.title}>Who We Are</Title>
             <Text color="black" mt="md">
-              Our company was envisioned during a trip to Colchuck Lake, in the
-              Enchantments of Washington State in 2018. We were inspired by the
-              beauty of the lake, and the surrounding mountains. We wanted to
-              bring that same beauty to our software. Founded by two industry
-              experts, with a combined 40 years of experience, ready to make
-              your dreams a reality.
+              Our company was envisioned during a trip to{" "}
+              <Anchor
+                href="https://earth.google.com/web/search/Colchuck+Lake,+Leavenworth,+WA/@47.4984306,-120.8333841,1702.27471821a,686.05166596d,35y,0h,45t,0r/data=CokBGl8SWQolMHg1NDlhNDUwMzM0MzU2MmYzOjB4Y2FjM2E0MDRiMWM0OThkNxmvKeuSzL9HQCFooEMqVjVewCoeQ29sY2h1Y2sgTGFrZSwgTGVhdmVud29ydGgsIFdBGAIgASImCiQJkgGtdGnAR0ARThROffS0R0AZnKRRKqssXsAh0LA3KDs1XsAoAg"
+                target="_blank"
+              >
+                Colchuck Lake
+              </Anchor>
+              , in the Enchantments of Washington State in 2018. We were
+              inspired by the beauty of the lake, and the surrounding mountains.
+              We wanted to bring that same beauty to our software. Founded by
+              two industry experts, with a combined 40 years of experience,
+              ready to make your dreams a reality.
             </Text>
             <Text color="black" mt="md">
               Focused on excellence for our clients, we are well established,

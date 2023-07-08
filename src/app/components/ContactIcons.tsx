@@ -90,7 +90,7 @@ interface ContactIconsListProps {
 
 const MOCKDATA = [
   { title: "Email", description: "kyle@colchuckconsulting.com", icon: At },
-  { title: "Phone", description: "(360)-316-4900", icon: Phone },
+  { title: "Phone", description: "(360) 316-4900", icon: Phone },
   { title: "Location", description: "Seattle", icon: MapPin },
   { title: "Working hours", description: "8 a.m. – 11 p.m.", icon: Sun },
 ];
