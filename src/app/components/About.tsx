@@ -8,9 +8,6 @@ import {
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
-  wrapper: {
-    background: "linear-gradient(to bottom right, white, green)",
-  },
   inner: {
     display: "flex",
     justifyContent: "space-between",
@@ -29,7 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    color: theme.white,
+    color: theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(44),
     lineHeight: 1.2,
@@ -68,12 +65,12 @@ const useStyles = createStyles((theme) => ({
 export function About() {
   const { classes } = useStyles();
   return (
-    <div id="about" className={classes.wrapper}>
+    <div id="about">
       <Container>
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>Who We Are</Title>
-            <Text color="white" mt="md">
+            <Text color="black" mt="md">
               Our company was envisioned during a trip to Colchuck Lake, in the
               Enchantments of Washington State in 2018. We were inspired by the
               beauty of the lake, and the surrounding mountains. We wanted to
@@ -81,7 +78,7 @@ export function About() {
               experts, with a combined 40 years of experience, ready to make
               your dreams a reality.
             </Text>
-            <Text color="white" mt="md">
+            <Text color="black" mt="md">
               Focused on excellence for our clients, we are well established,
               with a reputation for great service and a high-quality product. We
               are a team of experienced developers and designers, who are

@@ -13,7 +13,6 @@ import {
   CloudComputing,
   Devices,
   Seo,
-  Message2,
   Users,
 } from "tabler-icons-react";
 

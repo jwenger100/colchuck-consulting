@@ -16,7 +16,7 @@ const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "fixed",
+    position: "relative", //TODO: set to fixed in the future to make it sticky
     zIndex: 1,
     marginBottom: 0,
     backgroundColor: "transparent",
@@ -60,7 +60,7 @@ const useStyles = createStyles((theme) => ({
         marginTop: "5px",
         width: 0,
         height: "2px",
-        backgroundColor: "#a8c196",
+        backgroundColor: "#98ff98",
         content: '""',
         opacity: 0,
         transition: "width 0.6s, opacity 0.8s",
@@ -70,7 +70,7 @@ const useStyles = createStyles((theme) => ({
         opacity: 1,
       },
       "&:hover": {
-        color: "#a8c196",
+        color: "#98ff98",
       },
     },
   },
@@ -79,6 +79,10 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },
+  },
+
+  logo: {
+    marginLeft: "-28px" /* fix for mobile */,
   },
 
   link: {
@@ -140,13 +144,19 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   ));
 
   return (
-    <Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    <Header
+      height={HEADER_HEIGHT}
+      mb={120}
+      className={classes.root}
+      id="header"
+    >
       <Container className={classes.header}>
         <Image
           src="/cc-white-mtn.svg"
           height={100}
           width={200}
           alt="Colchuck Consulting Logo"
+          className={classes.logo}
         />
 
         <Group spacing={5} className={classes.links}>

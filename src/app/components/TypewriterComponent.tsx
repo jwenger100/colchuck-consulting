@@ -1,11 +1,21 @@
 import React from "react";
 
 import { Typewriter } from "react-simple-typewriter"; // https://www.npmjs.com/package/react-simple-typewriter
-import { Text } from "@mantine/core";
+import { Text, createStyles } from "@mantine/core";
+
+const useStyles = createStyles(() => ({
+  typewriterWrapper: {
+    span: {
+      position: "relative",
+    },
+  },
+}));
 
 const TypewriterComponent = () => {
+  const { classes, cx } = useStyles();
+
   return (
-    <div>
+    <div className={classes.typewriterWrapper}>
       <Text fz="xl" color="white">
         {/* Style will be inherited from the parent element */}
         <Typewriter

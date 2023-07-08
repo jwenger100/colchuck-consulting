@@ -10,3 +10,7 @@
   --mint-green: #98ff98; /* This lighter, softer green is more muted and can provide a clean, fresh, modern look. */
   --sea-green: #2e8b57; /*  This medium to dark green with a hint of blue is stable and calming. */
 }
+
+body {
+  margin: 0; /* remove default margin for tsparticles */
+}

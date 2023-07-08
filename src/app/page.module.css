@@ -4,14 +4,10 @@
 
 /* Landing Page */
 
-.backgroundImage {
-  /* Find a way to do this without absolute position */
-  background-repeat: no-repeat;
+.particles {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: -1;
 }
 
 /* container for everything below the landing page background image */
@@ -25,12 +21,20 @@
 
 .pageTitle {
   color: white;
-  /* Add this font get from google?? */
+  font-family: "Greycliff CF", sans-serif;
   justify-content: center;
-  margin-top: 175px;
+  margin-top: 75px;
   font-weight: 700;
   font-size: 4rem;
   text-align: center;
+}
+
+.chevronsDown {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
 }
 
 .sectionsContainer {
@@ -99,5 +103,21 @@
   100% {
     opacity: 0;
     transform: translateY(-30px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
   }
 }
