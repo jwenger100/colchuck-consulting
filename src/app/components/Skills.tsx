@@ -12,7 +12,7 @@ import {
   Server2,
   CloudComputing,
   Devices,
-  Seo,
+  ArrowsDoubleSwNe,
   Users,
 } from "tabler-icons-react";
 
@@ -42,10 +42,11 @@ export const MOCKDATA = [
       "We are skilled at building scalabe web services on a variety of cloud platforms.",
   },
   {
-    icon: Seo,
-    title: "SEO",
+    icon: ArrowsDoubleSwNe,
+    title: "CI/CD",
     description:
-      "Our custom websites come with custom SEO to suit the indiviual needs of each client.",
+      "With a deep understanding of both Continuous Integration and Continuous Deployment(CI/CD). " +
+      "We have automated our development pipelines to deliver top-quality web applications, while reducing errors, increasing efficiency, and facilitating seamless collaboration with development teams.",
   },
   {
     icon: Users,
