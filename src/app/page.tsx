@@ -8,12 +8,7 @@ import { HeaderResponsive } from "./components/Header";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
-import { ParticlesComponent } from "./components/ParticlesComponent";
-import { TypewriterComponent } from "./components/TypewriterComponent";
-// mantine components
-import { Title } from "@mantine/core";
-
-import { ChevronsDown } from "tabler-icons-react";
+import { HeroImageBackground } from "./components/HeroImageBackground";
 
 const links = [
   // { label: "Home", link: "/" },
@@ -28,14 +23,9 @@ const links = [
 export default function Home() {
   return (
     <main className={styles.main}>
-      <ParticlesComponent />
+      <HeroImageBackground />
       <HeaderResponsive links={links} />
       <div className={styles.contentContainer}>
-        <Title order={1} className={`${styles.slideDown} ${styles.pageTitle}`}>
-          Colchuck Consulting
-        </Title>
-        <TypewriterComponent />
-        <ChevronsDown color="white" size={48} className={styles.chevronsDown} />
         <div className={styles.sectionsContainer}>
           <About />
           <Skills

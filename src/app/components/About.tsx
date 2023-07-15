@@ -6,6 +6,7 @@ import {
   rem,
   Anchor,
   Grid,
+  Container,
 } from "@mantine/core";
 
 import { Carousel } from "@mantine/carousel";
@@ -39,51 +40,53 @@ export function About() {
   const autoplay = useRef(Autoplay({ delay: 3000 }));
   return (
     <div id="about">
-      <Grid>
-        <Grid.Col sm={6} xs={12}>
-          <Title className={classes.title}>Who We Are</Title>
-          <Text color="black" mt="md">
-            Our company was envisioned during a trip to{" "}
-            <Anchor
-              href="https://earth.google.com/web/search/Colchuck+Lake,+Leavenworth,+WA/@47.4984306,-120.8333841,1702.27471821a,686.05166596d,35y,0h,45t,0r/data=CokBGl8SWQolMHg1NDlhNDUwMzM0MzU2MmYzOjB4Y2FjM2E0MDRiMWM0OThkNxmvKeuSzL9HQCFooEMqVjVewCoeQ29sY2h1Y2sgTGFrZSwgTGVhdmVud29ydGgsIFdBGAIgASImCiQJkgGtdGnAR0ARThROffS0R0AZnKRRKqssXsAh0LA3KDs1XsAoAg"
-              target="_blank"
+      <Container size={1100} style={{ marginTop: "100px" }}>
+        <Grid>
+          <Grid.Col sm={6} xs={12}>
+            <Title className={classes.title}>Who We Are</Title>
+            <Text color="black" mt="md">
+              Our company was envisioned during a trip to{" "}
+              <Anchor
+                href="https://earth.google.com/web/search/Colchuck+Lake,+Leavenworth,+WA/@47.4984306,-120.8333841,1702.27471821a,686.05166596d,35y,0h,45t,0r/data=CokBGl8SWQolMHg1NDlhNDUwMzM0MzU2MmYzOjB4Y2FjM2E0MDRiMWM0OThkNxmvKeuSzL9HQCFooEMqVjVewCoeQ29sY2h1Y2sgTGFrZSwgTGVhdmVud29ydGgsIFdBGAIgASImCiQJkgGtdGnAR0ARThROffS0R0AZnKRRKqssXsAh0LA3KDs1XsAoAg"
+                target="_blank"
+              >
+                Colchuck Lake
+              </Anchor>
+              , in the Enchantments of Washington State in 2018. We were
+              inspired by the beauty of the lake, and the surrounding mountains.
+              We wanted to bring that same beauty to our software. Founded by
+              two industry experts, with a combined 40 years of experience,
+              ready to make your dreams a reality.
+            </Text>
+            <Text color="black" mt="md">
+              Focused on excellence for our clients, we are well established,
+              with a reputation for great service and a high-quality product. We
+              are a team of experienced developers and designers, who are
+              passionate about building beautiful, easy to use software.
+            </Text>
+          </Grid.Col>
+          <Grid.Col sm={6} xs={12}>
+            <Carousel
+              withControls
+              withIndicators
+              loop={true}
+              plugins={[autoplay.current]}
+              onMouseEnter={autoplay.current.stop}
+              onMouseLeave={autoplay.current.reset}
             >
-              Colchuck Lake
-            </Anchor>
-            , in the Enchantments of Washington State in 2018. We were inspired
-            by the beauty of the lake, and the surrounding mountains. We wanted
-            to bring that same beauty to our software. Founded by two industry
-            experts, with a combined 40 years of experience, ready to make your
-            dreams a reality.
-          </Text>
-          <Text color="black" mt="md">
-            Focused on excellence for our clients, we are well established, with
-            a reputation for great service and a high-quality product. We are a
-            team of experienced developers and designers, who are passionate
-            about building beautiful, easy to use software.
-          </Text>
-        </Grid.Col>
-        <Grid.Col sm={6} xs={12}>
-          <Carousel
-            withControls
-            withIndicators
-            loop={true}
-            plugins={[autoplay.current]}
-            onMouseEnter={autoplay.current.stop}
-            onMouseLeave={autoplay.current.reset}
-          >
-            <Carousel.Slide>
-              <Image src="./images/colchuck-lake.jpeg" />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <Image src="./images/founders.png" />
-            </Carousel.Slide>
-            {/* <Carousel.Slide>
+              <Carousel.Slide>
+                <Image src="./images/colchuck-lake.jpeg" />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image src="./images/founders.png" />
+              </Carousel.Slide>
+              {/* <Carousel.Slide>
               <Image src="./images/15401560621_9c96b7b02a_o.jpeg" />
             </Carousel.Slide> */}
-          </Carousel>
-        </Grid.Col>
-      </Grid>
+            </Carousel>
+          </Grid.Col>
+        </Grid>
+      </Container>
     </div>
   );
 }
