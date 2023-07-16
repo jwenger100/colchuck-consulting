@@ -60,7 +60,7 @@ const useStyles = createStyles((theme) => ({
         marginTop: "5px",
         width: 0,
         height: "2px",
-        backgroundColor: "#98ff98",
+        backgroundColor: "#1DB954", //spotify green
         content: '""',
         opacity: 0,
         transition: "width 0.6s, opacity 0.8s",
@@ -70,7 +70,7 @@ const useStyles = createStyles((theme) => ({
         opacity: 1,
       },
       "&:hover": {
-        color: "#98ff98",
+        color: "#1DB954", //spotify green
       },
     },
   },

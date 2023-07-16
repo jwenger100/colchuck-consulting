@@ -78,9 +78,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   control: {
-    backgroundColor: "#1e9757",
+    backgroundColor: "#1db954",
     "&:hover": {
-      backgroundColor: "#00a86b",
+      backgroundColor: "#1ed760",
     },
   },
 }));
