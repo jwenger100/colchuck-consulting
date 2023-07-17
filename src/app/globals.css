@@ -14,8 +14,11 @@
 }
 
 body {
-  margin: 0; /* remove default margin for tsparticles */
+  margin: 0; /* remove default margin for hero image background */
 }
 
 /* style props from mantine */
 /* https://mantine.dev/styles/style-props/ */
+
+/* default colors */
+/* https://mantine.dev/theming/colors/#default-colors */

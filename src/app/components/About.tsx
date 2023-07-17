@@ -75,14 +75,35 @@ export function About() {
               onMouseLeave={autoplay.current.reset}
             >
               <Carousel.Slide>
-                <Image src="./images/colchuck-lake.jpeg" />
+                <Image height={350} src="./images/colchuck-lake-2.jpg" />
               </Carousel.Slide>
               <Carousel.Slide>
-                <Image src="./images/founders.png" />
+                <Image height={350} src="./images/enchantments-goats-1.jpg" />
               </Carousel.Slide>
-              {/* <Carousel.Slide>
-              <Image src="./images/15401560621_9c96b7b02a_o.jpeg" />
-            </Carousel.Slide> */}
+              <Carousel.Slide>
+                <Image height={350} src="./images/enchantments-goats-2.webp" />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image height={350} src="./images/enchantments-mtn-1.jpeg" />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image height={350} src="./images/enchantments-mtn-2.jpg" />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image
+                  height={350}
+                  src="./images/enchantments-alpine-lakes-1.jpg"
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image
+                  height={350}
+                  src="./images/enchantments-alpine-lakes-2.jpg"
+                />
+              </Carousel.Slide>
+              <Carousel.Slide>
+                <Image height={350} src="./images/founders.png" />
+              </Carousel.Slide>
             </Carousel>
           </Grid.Col>
         </Grid>
