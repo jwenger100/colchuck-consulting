@@ -3,10 +3,10 @@ import {
   Text,
   Title,
   Container,
-  SimpleGrid,
   createStyles,
   rem,
   Paper,
+  Grid,
 } from "@mantine/core";
 import {
   SourceCode,
@@ -76,6 +76,7 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     textAlign: "center",
+    marginBottom: theme.spacing.xl,
 
     [theme.fn.smallerThan("sm")]: {
       textAlign: "left",
@@ -89,6 +90,7 @@ const useStyles = createStyles((theme) => ({
     transition: "transform 150ms ease, box-shadow 100ms ease",
     padding: theme.spacing.xl,
     paddingLeft: `calc(${theme.spacing.xl} * 2)`,
+    height: "100%",
 
     "&:hover": {
       boxShadow: theme.shadows.md,
@@ -115,43 +117,35 @@ interface FeaturesGridProps {
 export function Skills({ title, description }: FeaturesGridProps) {
   const { classes } = useStyles();
   return (
-    <Container id="skills" className={classes.wrapper}>
+    <Container id="skills" className={classes.wrapper} size={1200}>
       <Title className={classes.title}>{title}</Title>
-
       <Container size={560} p={0}>
         <Text size="sm" className={classes.description}>
           {description}
         </Text>
       </Container>
-
-      <SimpleGrid
-        mt={60}
-        cols={3}
-        spacing={50}
-        breakpoints={[
-          { maxWidth: 980, cols: 2, spacing: "xl" },
-          { maxWidth: 755, cols: 1, spacing: "xl" },
-        ]}
-      >
+      <Grid gutterXs={25} gutterMd={30} gutterLg={50}>
         {MOCKDATA.map((feature) => (
-          <Paper withBorder radius="md" className={classes.card}>
-            <ThemeIcon
-              size="xl"
-              radius="md"
-              variant="gradient"
-              gradient={{ deg: 0, from: "#1db954", to: "#1ed760" }}
-            >
-              {feature.icon}
-            </ThemeIcon>
-            <Text size="xl" weight={500} mt="md">
-              {feature.title}
-            </Text>
-            <Text size="sm" mt="sm" color="dimmed">
-              {feature.description}
-            </Text>
-          </Paper>
+          <Grid.Col md={6} lg={4}>
+            <Paper withBorder radius="md" className={classes.card}>
+              <ThemeIcon
+                size="xl"
+                radius="md"
+                variant="gradient"
+                gradient={{ deg: 0, from: "#1db954", to: "#1ed760" }}
+              >
+                {feature.icon}
+              </ThemeIcon>
+              <Text size="xl" weight={500} mt="md">
+                {feature.title}
+              </Text>
+              <Text size="sm" mt="sm" color="dimmed">
+                {feature.description}
+              </Text>
+            </Paper>
+          </Grid.Col>
         ))}
-      </SimpleGrid>
+      </Grid>
     </Container>
   );
 }
