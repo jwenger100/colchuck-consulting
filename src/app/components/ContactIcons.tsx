@@ -5,8 +5,10 @@ import {
   SimpleGrid,
   Box,
   Stack,
+  Tooltip,
 } from "@mantine/core";
-import { Sun, Phone, MapPin, At } from "tabler-icons-react";
+import { useClipboard } from "@mantine/hooks";
+import { Sun, Phone, MapPin, At, Copy } from "tabler-icons-react";
 
 type ContactIconVariant = "white" | "gradient";
 
@@ -21,17 +23,6 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
     color: theme.white,
   },
 
-  icon: {
-    marginRight: theme.spacing.md,
-    backgroundImage:
-      variant === "gradient"
-        ? `linear-gradient(135deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-            theme.colors[theme.primaryColor][6]
-          } 100%)`
-        : "none",
-    backgroundColor: "transparent",
-  },
-
   title: {
     color:
       variant === "gradient"
@@ -39,8 +30,8 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
         : theme.colors[theme.primaryColor][0],
   },
 
-  description: {
-    color: variant === "gradient" ? theme.black : theme.white,
+  copyIconAlignment: {
+    marginLeft: theme.spacing.xs,
   },
 }));
 
@@ -61,10 +52,11 @@ function ContactIcon({
   ...others
 }: ContactIconProps) {
   const { classes, cx } = useStyles({ variant });
+  const clipboard = useClipboard({ timeout: 1000 });
   return (
     <div className={cx(classes.wrapper, className)} {...others}>
       {variant === "gradient" ? (
-        <ThemeIcon size={40} radius="md" className={classes.icon}>
+        <ThemeIcon size={40} radius="md">
           <Icon size="1.5rem" />
         </ThemeIcon>
       ) : (
@@ -77,7 +69,21 @@ function ContactIcon({
         <Text size="xs" className={classes.title}>
           {title}
         </Text>
-        <Text className={classes.description}>{description}</Text>
+        <Text>
+          {description}
+          {description === "info@colchuckconsulting.com" && (
+            <Tooltip
+              label={clipboard.copied ? "Copied!" : "Copy to clipboard"}
+              onClick={() => clipboard.copy("info@colchuckconsulting.com")}
+              withArrow
+            >
+              {/* keep span to display tooltip */}
+              <span className={classes.copyIconAlignment}>
+                <Copy size="1.5rem" color="#FFFFFF" />
+              </span>
+            </Tooltip>
+          )}
+        </Text>
       </div>
     </div>
   );
