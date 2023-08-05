@@ -1,184 +1,191 @@
-import { useState } from "react";
 import {
   createStyles,
   Header,
-  Container,
   Group,
+  Divider,
+  Box,
   Burger,
-  Paper,
-  Transition,
+  Drawer,
+  ScrollArea,
   rem,
   Image,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-
-const HEADER_HEIGHT = rem(60);
+import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
+import { BrandFacebook, BrandInstagram } from "tabler-icons-react";
 
 const useStyles = createStyles((theme) => ({
-  root: {
-    position: "relative", //TODO: set to fixed in the future to make it sticky
-    zIndex: 1,
-    marginBottom: 0,
+  headerContainer: {
+    position: "relative",
     backgroundColor: "transparent",
     borderBottom: 0,
   },
-
-  dropdown: {
-    position: "absolute",
-    top: HEADER_HEIGHT,
-    left: 0,
-    right: 0,
-    zIndex: 0,
-    borderTopRightRadius: 0,
-    borderTopLeftRadius: 0,
-    borderTopWidth: 0,
-    overflow: "hidden",
-
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
+  logo: {
+    marginTop: "-40px",
+    maxHeight: "100%",
+    marginLeft: "-20px",
   },
-
-  header: {
+  headerLink: {
     display: "flex",
-    justifyContent: "space-between",
     alignItems: "center",
     height: "100%",
-    maxWidth: "none !important",
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    textDecoration: "none",
+    color: theme.white,
+    fontWeight: 500,
+    fontSize: theme.fontSizes.sm,
+    "&:hover": {
+      color: "#1DB954", //spotify green
+    },
   },
 
-  links: {
+  sideMenuLink: {
+    display: "flex",
+    alignItems: "center",
+    height: rem(42),
+    width: "100%",
+    paddingLeft: theme.spacing.md,
+    paddingRight: theme.spacing.md,
+    textDecoration: "none",
+    color: theme.black,
+    fontWeight: 500,
+    fontSize: theme.fontSizes.sm,
+
+    ...theme.fn.hover({
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
+    }),
+  },
+
+  hiddenMobile: {
     [theme.fn.smallerThan("sm")]: {
       display: "none",
     },
-    a: {
-      color: "white",
-      backgroundColor: "transparent !important",
-      "&::after": {
-        display: "block",
-        margin: "0 auto",
-        marginTop: "5px",
-        width: 0,
-        height: "2px",
-        backgroundColor: "#1DB954", //spotify green
-        content: '""',
-        opacity: 0,
-        transition: "width 0.6s, opacity 0.8s",
-      },
-      "&:hover::after": {
-        width: "100%",
-        opacity: 1,
-      },
-      "&:hover": {
-        color: "#1DB954", //spotify green
-      },
-    },
   },
 
-  burger: {
+  hiddenDesktop: {
     [theme.fn.largerThan("sm")]: {
       display: "none",
-    },
-  },
-
-  logo: {
-    marginLeft: "-28px" /* fix for mobile */,
-  },
-
-  link: {
-    display: "block",
-    lineHeight: 1,
-    padding: `${rem(8)} ${rem(12)}`,
-    borderRadius: theme.radius.sm,
-    textDecoration: "none",
-
-    [theme.fn.smallerThan("sm")]: {
-      borderRadius: 0,
-      padding: theme.spacing.md,
-    },
-  },
-
-  linkActive: {
-    "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "light",
-        color: theme.primaryColor,
-      }).background,
-      color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-        .color,
     },
   },
 }));
 
-interface HeaderResponsiveProps {
-  links: { link: string; label: string }[];
-}
+const mockdata = [
+  {
+    link: "about",
+    label: "About",
+  },
+  {
+    link: "skills",
+    label: "Skills",
+  },
+  {
+    link: "contact",
+    label: "Contact",
+  },
+];
 
-export function HeaderResponsive({ links }: HeaderResponsiveProps) {
-  const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
-  const { classes, cx } = useStyles();
+// Suppose this is your component
+function LinkComponent({
+  location,
+  closeDrawer,
+}: {
+  location: string;
+  closeDrawer: any;
+}) {
+  const { classes, theme } = useStyles();
 
-  const items = links.map((link) => (
+  const links = mockdata.map((item) => (
     <a
-      key={link.label}
-      href={link.link}
-      className={cx(classes.link, {
-        [classes.linkActive]: active === link.link,
-      })}
+      key={item.label}
+      href={item.link}
+      className={
+        location === "header" ? classes.headerLink : classes.sideMenuLink
+      }
       onClick={(event) => {
         event.preventDefault();
-        close();
-        // scroll to element with id equal to link.link or to top of the page
-        // scrollIntoView API https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
-        const element = document.getElementById(link.link) || document.body;
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest",
-        });
+        const target =
+          (document.getElementById(item.link) as HTMLDivElement) ||
+          document.body;
+        if (target) {
+          // TODO useScrollIntoView hook is not working
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+        if (closeDrawer) {
+          closeDrawer(); // Close the drawer here
+        }
       }}
     >
-      {link.label}
+      {item.label}
     </a>
   ));
 
+  return <>{links}</>; // Render the links
+}
+
+export default LinkComponent;
+
+export function HeaderMegaMenu() {
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
+  const { classes, theme } = useStyles();
+
   return (
-    <Header
-      height={HEADER_HEIGHT}
-      mb={120}
-      className={classes.root}
-      id="header"
-    >
-      <Container className={classes.header}>
-        <Image
-          src="/cc-white-mtn.svg"
-          height={100}
-          width={200}
-          alt="Colchuck Consulting Logo"
-          className={classes.logo}
-        />
+    <Box pb={120}>
+      <Header height={60} px="md" className={classes.headerContainer}>
+        <Group position="apart" sx={{ height: "100%" }}>
+          <Image
+            src="/cc-white-mtn.svg"
+            height={100}
+            width={200}
+            alt="Colchuck Consulting Logo"
+            className={classes.logo}
+          />
+          <Group
+            sx={{ height: "100%" }}
+            spacing={0}
+            className={classes.hiddenMobile}
+          >
+            <LinkComponent location="header" closeDrawer={closeDrawer} />
+          </Group>
 
-        <Group spacing={5} className={classes.links}>
-          {items}
+          <Burger
+            opened={drawerOpened}
+            onClick={toggleDrawer}
+            className={classes.hiddenDesktop}
+            size="sm"
+            color="white"
+          />
         </Group>
+      </Header>
 
-        <Burger
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="sm"
-          color="white"
-        />
-
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
-      </Container>
-    </Header>
+      <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        position="right"
+        // size="100%"
+        padding="md"
+        title="Colchuck Consulting"
+        className={classes.hiddenDesktop}
+        zIndex={1000000}
+      >
+        <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
+          <Divider
+            my="sm"
+            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
+          />
+          <LinkComponent location="sideMenuLinks" closeDrawer={closeDrawer} />
+          <Divider
+            my="sm"
+            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
+          />
+          {/* social media icons */}
+          {/* <BrandFacebook size={24} />
+          <BrandInstagram size={24} /> */}
+        </ScrollArea>
+      </Drawer>
+    </Box>
   );
 }

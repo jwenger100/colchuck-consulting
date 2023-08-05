@@ -5,21 +5,11 @@
 // import styles from "./page.module.css";
 import { createStyles } from "@mantine/core";
 // local components
-import { HeaderResponsive } from "./components/HeaderResponsive";
+import { HeaderMegaMenu } from "./components/HeaderResponsive";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { HeroImageBackground } from "./components/HeroImageBackground";
-
-const links = [
-  // { label: "Home", link: "/" },
-  { label: "About", link: "about" },
-  { label: "Skills", link: "skills" },
-  // { label: "Projects", link: "projects" },
-  //TODO: Add logos of clients
-  // { label: "Clients", link: "clients"}
-  { label: "Contact", link: "contact" },
-];
 
 const useStyles = createStyles((theme) => ({
   main: {
@@ -45,7 +35,7 @@ export default function Home() {
   return (
     <main className={classes.main}>
       <HeroImageBackground />
-      <HeaderResponsive links={links} />
+      <HeaderMegaMenu />
       <div className={classes.contentContainer}>
         <div className={classes.sectionsContainer}>
           <About />
