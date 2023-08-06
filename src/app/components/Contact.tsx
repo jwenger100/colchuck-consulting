@@ -115,8 +115,8 @@ export function Contact() {
           </Text>
 
           <ContactIconsList variant="white" />
-
-          <Group mt="xl">{icons}</Group>
+          {/* TODO: Add back once social media pages are built out */}
+          {/* <Group mt="xl">{icons}</Group> */}
         </div>
         <form
           className={classes.form}
