@@ -75,6 +75,7 @@ function ContactIcon({
             <Tooltip
               label={clipboard.copied ? "Copied!" : "Copy to clipboard"}
               onClick={() => clipboard.copy("info@colchuckconsulting.com")}
+              offset={12}
               withArrow
             >
               {/* keep span to display tooltip */}
