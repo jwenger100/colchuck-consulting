@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
-import { Sun, Phone, MapPin, At, Copy } from "tabler-icons-react";
+import { Sun, Phone, MapPin, At, Copy, Check } from "tabler-icons-react";
 
 type ContactIconVariant = "white" | "gradient";
 
@@ -52,7 +52,7 @@ function ContactIcon({
   ...others
 }: ContactIconProps) {
   const { classes, cx } = useStyles({ variant });
-  const clipboard = useClipboard({ timeout: 1000 });
+  const clipboard = useClipboard({ timeout: 1500 });
   return (
     <div className={cx(classes.wrapper, className)} {...others}>
       {variant === "gradient" ? (
@@ -79,7 +79,11 @@ function ContactIcon({
             >
               {/* keep span to display tooltip */}
               <span className={classes.copyIconAlignment}>
-                <Copy size="1.5rem" color="#FFFFFF" />
+                {clipboard.copied ? (
+                  <Check size="1.5rem" color="#FFFFFF" />
+                ) : (
+                  <Copy size="1.5rem" color="#FFFFFF" />
+                )}
               </span>
             </Tooltip>
           )}
