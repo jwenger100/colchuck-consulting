@@ -1,13 +1,4 @@
-import {
-  ThemeIcon,
-  Text,
-  Title,
-  Container,
-  createStyles,
-  rem,
-  Paper,
-  Grid,
-} from "@mantine/core";
+import { ThemeIcon, Text, Title, Container, Paper, Grid } from "@mantine/core";
 import {
   SourceCode,
   Server2,
@@ -16,6 +7,7 @@ import {
   ArrowsDoubleSwNe,
   Users,
 } from "tabler-icons-react";
+import classes from "./Skills.module.css";
 
 export const MOCKDATA = [
   {
@@ -56,66 +48,12 @@ export const MOCKDATA = [
   },
 ];
 
-const useStyles = createStyles((theme) => ({
-  wrapper: {
-    paddingTop: `calc(${theme.spacing.xl} * 4)`,
-    paddingBottom: `calc(${theme.spacing.xl} * 4)`,
-  },
-
-  title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 900,
-    marginBottom: theme.spacing.md,
-    textAlign: "center",
-
-    [theme.fn.smallerThan("sm")]: {
-      fontSize: rem(28),
-      textAlign: "left",
-    },
-  },
-
-  description: {
-    textAlign: "center",
-    marginBottom: theme.spacing.xl,
-
-    [theme.fn.smallerThan("sm")]: {
-      textAlign: "left",
-    },
-  },
-
-  card: {
-    position: "relative",
-    cursor: "pointer",
-    overflow: "hidden",
-    transition: "transform 150ms ease, box-shadow 100ms ease",
-    padding: theme.spacing.xl,
-    paddingLeft: `calc(${theme.spacing.xl} * 2)`,
-    height: "100%",
-
-    "&:hover": {
-      boxShadow: theme.shadows.md,
-      transform: "scale(1.02)",
-    },
-
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      width: rem(6),
-      backgroundImage: theme.fn.linearGradient(0, "#1db954", "#1ed760"),
-    },
-  },
-}));
-
 interface FeaturesGridProps {
   title: React.ReactNode;
   description: React.ReactNode;
 }
 
 export function Skills({ title, description }: FeaturesGridProps) {
-  const { classes } = useStyles();
   return (
     <Container id="skills" className={classes.wrapper} size={1200}>
       <Title className={classes.title}>{title}</Title>
@@ -124,9 +62,10 @@ export function Skills({ title, description }: FeaturesGridProps) {
           {description}
         </Text>
       </Container>
-      <Grid gutterXs={25} gutterMd={30} gutterLg={50}>
-        {MOCKDATA.map((feature) => (
-          <Grid.Col md={6} lg={4}>
+      <Grid>
+        {MOCKDATA.map((feature, index) => (
+          // each child in a list should have a unique "key" prop
+          <Grid.Col span={{ md: 6, lg: 4 }} key={index}>
             <Paper withBorder radius="md" className={classes.card}>
               <ThemeIcon
                 size="xl"
@@ -136,10 +75,10 @@ export function Skills({ title, description }: FeaturesGridProps) {
               >
                 {feature.icon}
               </ThemeIcon>
-              <Text size="xl" weight={500} mt="md">
+              <Text size="xl" fw={500} mt="md">
                 {feature.title}
               </Text>
-              <Text size="sm" mt="sm" color="dimmed">
+              <Text size="sm" mt="sm" c="dimmed">
                 {feature.description}
               </Text>
             </Paper>

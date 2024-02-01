@@ -1,0 +1,52 @@
+.wrapper {
+  position: "absolute";
+  top: 0;
+  width: "100vw";
+  height: "100vh";
+  /* backgroundImage: `url("./images/aasgard-pass.jpg")`; */
+  background-size: "cover";
+  background-position: "center";
+}
+
+.title {
+  font-weight: 800;
+  font-size: rem(60);
+  letter-spacing: rem(-1);
+  margin-top: "275px";
+  position: "relative";
+  padding-left: "20px";
+  padding-right: "20px";
+  color: "white";
+  margin-bottom: "20px";
+  text-align: "center";
+  /* font-family: `Georgia, ${theme.fontFamily}; */
+  /* animation: `${slideDownOpacity} ease-in 1s; */
+  /* animation-fill-fode: "forwards"; */
+  /* animation-furation: "2s"; */
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28);
+    text-overflow: "ellipsis";
+  }
+}
+
+.description {
+  color: "gray";
+  text-align: "center";
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: 12px;
+  }
+}
+
+.chevronsDown {
+  position: "absolute";
+  left: "0";
+  right: "0";
+  bottom: "0";
+  margin-bottom: "20px";
+  /* animation: `${bounce} 3s ease-in-out infinite`, */
+  text-align: "center";
+  margin-left: "auto";
+  margin-right: "auto";
+}

@@ -1,5 +1,4 @@
 import {
-  createStyles,
   ThemeIcon,
   Text,
   SimpleGrid,
@@ -7,6 +6,7 @@ import {
   Stack,
   Tooltip,
 } from "@mantine/core";
+import classes from "./ContactIcons.module.css";
 import { useClipboard } from "@mantine/hooks";
 import { Sun, Phone, MapPin, At, Copy, Check } from "tabler-icons-react";
 
@@ -15,25 +15,6 @@ type ContactIconVariant = "white" | "gradient";
 interface ContactIconStyles {
   variant: ContactIconVariant;
 }
-
-const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
-  wrapper: {
-    display: "flex",
-    alignItems: "center",
-    color: theme.white,
-  },
-
-  title: {
-    color:
-      variant === "gradient"
-        ? theme.colors.gray[6]
-        : theme.colors[theme.primaryColor][0],
-  },
-
-  copyIconAlignment: {
-    marginLeft: theme.spacing.xs,
-  },
-}));
 
 interface ContactIconProps
   extends Omit<React.ComponentPropsWithoutRef<"div">, "title"> {
@@ -51,10 +32,9 @@ function ContactIcon({
   className,
   ...others
 }: ContactIconProps) {
-  const { classes, cx } = useStyles({ variant });
   const clipboard = useClipboard({ timeout: 1500 });
   return (
-    <div className={cx(classes.wrapper, className)} {...others}>
+    <div className={classes.wrapper} {...others}>
       {variant === "gradient" ? (
         <ThemeIcon size={40} radius="md">
           <Icon size="1.5rem" />
@@ -118,25 +98,25 @@ export function ContactIconsList({
 
 export function ContactIcons() {
   return (
-    <SimpleGrid cols={2} breakpoints={[{ maxWidth: 755, cols: 1 }]}>
+    <SimpleGrid cols={2}>
       <Box
-        sx={(theme) => ({
-          padding: theme.spacing.xl,
-          borderRadius: theme.radius.md,
-          backgroundColor: theme.white,
-        })}
+      // sx={(theme) => ({
+      //   padding: theme.spacing.xl,
+      //   borderRadius: theme.radius.md,
+      //   backgroundColor: theme.white,
+      // })}
       >
         <ContactIconsList />
       </Box>
 
       <Box
-        sx={(theme) => ({
-          padding: theme.spacing.xl,
-          borderRadius: theme.radius.md,
-          backgroundImage: `linear-gradient(135deg, ${
-            theme.colors[theme.primaryColor][6]
-          } 0%, ${theme.colors[theme.primaryColor][4]} 100%)`,
-        })}
+      // sx={(theme) => ({
+      //   padding: theme.spacing.xl,
+      //   borderRadius: theme.radius.md,
+      //   backgroundImage: `linear-gradient(135deg, ${
+      //     theme.colors[theme.primaryColor][6]
+      //   } 0%, ${theme.colors[theme.primaryColor][4]} 100%)`,
+      // })}
       >
         <ContactIconsList variant="white" />
       </Box>

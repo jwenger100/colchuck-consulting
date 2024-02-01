@@ -1,0 +1,65 @@
+.wrapper {
+  min-height: 400;
+  box-sizing: "border-box";
+  /* background-image: url("./bg.svg"); */
+  background-size: "cover";
+  background-position: "center";
+  /* border-radius: theme.radius.md; */
+  border-radius: 10;
+  padding: "20px";
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding: "10px";
+  }
+}
+
+.title {
+  /* fontFamily: `Greycliff CF, ${theme.fontFamily}`, */
+  color: "white";
+  line-height: 1;
+}
+
+.description {
+  color: "green";
+  max-width: rem(300);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    max-width: "100%";
+  }
+}
+
+.form {
+  background-color: "white";
+  padding: "20px";
+  border-radius: "20px";
+  box-shadow: "20px";
+}
+
+.social {
+  color: "white";
+
+  /* &:hover {
+    color: "green";
+  } */
+}
+
+.input {
+  background-color: "white";
+  border-color: "1px solid gray";
+  color: "black";
+
+  /* &:placeholder {
+    color: "gray";
+  } */
+}
+
+.inputLabel {
+  color: "black";
+}
+
+.control {
+  background-color: "#1db954";
+  /* &:hover {
+    background-color: "#1ed760";
+  } */
+}

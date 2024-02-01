@@ -3,8 +3,7 @@
 import { PuffLoader } from "react-spinners";
 
 // css styling
-// import styles from "./page.module.css";
-import { createStyles } from "@mantine/core";
+import classes from "./page.module.css";
 // local components
 import { HeaderMegaMenu } from "./components/HeaderResponsive";
 import { About } from "./components/About";
@@ -14,27 +13,7 @@ import { HeroImageBackground } from "./components/HeroImageBackground";
 
 import { useState, useEffect } from "react";
 
-const useStyles = createStyles((theme) => ({
-  main: {
-    // minHeight: "100vh",
-  },
-  /* container for everything below the landing page HeroImageBackground */
-  contentContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-  },
-  sectionsContainer: {
-    position: "absolute",
-    top: "100vh",
-    width: "100%",
-  },
-}));
-
 export default function Home() {
-  const { classes } = useStyles();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -43,12 +22,12 @@ export default function Home() {
   if (loading) {
     return (
       <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
+      // style={{
+      //   display: "flex",
+      //   justifyContent: "center",
+      //   alignItems: "center",
+      //   height: "100vh",
+      // }}
       >
         <PuffLoader
           color="#1db954"

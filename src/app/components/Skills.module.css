@@ -1,0 +1,50 @@
+.wrapper {
+  padding-top: "20px";
+  padding-bottom: "20px";
+}
+
+.title {
+  /* fontFamily: `Greycliff CF, ${theme.fontFamily}`, */
+  font-weight: 900;
+  margin-bottom: "20px";
+  text-align: "center";
+
+  /* [theme.fn.smallerThan("sm")]: {
+      fontSize: rem(28),
+      textAlign: "left",
+    }, */
+}
+
+.description {
+  text-align: "center";
+  margin-bottom: "20px";
+
+  /* [theme.fn.smallerThan("sm")]: {
+      textAlign: "left",
+    }, */
+}
+
+.card {
+  position: "relative";
+  cursor: "pointer";
+  overflow: "hidden";
+  transition: "transform 150ms ease, box-shadow 100ms ease";
+  padding: "25px";
+  padding-left: "15px";
+  height: "100%";
+
+  /* "&:hover": {
+      boxShadow: theme.shadows.md,
+      transform: "scale(1.02)",
+    }, */
+
+  /* "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      bottom: 0,
+      left: 0,
+      width: rem(6),
+      backgroundImage: theme.fn.linearGradient(0, "#1db954", "#1ed760"),
+    }, */
+}

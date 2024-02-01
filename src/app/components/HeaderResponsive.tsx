@@ -1,6 +1,4 @@
 import {
-  createStyles,
-  Header,
   Group,
   Divider,
   Box,
@@ -10,67 +8,8 @@ import {
   rem,
   Image,
 } from "@mantine/core";
+import classes from "./HeaderResponsive.module.css";
 import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
-import { BrandFacebook, BrandInstagram } from "tabler-icons-react";
-
-const useStyles = createStyles((theme) => ({
-  headerContainer: {
-    position: "relative",
-    backgroundColor: "transparent",
-    borderBottom: 0,
-  },
-  logo: {
-    marginTop: "-40px",
-    maxHeight: "100%",
-    marginLeft: "-20px",
-  },
-  headerLink: {
-    display: "flex",
-    alignItems: "center",
-    height: "100%",
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
-    textDecoration: "none",
-    color: theme.white,
-    fontWeight: 500,
-    fontSize: theme.fontSizes.sm,
-    "&:hover": {
-      color: "#1DB954", //spotify green
-    },
-  },
-
-  sideMenuLink: {
-    display: "flex",
-    alignItems: "center",
-    height: rem(42),
-    width: "100%",
-    paddingLeft: theme.spacing.md,
-    paddingRight: theme.spacing.md,
-    textDecoration: "none",
-    color: theme.black,
-    fontWeight: 500,
-    fontSize: theme.fontSizes.sm,
-
-    ...theme.fn.hover({
-      backgroundColor:
-        theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
-    }),
-  },
-
-  hiddenMobile: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
-    },
-  },
-
-  hiddenDesktop: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
-    },
-  },
-}));
 
 const mockdata = [
   {
@@ -95,8 +34,6 @@ function LinkComponent({
   location: string;
   closeDrawer: any;
 }) {
-  const { classes, theme } = useStyles();
-
   const links = mockdata.map((item) => (
     <a
       key={item.label}
@@ -130,12 +67,11 @@ export default LinkComponent;
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-  const { classes, theme } = useStyles();
 
   return (
     <Box pb={120}>
-      <Header height={60} px="md" className={classes.headerContainer}>
-        <Group position="apart" sx={{ height: "100%" }}>
+      <header className={classes.headerContainer}>
+        <Group>
           <Image
             src="/cc-white-mtn.svg"
             height={100}
@@ -144,8 +80,8 @@ export function HeaderMegaMenu() {
             className={classes.logo}
           />
           <Group
-            sx={{ height: "100%" }}
-            spacing={0}
+            // sx={{ height: "100%" }}
+            // spacing={0}
             className={classes.hiddenMobile}
           >
             <LinkComponent location="header" closeDrawer={closeDrawer} />
@@ -159,7 +95,7 @@ export function HeaderMegaMenu() {
             color="white"
           />
         </Group>
-      </Header>
+      </header>
 
       <Drawer
         opened={drawerOpened}
@@ -172,15 +108,9 @@ export function HeaderMegaMenu() {
         zIndex={1000000}
       >
         <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
-          <Divider
-            my="sm"
-            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-          />
+          <Divider my="sm" color={"gray"} />
           <LinkComponent location="sideMenuLinks" closeDrawer={closeDrawer} />
-          <Divider
-            my="sm"
-            color={theme.colorScheme === "dark" ? "dark.5" : "gray.1"}
-          />
+          <Divider my="sm" color={"gray"} />
           {/* social media icons */}
           {/* <BrandFacebook size={24} />
           <BrandInstagram size={24} /> */}
