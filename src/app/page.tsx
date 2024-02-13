@@ -5,7 +5,7 @@ import { PuffLoader } from "react-spinners";
 // css styling
 import classes from "./page.module.css";
 // local components
-import { HeaderMegaMenu } from "./components/HeaderResponsive";
+import { HeaderMenu } from "./components/HeaderMenu";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
@@ -40,16 +40,18 @@ export default function Home() {
   }
   return (
     <main className={classes.main}>
-      <HeroImageBackground />
-      <HeaderMegaMenu />
+      <HeaderMenu />
+      {/* <HeroImageBackground /> */}
+      {/* later move abour componet to sectionsContainer */}
+      <About />
+
       <div className={classes.contentContainer}>
         <div className={classes.sectionsContainer}>
-          <About />
-          <Skills
+          {/* <Skills
             title="Skills"
             description="Mastering the digital sphere with exceptional web development, intuitive UI/UX design, cutting-edge coding practices, and thorough performance testing for seamless user experiences."
           />
-          <Contact />
+          <Contact /> */}
         </div>
       </div>
     </main>

@@ -1,16 +1,10 @@
 :root {
-  --main-dark-green: #566e57;
-  --main-light-green: #a8c196;
+  --cc-green: #1db954;
+  --cc-light-green: #1ed760;
 
-  --emerald-green: #00873d; /* This vibrant and energetic green evokes the feeling of success and abundance. */
-  --jade-green: #00a86b; /* This darker green is a bit more subdued, but still provides a feel of sophistication and prestige. */
-  --neon-green: #39ff14; /* This bold, electric green is modern and futuristic, perfect for a tech company pushing the boundaries. */
-  --lime-green: #32cd32; /* This brighter, cheerful green has a more friendly, approachable vibe. */
-  --forest-green: #228b22; /* This deep, rich green suggests stability, longevity, and trustworthiness. */
-  --mint-green: #98ff98; /* This lighter, softer green is more muted and can provide a clean, fresh, modern look. */
-  --sea-green: #2e8b57; /*  This medium to dark green with a hint of blue is stable and calming. */
-  --spotfiy-green: #1db954; /*  This medium to dark green with a hint of blue is stable and calming. */
-  --spotify-light-green: #1ed760;
+  --cc-accent-color: #6772e5;
+  --cc-accent-color-light: #f3f4f6;
+  --cc-accent-color-dark: #1e1e1e;
 }
 
 body {
@@ -22,3 +16,23 @@ body {
 
 /* default colors */
 /* https://mantine.dev/theming/colors/#default-colors */
+
+/* Montserrat - Montserrat and Poppins share a modern sans-serif aesthetic,
+ but Montserrat's slightly quirkier letterforms can add an interesting visual 
+ texture when used as body text alongside Poppins. 
+*/
+
+/* Raleway - Raleway is an elegant sans-serif typeface with a more delicate
+ weight compared to Poppins. Its high level of readability and sophisticated
+ style makes it a good companion for more upscale or artistic projects.
+*/
+
+/* Poppins - Poppins is a modern sans-serif typeface with a geometric aesthetic.
+ It's a versatile font that can be used for both display and text, and it pairs
+ well with Raleway and Montserrat. */
+
+/* --mantine-breakpoint-xs: 36em; (576px) */
+/* --mantine-breakpoint-sm: 48em; (768px) */
+/* --mantine-breakpoint-md: 62em; (992px) */
+/* --mantine-breakpoint-lg: 75em; (1200px) */
+/* --mantine-breakpoint-xl: 88em; (1408px) */

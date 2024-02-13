@@ -10,6 +10,12 @@ const TypewriterComponent = () => {
       <Text fz="xl" c="white">
         {/* Style will be inherited from the parent element */}
         <Typewriter
+          // WEBDEVELOPMENT -> Full Stack Software Development
+          // FULLSTACK
+          // DEVOPS
+          // TRANSFORMINGIDEAS -> Transforming ideas into digital reality
+          // DIGITALBRIDGES -> Building digital bridges for your business
+          // REACHCUSTOMERS -> Helping you reach your customers
           words={[
             "Full Stack Software Development",
             "Transforming ideas into digital reality",

@@ -3,10 +3,35 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import ThemeProvider from "./theme-provider";
 import type { Metadata } from "next";
+import { Poppins, Montserrat, Raleway } from "next/font/google";
+
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  subsets: ["latin", "latin-ext", "devanagari"],
+  variable: "--font-poppins",
+});
+
+const montserrat = Montserrat({
+  weight: "variable",
+  display: "swap",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-montserrat",
+});
+
+const raleway = Raleway({
+  weight: "variable",
+  display: "swap",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-raleway",
+});
 
 export const metadata: Metadata = {
   title: "Colchuck Consulting",
   description: "The Colchuck Differnce",
+  icons: {
+    icon: "icon.ico", // facivon.ico -> icon.ico 👍
+  },
 };
 
 export default function RootLayout({
@@ -15,11 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        {/* favicon issue: https://stackoverflow.com/questions/61836949/why-is-my-favicon-not-working-in-my-next-js-app */}
-        <link rel="icon" href="/images/favicon.ico" sizes="any" />
-      </head>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${montserrat.variable} ${raleway.variable}`}
+    >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
