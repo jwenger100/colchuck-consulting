@@ -7,7 +7,7 @@ import {
   ArrowsDoubleSwNe,
   Users,
 } from "tabler-icons-react";
-import classes from "./Skills.module.css";
+import classes from "./Services.module.css";
 
 export const MOCKDATA = [
   {
@@ -35,6 +35,11 @@ export const MOCKDATA = [
       "We are skilled at building scalabe web services on a variety of cloud platforms.",
   },
   {
+    icon: <CloudComputing size="1.6rem" />,
+    title: "THIRD PARTY LIBRARIES",
+    description: "THIRD PARTY LIBRARIES",
+  },
+  {
     icon: <ArrowsDoubleSwNe size="1.6rem" />,
     title: "CI/CD",
     description:
@@ -48,18 +53,17 @@ export const MOCKDATA = [
   },
 ];
 
-interface FeaturesGridProps {
-  title: React.ReactNode;
-  description: React.ReactNode;
-}
-
-export function Skills({ title, description }: FeaturesGridProps) {
+export function Services() {
   return (
-    <Container id="skills" className={classes.wrapper} size={1200}>
-      <Title className={classes.title}>{title}</Title>
+    <Container id="services" className={classes.wrapper} size={1200}>
+      <Title className={classes.title} ta={"center"}>
+        Our Services
+      </Title>
       <Container size={560} p={0}>
         <Text size="sm" className={classes.description}>
-          {description}
+          Mastering the digital sphere with exceptional web development,
+          intuitive UI/UX design, cutting-edge coding practices, and thorough
+          performance testing for seamless user experiences.
         </Text>
       </Container>
       <Grid>
@@ -85,6 +89,17 @@ export function Skills({ title, description }: FeaturesGridProps) {
           </Grid.Col>
         ))}
       </Grid>
+
+      <Title className={classes.title} ta={"center"}>
+        Technologies we work with!
+      </Title>
+      <Container size={560} p={0} ta={"center"}>
+        <Text size="sm" className={classes.description}>
+          Our expertise encompasses various technologies that we constantly
+          expand depending on our Clients’ needs. Take a look at just a few of
+          those we work with.
+        </Text>
+      </Container>
     </Container>
   );
 }

@@ -6,14 +6,15 @@ import {
   IconBrandFacebook,
   IconBrandFacebookFilled,
   IconBrandLinkedin,
+  IconMailFilled,
+  IconPhoneFilled,
 } from "@tabler/icons-react";
 import { TypewriterComponent } from "./TypewriterComponent";
 
 export function HeroImageBackground() {
   return (
     <Box className={classes.wrapper}>
-      <Overlay color="#000" opacity={0.65} zIndex={1} />
-
+      <Overlay color="#000" backgroundOpacity={0.45} zIndex={1} />
       <Box className={classes.inner}>
         <Box className={classes.titleContainer}>
           <Title className={classes.title}>COLCHUCK</Title>
@@ -35,12 +36,23 @@ export function HeroImageBackground() {
           <Box className={classes.contactInfoContainer}>
             {/* Box for icons (aligned left) */}
             <Box>
-              <IconBrandLinkedin size={"1.15rem"} color="#fff" />
-              <IconBrandFacebook
-                size={"1.15rem"}
-                color="#fff"
-                style={{ marginLeft: "5px" }}
-              />
+              <a
+                href="https://www.linkedin.com/company/colchuck-consulting"
+                target="_blank"
+                className={classes.socialLink}
+              >
+                <IconBrandLinkedin className={classes.socialIcon} />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Colchuck-Consulting/100092182747710/"
+                target="_blank"
+                className={classes.socialLink}
+              >
+                <IconBrandFacebook
+                  style={{ marginLeft: "5px" }}
+                  className={classes.socialIcon}
+                />
+              </a>
             </Box>
             {/* Box for contact information (aligned right), now also with flex layout for horizontal alignment */}
             <Box
@@ -56,27 +68,40 @@ export function HeroImageBackground() {
                 fz={"1rem"}
                 display={{ base: "none", sm: "block" }}
               >
-                Contact
+                Contact:
               </Text>
-              <Text
-                c="white"
-                fz={"1rem"}
-                display={{ base: "none", sm: "block" }}
-              >
-                {/* tel: – place a phone call
-                  mailto: – open an email app
-                  callto: open Skype
-                  sms: – send a text message */}
-                3603164900
-              </Text>
-              <Text c="white" fz={"1rem"}>
+              <Box display={{ base: "none", sm: "block" }}>
+                <a href="tel:3603164900" style={{ color: "white" }}>
+                  (360) 316-4900
+                </a>
+              </Box>
+              <Box display={{ base: "block", sm: "none" }}>
+                <a href="tel:3603164900" style={{ color: "white" }}>
+                  <IconPhoneFilled
+                    size={"1.15rem"}
+                    className={classes.socialIcon}
+                  />
+                </a>
+              </Box>
+              <Box display={{ base: "none", sm: "block" }}>
                 <a
                   href="mailto:info@colchuckconsulting.com?Subject=General%20Inquiry"
                   style={{ color: "white" }}
                 >
                   info@colchuckconsulting.com
                 </a>
-              </Text>
+              </Box>
+              <Box display={{ xs: "block", sm: "none" }}>
+                <a
+                  href="mailto:info@colchuckconsulting.com?Subject=General%20Inquiry"
+                  style={{ color: "white" }}
+                >
+                  <IconMailFilled
+                    size={"1.15rem"}
+                    className={classes.socialIcon}
+                  />
+                </a>
+              </Box>
             </Box>
           </Box>
         </Container>

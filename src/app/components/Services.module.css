@@ -1,23 +1,11 @@
 .wrapper {
-  padding-top: "20px";
-  padding-bottom: "20px";
-}
-
-.title {
-  /* fontFamily: `Greycliff CF, ${theme.fontFamily}`, */
-  font-weight: 900;
-  margin-bottom: "20px";
-  text-align: "center";
-
-  /* [theme.fn.smallerThan("sm")]: {
-      fontSize: rem(28),
-      textAlign: "left",
-    }, */
+  height: 100vh;
+  margin-top: 100px;
 }
 
 .description {
-  text-align: "center";
-  margin-bottom: "20px";
+  text-align: center;
+  margin-bottom: 20px;
 
   /* [theme.fn.smallerThan("sm")]: {
       textAlign: "left",

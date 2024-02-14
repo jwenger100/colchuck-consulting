@@ -3,10 +3,13 @@ import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const links = [
-  { link: "/about", label: "About" },
-  { link: "/servicing", label: "Servicing" },
+  { link: "/#about", label: "About" },
+  { link: "/#services", label: "Our Services" },
+  { link: "/", label: "Our Work" },
+  { link: "/", label: "Contact" },
   // strucutre of the links for the dropdown
   // {
   //   link: "#1",
@@ -54,14 +57,14 @@ export function HeaderMenu() {
     }
 
     return (
-      <a
+      <Link
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => console.log("clicked")}
       >
         {link.label}
-      </a>
+      </Link>
     );
   });
 
@@ -69,13 +72,15 @@ export function HeaderMenu() {
     <header className={classes.header}>
       <Container size="lg">
         <div className={classes.inner}>
-          <Image
-            src="/cc-main-logo-green.svg"
-            alt="Colchuck Consulting Logo"
-            width={120}
-            height={30}
-            className={classes.logo}
-          />
+          <Link href="/">
+            <Image
+              src="/cc-main-logo-green.svg"
+              alt="Colchuck Consulting Logo"
+              width={120}
+              height={30}
+              className={classes.logo}
+            />
+          </Link>
           <Group gap={5} visibleFrom="sm">
             {items}
           </Group>

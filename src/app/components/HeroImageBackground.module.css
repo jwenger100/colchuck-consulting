@@ -12,6 +12,18 @@
     padding-bottom: rem(50px);
   }
 }
+.socialLink {
+  color: #ffffff;
+}
+.socialIcon {
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+.socialIcon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
 
 .inner {
   position: relative;
@@ -62,7 +74,7 @@
 .description {
   color: var(--mantine-color-gray-0);
   text-align: center;
-  font-family: var(--font-monterrat);
+  font-family: var(--font-montserrat);
 
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: var(--mantine-font-size-md);

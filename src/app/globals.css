@@ -5,10 +5,17 @@
   --cc-accent-color: #6772e5;
   --cc-accent-color-light: #f3f4f6;
   --cc-accent-color-dark: #1e1e1e;
+
+  --cc-text-color: #414042;
 }
 
 body {
   margin: 0; /* remove default margin for hero image background */
+}
+
+html {
+  /* Accounts for height of header when navigating to a section */
+  scroll-padding-top: 56px;
 }
 
 /* style props from mantine */

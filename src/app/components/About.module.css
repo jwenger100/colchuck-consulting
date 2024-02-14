@@ -4,7 +4,7 @@
   align-items: center;
   /* margin-bottom: rem(100); */
   height: 100vh;
-  margin-top: rem(100);
+  margin-top: rem(200);
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
     margin-bottom: rem(50);
@@ -12,14 +12,14 @@
 }
 
 .leftSection {
-  /* height: 100vh; */
+  background-color: var(--cc-green);
 }
 
 .title {
-  color: "#000";
+  color: #000;
   font-size: rem(44);
   font-weight: 600;
-  font-family: var(--font-poppins);
+  /* font-family: var(--font-poppins); */
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: rem(28);
   }

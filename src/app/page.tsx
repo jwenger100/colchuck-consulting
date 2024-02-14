@@ -7,7 +7,7 @@ import classes from "./page.module.css";
 // local components
 import { HeaderMenu } from "./components/HeaderMenu";
 import { About } from "./components/About";
-import { Skills } from "./components/Skills";
+import { Services } from "./components/Services";
 import { Contact } from "./components/Contact";
 import { HeroImageBackground } from "./components/HeroImageBackground";
 
@@ -30,7 +30,7 @@ export default function Home() {
       // }}
       >
         <PuffLoader
-          color="#1db954"
+          color="var(--cc-green)"
           size={100}
           loading={loading}
           aria-label="Loading Spinner"
@@ -41,17 +41,14 @@ export default function Home() {
   return (
     <main className={classes.main}>
       <HeaderMenu />
-      {/* <HeroImageBackground /> */}
+      <HeroImageBackground />
       {/* later move abour componet to sectionsContainer */}
-      <About />
 
       <div className={classes.contentContainer}>
         <div className={classes.sectionsContainer}>
-          {/* <Skills
-            title="Skills"
-            description="Mastering the digital sphere with exceptional web development, intuitive UI/UX design, cutting-edge coding practices, and thorough performance testing for seamless user experiences."
-          />
-          <Contact /> */}
+          <About />
+          <Services />
+          {/* <Contact /> */}
         </div>
       </div>
     </main>

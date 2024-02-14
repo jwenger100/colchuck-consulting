@@ -3,8 +3,9 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import ThemeProvider from "./theme-provider";
 import type { Metadata } from "next";
-import { Poppins, Montserrat, Raleway } from "next/font/google";
+import { Poppins, Montserrat, Raleway, Varta } from "next/font/google";
 
+// font for COLCHUCK CONSULTING text
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -12,6 +13,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// for for headings
 const montserrat = Montserrat({
   weight: "variable",
   display: "swap",
@@ -19,11 +21,12 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const raleway = Raleway({
+// font for body text
+const varta = Varta({
   weight: "variable",
   display: "swap",
   subsets: ["latin", "latin-ext"],
-  variable: "--font-raleway",
+  variable: "--font-varta",
 });
 
 export const metadata: Metadata = {
@@ -42,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${montserrat.variable} ${raleway.variable}`}
+      className={`${poppins.variable} ${montserrat.variable} ${varta.variable}`}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
