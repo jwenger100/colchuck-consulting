@@ -12,6 +12,7 @@ import { Contact } from "./components/Contact";
 import { HeroImageBackground } from "./components/HeroImageBackground";
 
 import { useState, useEffect } from "react";
+import { TechnologyGrid } from "./components/TechnologyGrid";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -40,17 +41,14 @@ export default function Home() {
   }
   return (
     <main className={classes.main}>
+      {/* The height of the header bar needs to be account for with the hero image background
+remove 56px???? */}
       <HeaderMenu />
       <HeroImageBackground />
-      {/* later move abour componet to sectionsContainer */}
-
-      <div className={classes.contentContainer}>
-        <div className={classes.sectionsContainer}>
-          <About />
-          <Services />
-          {/* <Contact /> */}
-        </div>
-      </div>
+      <About />
+      <Services />
+      <TechnologyGrid />
+      {/* <Contact /> */}
     </main>
   );
 }

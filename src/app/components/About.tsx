@@ -20,9 +20,9 @@ export function About() {
   return (
     <Box id="about" className={classes.wrapper}>
       <Container size="lg">
-        <Title order={1} ta={"center"} className={classes.title}>
+        <Title order={1} ta={"center"} className={classes.title} mt={"80px"}>
           {/* We Are a Professional Website Design & Development Agency */}
-          Web Design
+          About us Section
         </Title>
         <Grid>
           {/* left section of the about page */}

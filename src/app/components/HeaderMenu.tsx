@@ -126,7 +126,6 @@ export function HeaderMenu() {
           </Text>
         }
         onClick={toggle}
-        zIndex={1000000}
       >
         <Box>
           <Group gap={0} className={classes.drawerContent}>

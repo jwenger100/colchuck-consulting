@@ -51,6 +51,18 @@ export const MOCKDATA = [
     description:
       "We are 100% customer focused and transaprent. We aim to deliver the optimum solution that fits your business needs.",
   },
+  {
+    icon: <Users size="1.6rem" />,
+    title: "One Stop Shop",
+    description:
+      "We are 100% customer focused and transaprent. We aim to deliver the optimum solution that fits your business needs.",
+  },
+  {
+    icon: <Users size="1.6rem" />,
+    title: "Two Stop Shop",
+    description:
+      "We are 100% customer focused and transaprent. We aim to deliver the optimum solution that fits your business needs.",
+  },
 ];
 
 export function Services() {
@@ -89,17 +101,6 @@ export function Services() {
           </Grid.Col>
         ))}
       </Grid>
-
-      <Title className={classes.title} ta={"center"}>
-        Technologies we work with!
-      </Title>
-      <Container size={560} p={0} ta={"center"}>
-        <Text size="sm" className={classes.description}>
-          Our expertise encompasses various technologies that we constantly
-          expand depending on our Clients’ needs. Take a look at just a few of
-          those we work with.
-        </Text>
-      </Container>
     </Container>
   );
 }
