@@ -32,7 +32,7 @@ export function About() {
             </Title>
 
             <AspectRatio ratio={16 / 9} className={classes.video}>
-              <video autoPlay loop muted controls>
+              <video autoPlay loop muted>
                 <source src="/app-development-video.mp4" type="video/mp4" />
               </video>
             </AspectRatio>

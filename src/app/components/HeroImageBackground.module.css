@@ -1,7 +1,6 @@
 .wrapper {
   position: relative;
-  padding-top: rem(140px);
-  padding-bottom: rem(130px);
+  padding-top: rem(100px);
   background-image: url("/aasgard-pass.jpg");
   background-size: cover;
   background-position: center;
@@ -49,7 +48,7 @@
   font-family: var(--font-poppins);
 
   @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(50px);
+    font-size: rem(65px);
   }
 }
 
@@ -61,11 +60,12 @@
   padding-right: var(--mantine-spacing-md);
   margin-bottom: var(--mantine-spacing-lg);
   font-family: var(--font-poppins);
-  margin-top: -25px;
+  margin-top: -40px;
   color: var(--cc-green);
 
   @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(44px);
+    font-size: rem(57px);
+    margin-top: -33px;
   }
 }
 
@@ -85,6 +85,5 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: bottom;
-  /* margin-top: var(--mantine-spacing-xl); */
-  margin-top: 200px;
+  margin-top: 35%;
 }

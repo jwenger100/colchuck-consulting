@@ -24,12 +24,14 @@ export function HeroImageBackground() {
           </Title>
         </Box>
         <Container size={640}>
-          <Text size="lg" className={classes.description}>
-            Your gateway to bespoke technology solutions that propel your
-            business into the future.
-          </Text>
-
-          {/* <Box ta={"center"} mt={"60px"} mb={"60px"}>
+          <Container size={400}>
+            <Text size="lg" ta={"center"} className={classes.description}>
+              Your gateway to bespoke technology solutions that propel your
+              business into the future.
+            </Text>
+          </Container>
+          {/* 
+          <Box ta={"center"} mt={"60px"} mb={"60px"}>
             <TypewriterComponent />
           </Box> */}
           {/* Parent box for horizontal row alignment */}
