@@ -4,7 +4,6 @@ import classes from "./HeroImageBackground.module.css";
 import Image from "next/image";
 import {
   IconBrandFacebook,
-  IconBrandFacebookFilled,
   IconBrandLinkedin,
   IconMailFilled,
   IconPhoneFilled,
@@ -17,8 +16,10 @@ export function HeroImageBackground() {
       <Overlay color="#000" backgroundOpacity={0.45} zIndex={1} />
       <Box className={classes.inner}>
         <Box className={classes.titleContainer}>
-          <Title className={classes.title}>COLCHUCK</Title>
-          <Title order={3} className={classes.subtitle}>
+          <Title className={classes.title} fw={"600"}>
+            COLCHUCK
+          </Title>
+          <Title order={3} className={classes.subtitle} fw={"400"}>
             CONSULTING
           </Title>
         </Box>
