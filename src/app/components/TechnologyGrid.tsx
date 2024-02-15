@@ -45,11 +45,56 @@ const mockdata: TechnologyCategory[] = [
   },
   {
     category: "Web Backend",
-    services: [],
+    services: [
+      { title: "Node.js", src: "/tech-icons/Node.js.svg" },
+      { title: "PostgresSQL", src: "/tech-icons/PostgresSQL.svg" },
+      {
+        title: "Azure SQL-Database",
+        src: "/tech-icons/Azure-SQL-Database.svg",
+      },
+      { title: "Django", src: "/tech-icons/Django.svg" },
+      { title: "Next Auth", src: "/tech-icons/Next-auth.svg" },
+      { title: "PHP", src: "/tech-icons/PHP.svg" },
+      { title: "Java", src: "/tech-icons/Java.svg" },
+      { title: ".NET", src: "/tech-icons/Net.svg" },
+      { title: "Redis", src: "/tech-icons/Redis.svg" },
+      { title: "Prisma", src: "/tech-icons/Prisma.svg" },
+    ],
   },
   {
-    category: "APIs",
-    services: [],
+    category: "DevOps & Cloud",
+    services: [
+      { title: "Docker", src: "/tech-icons/Docker.svg" },
+      { title: "Kubernetes", src: "/tech-icons/Kubernetes.svg" },
+      { title: "AWS", src: "/tech-icons/AWS.svg" },
+      { title: "GitHub Actions", src: "/tech-icons/GitHub-Actions.svg" },
+      { title: "Terraform", src: "/tech-icons/Terraform.svg" },
+    ],
+  },
+  {
+    category: "Testing",
+    services: [
+      { title: "Jest", src: "/tech-icons/Jest.svg" },
+      { title: "Cypress", src: "/tech-icons/Cypress.svg" },
+      { title: "Selenium", src: "/tech-icons/Selenium.svg" },
+      { title: "Mocha", src: "/tech-icons/Mocha.svg" },
+      { title: "Chai", src: "/tech-icons/Chai.svg" },
+    ],
+  },
+  {
+    category: "Tools",
+    services: [
+      { title: "Jira", src: "/tech-icons/Jira.svg" },
+      { title: "Confluence", src: "/tech-icons/Confluence.svg" },
+      { title: "Slack", src: "/tech-icons/Slack.svg" },
+      { title: "Teams", src: "/tech-icons/Microsoft-Teams.svg" },
+      { title: "Notion", src: "/tech-icons/Notion.svg" },
+      { title: "Google Meet", src: "/tech-icons/Google-Meet.svg" },
+      { title: "Figma", src: "/tech-icons/Figma.svg" },
+      { title: "Bitbucket", src: "/tech-icons/Bitbucket.svg" },
+      { title: "Asana", src: "/tech-icons/Asana.svg" },
+      { title: "GitHub", src: "/tech-icons/GitHub.svg" },
+    ],
   },
 ];
 
@@ -63,7 +108,7 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
         mb={"var(--mantine-spacing-xs)"}
         mt={"var(--mantine-spacing-xs)"}
         fw={"600"}
-        ta={{ xs: "center", sm: "left" }}
+        ta={"center"}
         className={classes.categoryTitle}
       >
         {category.category}
