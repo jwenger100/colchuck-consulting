@@ -34,19 +34,42 @@
 .link {
   display: block;
   line-height: 1;
-  padding: rem(8px) rem(12px);
-  border-radius: var(--mantine-radius-sm);
-  text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
   font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  padding: rem(20px) rem(12px);
   font-weight: 500;
+  border-bottom: rem(2px) solid transparent;
+  transition: border-color 100ms ease, color 100ms ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 
   @mixin hover {
-    background-color: light-dark(
-      var(--mantine-color-gray-0),
-      var(--mantine-color-dark-6)
-    );
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    text-decoration: none;
   }
+
+  &[data-active] {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cc-green);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+.link[data-active]::after {
+  transform: scaleX(1);
+  transform-origin: center;
 }
 
 .linkLabel {

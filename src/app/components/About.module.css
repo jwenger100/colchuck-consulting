@@ -5,7 +5,7 @@
   min-height: 100vh;
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
-    margin-bottom: rem(50);
+    /* margin-bottom: rem(50); */
   }
 }
 

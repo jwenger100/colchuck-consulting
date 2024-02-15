@@ -109,7 +109,6 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
         mt={"var(--mantine-spacing-xs)"}
         fw={"600"}
         ta={"center"}
-        className={classes.categoryTitle}
       >
         {category.category}
       </Title>
@@ -137,9 +136,7 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
       mb={"var(--mantine-spacing-xl)"}
       className={classes.wrapper}
     >
-      <Title className={classes.title} ta="center">
-        Technologies we work with!
-      </Title>
+      <Title ta="center">Technologies we work with!</Title>
       <Text
         size="sm"
         ta="center"

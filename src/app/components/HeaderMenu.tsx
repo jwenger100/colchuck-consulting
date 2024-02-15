@@ -11,6 +11,7 @@ import {
   Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { useState } from "react";
 import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
@@ -37,8 +38,9 @@ const links = [
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
+  const [active, setActive] = useState(-1);
 
-  const items = links.map((link) => {
+  const items = links.map((link, index) => {
     // This is the code for the DROPDOWN menu
 
     // const menuItems = link.links?.map((item: any) => (
@@ -74,8 +76,12 @@ export function HeaderMenu() {
       <Link
         key={link.label}
         href={link.link}
+        data-active={index === active || undefined}
         className={classes.link}
-        onClick={(event) => console.log("clicked")}
+        onClick={(event) => {
+          event.preventDefault();
+          setActive(index);
+        }}
       >
         {link.label}
       </Link>
@@ -87,7 +93,12 @@ export function HeaderMenu() {
       <header className={classes.header}>
         <Container size="lg">
           <div className={classes.inner}>
-            <Link href="/">
+            <Link
+              href="/"
+              onClick={() => {
+                setActive(-1);
+              }}
+            >
               <Image
                 src="/cc-main-logo-green.svg"
                 alt="Colchuck Consulting Logo"
@@ -97,7 +108,7 @@ export function HeaderMenu() {
                 style={{ marginTop: "7px" }}
               />
             </Link>
-            <Group gap={5} visibleFrom="sm">
+            <Group gap={0} justify="flex-end" visibleFrom="sm">
               {items}
             </Group>
             <Burger

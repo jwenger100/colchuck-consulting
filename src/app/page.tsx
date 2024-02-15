@@ -13,6 +13,7 @@ import { HeroImageBackground } from "./components/HeroImageBackground";
 
 import { useState, useEffect } from "react";
 import { TechnologyGrid } from "./components/TechnologyGrid";
+import { Portfolio } from "./components/Portfolio";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,7 @@ remove 56px???? */}
       <About />
       <Services />
       <TechnologyGrid />
+      <Portfolio />
       {/* <Contact /> */}
     </main>
   );

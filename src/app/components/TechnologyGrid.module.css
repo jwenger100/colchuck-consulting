@@ -9,11 +9,6 @@
   );
 }
 
-.title,
-.categoryTitle {
-  font-weight: 700;
-}
-
 .item {
   display: flex;
   flex-direction: column;

@@ -33,7 +33,7 @@ export function About() {
 
             <AspectRatio ratio={16 / 9} className={classes.video}>
               <video autoPlay loop muted>
-                <source src="/app-development-video.mp4" type="video/mp4" />
+                <source src="/app-process.mp4" type="video/mp4" />
               </video>
             </AspectRatio>
             <Text className={classes.text}>
@@ -77,7 +77,7 @@ export function About() {
               creating websites that are designed to grow your business.
             </Text>
             {/* Route this to another page that has team member cards */}
-            <Button>Meet the Team</Button>
+            {/* <Button>Meet the Team</Button> */}
           </Grid.Col>
         </Grid>
       </Container>

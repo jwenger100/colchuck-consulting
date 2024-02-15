@@ -18,23 +18,30 @@ html {
   scroll-padding-top: 56px;
 }
 
+.green-linear-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--cc-green) 0%,
+    var(--cc-light-green) 100%
+  );
+}
+
 /* style props from mantine */
 /* https://mantine.dev/styles/style-props/ */
 
 /* default colors */
 /* https://mantine.dev/theming/colors/#default-colors */
 
+/* Poppins - Poppins is a modern sans-serif typeface with a geometric aesthetic.
+ It's a versatile font that can be used for both display and text, and it pairs
+ well with Raleway and Montserrat. */
+
 /* Montserrat - Montserrat and Poppins share a modern sans-serif aesthetic,
  but Montserrat's slightly quirkier letterforms can add an interesting visual 
  texture when used as body text alongside Poppins. 
 */
 
-/* Raleway - Raleway is an elegant sans-serif typeface with a more delicate
- weight compared to Poppins. Its high level of readability and sophisticated
- style makes it a good companion for more upscale or artistic projects.
-*/
-
-/* Poppins - Poppins is a modern sans-serif typeface with a geometric aesthetic.
+/* Varta - Varta is a sans-serif typeface with a modern, geometric aesthetic.
  It's a versatile font that can be used for both display and text, and it pairs
  well with Raleway and Montserrat. */
 
