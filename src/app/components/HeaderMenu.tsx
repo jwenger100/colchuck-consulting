@@ -78,8 +78,7 @@ export function HeaderMenu() {
         href={link.link}
         data-active={index === active || undefined}
         className={classes.link}
-        onClick={(event) => {
-          event.preventDefault();
+        onClick={() => {
           setActive(index);
         }}
       >

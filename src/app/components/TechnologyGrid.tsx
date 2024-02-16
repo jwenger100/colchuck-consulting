@@ -27,6 +27,10 @@ interface TechnologyGridProps {
   // Example: categories?: TechnologyCategory[];
 }
 
+// More simple tech icons: https://simpleicons.org/
+// Currently using: https://techicons.dev/
+// And https://worldvectorlogo.com/
+
 const mockdata: TechnologyCategory[] = [
   {
     category: "Web Frontend",
@@ -52,13 +56,14 @@ const mockdata: TechnologyCategory[] = [
         title: "Azure SQL-Database",
         src: "/tech-icons/Azure-SQL-Database.svg",
       },
-      { title: "Django", src: "/tech-icons/Django.svg" },
+      // { title: "Django", src: "/tech-icons/Django.svg" },
       { title: "Next Auth", src: "/tech-icons/Next-auth.svg" },
       { title: "PHP", src: "/tech-icons/PHP.svg" },
       { title: "Java", src: "/tech-icons/Java.svg" },
       { title: ".NET", src: "/tech-icons/Net.svg" },
       { title: "Redis", src: "/tech-icons/Redis.svg" },
       { title: "Prisma", src: "/tech-icons/Prisma.svg" },
+      { title: "Stripe", src: "/tech-icons/Stripe.svg" },
     ],
   },
   {

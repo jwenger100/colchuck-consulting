@@ -26,7 +26,11 @@ export function About() {
         </Title>
         <Grid>
           {/* left section of the about page */}
-          <Grid.Col span={{ xs: 12, sm: 6 }} className={classes.leftSection}>
+          <Grid.Col
+            span={{ xs: 12, sm: 6 }}
+            // className={`${classes.leftSection} green-linear-gradient`}
+            className={classes.leftSection}
+          >
             <Title className={classes.title}>
               Elevate Your Digital Presence with Our Comprehensive Web Solutions
             </Title>

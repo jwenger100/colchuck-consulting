@@ -72,7 +72,7 @@ export function Services() {
         Our Services
       </Title>
       <Container size={560} p={0}>
-        <Text size="sm" className={classes.description}>
+        <Text size="sm" mb={"sm"} className={classes.description}>
           Mastering the digital sphere with exceptional web development,
           intuitive UI/UX design, cutting-edge coding practices, and thorough
           performance testing for seamless user experiences.

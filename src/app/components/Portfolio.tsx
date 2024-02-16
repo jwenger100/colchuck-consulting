@@ -47,7 +47,7 @@ const cards = mockdata.map((article) => (
     <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
       {article.date}
     </Text>
-    <Text className={classes.title} mt={5}>
+    <Text fw={"bold"} mt={5}>
       {article.title}
     </Text>
   </Card>
