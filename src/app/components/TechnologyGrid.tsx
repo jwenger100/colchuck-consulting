@@ -64,6 +64,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Redis", src: "/tech-icons/Redis.svg" },
       { title: "Prisma", src: "/tech-icons/Prisma.svg" },
       { title: "Stripe", src: "/tech-icons/Stripe.svg" },
+      { title: "Amity", src: "/tech-icons/Amity.svg" },
     ],
   },
   {

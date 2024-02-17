@@ -25,7 +25,6 @@
 }
 
 .item:hover {
-  /* box-shadow: var(--mantine-shadow-md); */
   box-shadow: var(--cc-green) 0px 0px 10px 0px;
   transform: scale(1.03);
 }
