@@ -51,7 +51,12 @@ const PortfolioCard = ({ article }: { article: any }) => {
         >
           {article.title}
         </Title>
-        <AspectRatio ratio={500 / 500}>
+        {/* maw max width */}
+        {/* mah max height */}
+        {/* mx marginLeft marginRight */}
+        {/* my marginTop marginBottom */}
+        {/* MODAL IMAGE */}
+        <AspectRatio ratio={16 / 9}>
           <Image
             src={article.image}
             alt={article.title}
@@ -62,18 +67,17 @@ const PortfolioCard = ({ article }: { article: any }) => {
         </AspectRatio>
         <Button onClick={close}>Close</Button>
       </Modal>
+
       <Card
-        p="md"
-        radius="md"
-        component="a"
-        href="#"
+        // p="md"
+        w={"360px"}
+        radius="sm"
         className={classes.card}
-        onClick={(event) => {
-          event.preventDefault();
+        onClick={() => {
           open();
         }}
       >
-        <AspectRatio ratio={500 / 500}>
+        <AspectRatio ratio={16 / 9} maw={"300"} mah={"300"}>
           <Image
             src={article.image}
             alt={article.title}
@@ -88,7 +92,15 @@ const PortfolioCard = ({ article }: { article: any }) => {
         <Text c="dimmed" size="xs" fw={700} mt="md" ta={"center"}>
           {article.description}
         </Text>
-        <Button variant="light" mt="xl" onClick={() => open()}>
+        <Button
+          variant="primary"
+          bg={"var(--cc-green)"}
+          mt={"30px"}
+          w={"200px"}
+          ta={"center"}
+          m={"auto"}
+          onClick={() => open()}
+        >
           View Project
         </Button>
       </Card>
@@ -119,7 +131,7 @@ export function Portfolio() {
             in our field.
           </Text>
         </Container>
-        <SimpleGrid cols={{ base: 1, sm: 2 }}>
+        <SimpleGrid cols={{ base: 1, sm: 3 }}>
           {mockdata.map((article) => (
             <PortfolioCard key={article.title} article={article} />
           ))}

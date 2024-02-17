@@ -41,7 +41,8 @@ const mockdata: TechnologyCategory[] = [
       { title: "NextJS", src: "/tech-icons/Next.js.svg" },
       { title: "TypeScript", src: "/tech-icons/TypeScript.svg" },
       { title: "CSS3", src: "/tech-icons/CSS3.svg" },
-      { title: "HTML5", src: "/tech-icons/HTML5.svg" },
+      { title: "PWA", src: "/tech-icons/PWA.svg" },
+      // { title: "HTML5", src: "/tech-icons/HTML5.svg" },
       { title: "D3.js", src: "/tech-icons/D3.js.svg" },
       { title: "Less.js", src: "/tech-icons/Less.js.svg" },
       { title: "Vue.js", src: "/tech-icons/Vue.js.svg" },
@@ -58,7 +59,7 @@ const mockdata: TechnologyCategory[] = [
       },
       // { title: "Django", src: "/tech-icons/Django.svg" },
       { title: "Next Auth", src: "/tech-icons/Next-auth.svg" },
-      { title: "PHP", src: "/tech-icons/PHP.svg" },
+      // { title: "PHP", src: "/tech-icons/PHP.svg" },
       { title: "Java", src: "/tech-icons/Java.svg" },
       { title: ".NET", src: "/tech-icons/Net.svg" },
       { title: "Redis", src: "/tech-icons/Redis.svg" },
@@ -148,7 +149,6 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
         ta="center"
         mb="var(--mantine-spacing-lg)"
         mt="var(--mantine-spacing-md)"
-        className={classes.description}
       >
         Our expertise encompasses various technologies that we constantly expand
         depending on our Clients’ needs. Take a look at just a few of those we

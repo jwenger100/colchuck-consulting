@@ -1,17 +1,54 @@
 .card {
-  transition: all 0.25s ease-in;
-  border-bottom: 5px solid transparent;
-  position: relative; /* Needed for absolute positioning of the :after pseudo-element */
-  overflow: hidden; /* Ensures the pseudo-element does not extend outside the card */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Maintain smooth transition for transform and box-shadow */
   box-shadow: var(--mantine-shadow-xl);
-  &:hover {
-    transform: translateY(-5px);
-    border: none;
-    border-bottom: 5px solid var(--cc-green);
-    box-shadow: none;
+  border: 3px solid transparent; /* Ensures layout stability */
+  /* Apply zoom effect */
+  transform: scale(1); /* Default scale */
+}
 
-    &:after {
-      width: 100%; /* Full width on hover */
-    }
-  }
+/* Initial state for top/left border */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width to cover the top edge */
+  height: 100%; /* Full height to cover the left edge */
+  border-top: 3px solid var(--cc-green); /* Top border */
+  border-left: 3px solid var(--cc-green); /* Left border */
+  transition: transform 0.3s ease-out; /* Smooth transition for border */
+  transform-origin: top left;
+  transform: scaleX(0); /* Start with top border fully retracted */
+}
+
+/* Initial state for bottom/right border */
+.card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width to cover the bottom edge */
+  height: 100%; /* Full height to cover the right edge */
+  border-bottom: 3px solid var(--cc-green); /* Bottom border */
+  border-right: 3px solid var(--cc-green); /* Right border */
+  transition: transform 0.3s ease-out 0.3s; /* Delay bottom/right animation for a sequential effect */
+  transform-origin: bottom right;
+  transform: scaleY(0); /* Start with right border fully retracted */
+}
+
+.card:hover {
+  /* Enhance zoom effect on hover */
+  transform: scale(1.03); /* Slightly larger scale for zoom effect */
+  box-shadow: none; /* Optionally remove the box-shadow for focus on the border animation */
+}
+
+.card:hover::before {
+  transform: scaleY(1); /* Expand left border downwards after delay */
+}
+
+.card:hover::after {
+  transform: scaleX(1); /* Expand bottom border to the right */
 }
