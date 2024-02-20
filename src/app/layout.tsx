@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   title: "Colchuck Consulting",
   description: "The Colchuck Differnce",
   icons: {
-    icon: "icon.ico", // facivon.ico -> icon.ico 👍
+    icon: "icon-white.ico", // facivon.ico -> icon.ico 👍
   },
 };
 

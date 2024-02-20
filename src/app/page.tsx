@@ -45,10 +45,10 @@ export default function Home() {
       {/* The height of the header bar needs to be account for with the hero image background
 remove 56px???? */}
       <HeaderMenu />
-      <HeroImageBackground />
+      {/* <HeroImageBackground />
       <About />
       <Services />
-      <TechnologyGrid />
+      <TechnologyGrid /> */}
       <Portfolio />
       {/* <Contact /> */}
     </main>

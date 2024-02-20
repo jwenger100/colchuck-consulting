@@ -1,54 +1,46 @@
 .card {
   position: relative;
-  overflow: hidden;
+  /* border: 0.75px solid #cccccc; */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Maintain smooth transition for transform and box-shadow */
-  box-shadow: var(--mantine-shadow-xl);
-  border: 3px solid transparent; /* Ensures layout stability */
-  /* Apply zoom effect */
-  transform: scale(1); /* Default scale */
-}
-
-/* Initial state for top/left border */
-.card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width to cover the top edge */
-  height: 100%; /* Full height to cover the left edge */
-  border-top: 3px solid var(--cc-green); /* Top border */
-  border-left: 3px solid var(--cc-green); /* Left border */
-  transition: transform 0.3s ease-out; /* Smooth transition for border */
-  transform-origin: top left;
-  transform: scaleX(0); /* Start with top border fully retracted */
-}
-
-/* Initial state for bottom/right border */
-.card::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%; /* Full width to cover the bottom edge */
-  height: 100%; /* Full height to cover the right edge */
-  border-bottom: 3px solid var(--cc-green); /* Bottom border */
-  border-right: 3px solid var(--cc-green); /* Right border */
-  transition: transform 0.3s ease-out 0.3s; /* Delay bottom/right animation for a sequential effect */
-  transform-origin: bottom right;
-  transform: scaleY(0); /* Start with right border fully retracted */
 }
 
 .card:hover {
   /* Enhance zoom effect on hover */
   transform: scale(1.03); /* Slightly larger scale for zoom effect */
   box-shadow: none; /* Optionally remove the box-shadow for focus on the border animation */
+  border: 1px solid var(--cc-green);
 }
 
-.card:hover::before {
-  transform: scaleY(1); /* Expand left border downwards after delay */
+.cardImage {
+  position: relative;
+  object-fit: inherit;
+  min-height: 300px;
 }
 
-.card:hover::after {
-  transform: scaleX(1); /* Expand bottom border to the right */
+.viewProjectbutton {
+  background-color: var(--cc-green);
+  width: 250px;
+  &:hover {
+    background-color: var(--cc-light-green);
+  }
+}
+
+.closeButton {
+  width: 250px;
+  background-color: var(--cc-green);
+  &:hover {
+    background-color: var(--cc-light-green);
+  }
+}
+
+/* for image carousel */
+.indicator {
+  width: rem(12px);
+  height: rem(4px);
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: rem(40px);
+  }
 }
