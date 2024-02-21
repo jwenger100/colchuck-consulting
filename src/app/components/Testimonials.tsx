@@ -7,33 +7,32 @@ import {
   Button,
   SimpleGrid,
   Title,
+  Box,
 } from "@mantine/core";
+import { IconQuote } from "@tabler/icons-react";
 
 // Mock data for the testimonials
 const testimonials = [
   {
     id: 1,
-    name: "Jane Fingerlicker",
-    role: "Art Director",
-    email: "jfingerlicker@me.io",
-    avatarUrl:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+    name: "Brandon Beeson",
+    organization: "Pastor Stays",
+    description:
+      "I had the pleasure of working with Colchuck Consulting to create a web app, and I can't express how grateful I am to have found them. Before partnering with Kyle and Jon, we had struggled with two other tech companies that were unable to get our project off the ground, and we wasted a significant amount of time and resources in the process.",
   },
   {
     id: 2,
-    name: "John Doe",
-    role: "Software Engineer",
-    email: "johndoe@example.com",
-    avatarUrl:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png",
+    name: "Andre Marshall",
+    organization: "Boost Baseball",
+    description:
+      "They are great! Not the most straight forward project and has many evolving pieces, they are very patient and understanding. They are also very flexible throughout the process! Highly recommend these guys if you are in need of Software/App development or even a website also.",
   },
   {
     id: 3,
-    name: "Emily Smith",
-    role: "Product Manager",
-    email: "emilysmith@example.com",
-    avatarUrl:
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
+    name: "Francis Marquez",
+    organization: "The Mas Agency",
+    description:
+      "We are a sports management firm based in South Florida and contracted Colchuck to develop our internal site. The guys were awesome to deal with professionally and personally. So much so that we now hired them again for a second tech development stage. Highly recommended.",
   },
 ];
 
@@ -46,7 +45,7 @@ export function Testimonials() {
       <Text ta={"center"} mb={"100px"}>
         See what our clients have to say about us
       </Text>
-      <SimpleGrid cols={3} spacing="lg">
+      <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
         {testimonials.map((testimonial) => (
           <Paper
             key={testimonial.id}
@@ -60,25 +59,24 @@ export function Testimonials() {
               minHeight: "300px",
             }}
           >
-            <div
+            <Box
               style={{
                 position: "absolute",
-                top: "-49px",
+                top: "-45px",
                 left: "50%",
                 transform: "translateX(-50%)",
               }}
             >
-              <Avatar src={testimonial.avatarUrl} size={80} radius={80} />
-            </div>
+              <Avatar color="var(--cc-green)" size={80} radius={80}>
+                <IconQuote size={60} color="var(--cc-green)" />
+              </Avatar>
+            </Box>
+            <Text ta="center" mb="lg" c="dimmed" mt={"30px"}>
+              {testimonial.description}
+            </Text>
             <Text ta="center" fz="lg" fw={500} mt="50px">
               {testimonial.name}
             </Text>
-            <Text ta="center" c="dimmed" fz="sm">
-              {testimonial.email} • {testimonial.role}
-            </Text>
-            <Button variant="default" fullWidth mt="md">
-              Send message
-            </Button>
           </Paper>
         ))}
       </SimpleGrid>
