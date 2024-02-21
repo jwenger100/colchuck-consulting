@@ -9,6 +9,18 @@
   );
 }
 
+.categoryTitle {
+  &::after {
+    /* content: "";
+    display: block;
+    background-color: var(--cc-green);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+    text-align: center; */
+  }
+}
+
 .item {
   display: flex;
   flex-direction: column;
@@ -27,10 +39,4 @@
 .item:hover {
   box-shadow: var(--cc-green) 0px 0px 10px 0px;
   transform: scale(1.03);
-}
-
-@media (max-width: 768px) {
-  .categoryTitle {
-    margin-top: 1rem;
-  }
 }
