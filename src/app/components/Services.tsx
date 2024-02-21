@@ -71,13 +71,13 @@ export function Services() {
       <Title className={classes.title} ta={"center"}>
         Our Services
       </Title>
-      <Container size={560} p={0}>
-        <Text size="sm" mb={"sm"} className={classes.description}>
-          Mastering the digital sphere with exceptional web development,
-          intuitive UI/UX design, cutting-edge coding practices, and thorough
-          performance testing for seamless user experiences.
-        </Text>
-      </Container>
+      {/* <Container size={560} p={0}> */}
+      <Text size="sm" mb={"sm"} className={classes.description}>
+        Mastering the digital sphere with exceptional web development, intuitive
+        UI/UX design, cutting-edge coding practices, and thorough performance
+        testing for seamless user experiences.
+      </Text>
+      {/* </Container> */}
       <Grid>
         {MOCKDATA.map((feature, index) => (
           // each child in a list should have a unique "key" prop

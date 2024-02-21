@@ -139,9 +139,9 @@ const mockdata = [
   },
 ];
 
-const PortfolioCard = ({ article }: { article: any }, index: any) => {
+const PortfolioCard = ({ article }: { article: any }) => {
   const [opened, { open, close }] = useDisclosure(false);
-  const autoplay = useRef(Autoplay({ delay: 3000 }));
+  const autoplay = useRef(Autoplay({ delay: 2000 }));
   const TRANSITION_DURATION = 300;
   const [embla, setEmbla] = useState<Embla | null>(null);
 

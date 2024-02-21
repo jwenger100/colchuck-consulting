@@ -14,6 +14,8 @@ import { HeroImageBackground } from "./components/HeroImageBackground";
 import { useState, useEffect } from "react";
 import { TechnologyGrid } from "./components/TechnologyGrid";
 import { Portfolio } from "./components/Portfolio";
+import { Testimonials } from "./components/Testimonials";
+import { Box } from "@mantine/core";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -23,13 +25,13 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div
-      // style={{
-      //   display: "flex",
-      //   justifyContent: "center",
-      //   alignItems: "center",
-      //   height: "100vh",
-      // }}
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
       >
         <PuffLoader
           color="var(--cc-green)"
@@ -37,7 +39,7 @@ export default function Home() {
           loading={loading}
           aria-label="Loading Spinner"
         />
-      </div>
+      </Box>
     );
   }
   return (
@@ -45,11 +47,12 @@ export default function Home() {
       {/* The height of the header bar needs to be account for with the hero image background
 remove 56px???? */}
       <HeaderMenu />
-      {/* <HeroImageBackground />
+      <HeroImageBackground />
       <About />
       <Services />
-      <TechnologyGrid /> */}
+      <TechnologyGrid />
       <Portfolio />
+      <Testimonials />
       {/* <Contact /> */}
     </main>
   );

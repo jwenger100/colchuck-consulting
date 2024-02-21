@@ -11,16 +11,15 @@ import {
   Button,
 } from "@mantine/core";
 import classes from "./About.module.css";
-import { Carousel } from "@mantine/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
 export function About() {
-  const autoplay = useRef(Autoplay({ delay: 3000 }));
   return (
+    // Need to account for header bar height 56px
     <Box id="about" className={classes.wrapper}>
       <Container size="lg">
-        <Title order={1} ta={"center"} className={classes.title} mt={"80px"}>
+        <Title order={1} ta={"center"} className={classes.title}>
           {/* We Are a Professional Website Design & Development Agency */}
           About us Section
         </Title>

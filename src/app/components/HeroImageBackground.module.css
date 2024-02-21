@@ -4,7 +4,8 @@
   background-image: url("/aasgard-pass.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  /* subtract 56px for the header */
+  min-height: calc(100vh - 56px); /* Added 56px to the 100vh */
   font-family: var(--font-poppins);
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: rem(80px);
@@ -85,5 +86,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: bottom;
-  margin-top: 35%;
+  margin-top: 50%;
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: 55%;
+  }
 }

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* subtract 56px for the header */
   min-height: 100vh;
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
