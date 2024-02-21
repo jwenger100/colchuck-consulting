@@ -1,125 +1,90 @@
+import { Text, Box, Stack, rem, Tooltip } from "@mantine/core";
 import {
-  ThemeIcon,
-  Text,
-  SimpleGrid,
-  Box,
-  Stack,
-  Tooltip,
-} from "@mantine/core";
-import classes from "./ContactIcons.module.css";
+  IconSun,
+  IconPhone,
+  IconMapPin,
+  IconAt,
+  IconCopy,
+  IconCheck,
+} from "@tabler/icons-react";
 import { useClipboard } from "@mantine/hooks";
-import { Sun, Phone, MapPin, At, Copy, Check } from "tabler-icons-react";
 
-type ContactIconVariant = "white" | "gradient";
-
-interface ContactIconStyles {
-  variant: ContactIconVariant;
-}
+import classes from "./ContactIcons.module.css";
 
 interface ContactIconProps
   extends Omit<React.ComponentPropsWithoutRef<"div">, "title"> {
-  icon: React.FC<any>;
+  icon: typeof IconSun;
   title: React.ReactNode;
   description: React.ReactNode;
-  variant?: ContactIconVariant;
 }
 
 function ContactIcon({
   icon: Icon,
   title,
   description,
-  variant = "gradient",
-  className,
   ...others
 }: ContactIconProps) {
   const clipboard = useClipboard({ timeout: 1500 });
+
   return (
-    <div className={classes.wrapper} {...others}>
-      {variant === "gradient" ? (
-        <ThemeIcon size={40} radius="md">
-          <Icon size="1.5rem" />
-        </ThemeIcon>
-      ) : (
+    <>
+      <Box className={classes.wrapper} {...others}>
         <Box mr="md">
-          <Icon size="1.5rem" />
+          <Icon style={{ width: rem(24), height: rem(24) }} />
         </Box>
-      )}
 
-      <div>
-        <Text size="xs" className={classes.title}>
-          {title}
-        </Text>
-        <Text>
-          {description}
-          {description === "info@colchuckconsulting.com" && (
-            <Tooltip
-              label={clipboard.copied ? "Copied!" : "Copy to clipboard"}
-              onClick={() => clipboard.copy("info@colchuckconsulting.com")}
-              offset={12}
-              withArrow
-            >
-              {/* keep span to display tooltip */}
-              <span className={classes.copyIconAlignment}>
-                {clipboard.copied ? (
-                  <Check size="1.5rem" color="#FFFFFF" />
-                ) : (
-                  <Copy size="1.5rem" color="#FFFFFF" />
-                )}
-              </span>
-            </Tooltip>
-          )}
-        </Text>
-      </div>
-    </div>
+        <Box>
+          <Text size="xs" className={classes.title}>
+            {title}
+          </Text>
+          <Text className={classes.description}>
+            {description}{" "}
+            {description === "info@colchuckconsulting.com" && (
+              <Tooltip
+                label={clipboard.copied ? "Copied!" : "Copy to clipboard"}
+                onClick={() => clipboard.copy("info@colchuckconsulting.com")}
+                offset={12}
+                withArrow
+              >
+                {/* keep span to display tooltip */}
+                <span>
+                  {clipboard.copied ? (
+                    <IconCheck
+                      size="1.5rem"
+                      color="#FFFFFF"
+                      style={{ marginBottom: "-5px" }}
+                    />
+                  ) : (
+                    <IconCopy
+                      size="1.25rem"
+                      color="#FFFFFF"
+                      style={{
+                        cursor: "pointer",
+                        marginLeft: "5px",
+                        marginBottom: "-3px",
+                      }}
+                    />
+                  )}
+                </span>
+              </Tooltip>
+            )}
+          </Text>
+        </Box>
+      </Box>
+    </>
   );
-}
-
-interface ContactIconsListProps {
-  data?: ContactIconProps[];
-  variant?: ContactIconVariant;
 }
 
 const MOCKDATA = [
-  { title: "Email", description: "info@colchuckconsulting.com", icon: At },
-  { title: "Phone", description: "(360) 316-4900", icon: Phone },
-  { title: "Location", description: "Seattle", icon: MapPin },
-  { title: "Working hours", description: "8 a.m. – 11 p.m.", icon: Sun },
+  { title: "Email", description: "info@colchuckconsulting.com", icon: IconAt },
+  { title: "Phone", description: "(360) 316-4900", icon: IconPhone },
+  { title: "Location", description: "Seattle", icon: IconMapPin },
+  { title: "Working hours", description: "9 a.m. – 5 p.m.", icon: IconSun },
 ];
 
-export function ContactIconsList({
-  data = MOCKDATA,
-  variant,
-}: ContactIconsListProps) {
-  const items = data.map((item, index) => (
-    <ContactIcon key={index} variant={variant} {...item} />
+export function ContactIconsList() {
+  const items = MOCKDATA.map((item, index) => (
+    <ContactIcon key={index} {...item} />
   ));
   return <Stack>{items}</Stack>;
-}
-
-export function ContactIcons() {
-  return (
-    <SimpleGrid cols={2}>
-      <Box
-      // sx={(theme) => ({
-      //   padding: theme.spacing.xl,
-      //   borderRadius: theme.radius.md,
-      //   backgroundColor: theme.white,
-      // })}
-      >
-        <ContactIconsList />
-      </Box>
-
-      <Box
-      // sx={(theme) => ({
-      //   padding: theme.spacing.xl,
-      //   borderRadius: theme.radius.md,
-      //   backgroundImage: `linear-gradient(135deg, ${
-      //     theme.colors[theme.primaryColor][6]
-      //   } 0%, ${theme.colors[theme.primaryColor][4]} 100%)`,
-      // })}
-      >
-        <ContactIconsList variant="white" />
-      </Box>
-    </SimpleGrid>
-  );
 }

@@ -8,13 +8,13 @@ import classes from "./page.module.css";
 import { HeaderMenu } from "./components/HeaderMenu";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
-import { Contact } from "./components/Contact";
+import { Testimonials } from "./components/Testimonials";
+import { Portfolio } from "./components/Portfolio";
+import { TechnologyGrid } from "./components/TechnologyGrid";
+import { ContactUs } from "./components/ContactUs";
 import { HeroImageBackground } from "./components/HeroImageBackground";
 
 import { useState, useEffect } from "react";
-import { TechnologyGrid } from "./components/TechnologyGrid";
-import { Portfolio } from "./components/Portfolio";
-import { Testimonials } from "./components/Testimonials";
 import { Box } from "@mantine/core";
 
 export default function Home() {
@@ -47,13 +47,13 @@ export default function Home() {
       {/* The height of the header bar needs to be account for with the hero image background
 remove 56px???? */}
       <HeaderMenu />
-      <HeroImageBackground />
+      {/* <HeroImageBackground />
       <About />
       <Services />
       <TechnologyGrid />
       <Portfolio />
-      <Testimonials />
-      {/* <Contact /> */}
+      <Testimonials /> */}
+      <ContactUs />
     </main>
   );
 }

@@ -10,6 +10,7 @@ import {
   Box,
 } from "@mantine/core";
 import { IconQuote } from "@tabler/icons-react";
+import { Tex } from "tabler-icons-react";
 
 // Mock data for the testimonials
 const testimonials = [
@@ -80,6 +81,16 @@ export function Testimonials() {
           </Paper>
         ))}
       </SimpleGrid>
+      <Text ta={"center"}>
+        Read all our reviews{" "}
+        <a
+          rel="noopener"
+          target="_blank"
+          href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
+        >
+          here
+        </a>
+      </Text>
     </Container>
   );
 }

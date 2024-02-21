@@ -40,21 +40,21 @@ export function HeroImageBackground() {
             {/* Box for icons (aligned left) */}
             <Box>
               <a
-                href="https://www.linkedin.com/company/colchuck-consulting"
-                target="_blank"
-                className={classes.socialLink}
-              >
-                <IconBrandLinkedin className={classes.socialIcon} />
-              </a>
-              <a
                 href="https://www.facebook.com/people/Colchuck-Consulting/100092182747710/"
                 target="_blank"
                 className={classes.socialLink}
               >
                 <IconBrandFacebook
-                  style={{ marginLeft: "5px" }}
+                  style={{ marginRight: "5px" }}
                   className={classes.socialIcon}
                 />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/colchuck-consulting"
+                target="_blank"
+                className={classes.socialLink}
+              >
+                <IconBrandLinkedin className={classes.socialIcon} />
               </a>
             </Box>
             {/* Box for contact information (aligned right), now also with flex layout for horizontal alignment */}
@@ -74,12 +74,20 @@ export function HeroImageBackground() {
                 Contact:
               </Text>
               <Box display={{ base: "none", sm: "block" }}>
-                <a href="tel:3603164900" style={{ color: "white" }}>
+                <a
+                  href="tel:3603164900"
+                  rel="noopener"
+                  style={{ color: "white" }}
+                >
                   (360) 316-4900
                 </a>
               </Box>
               <Box display={{ base: "block", sm: "none" }}>
-                <a href="tel:3603164900" style={{ color: "white" }}>
+                <a
+                  href="tel:3603164900"
+                  rel="noopener"
+                  style={{ color: "white" }}
+                >
                   <IconPhoneFilled
                     size={"1.15rem"}
                     className={classes.socialIcon}

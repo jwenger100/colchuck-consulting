@@ -11,7 +11,6 @@ import {
   Button,
 } from "@mantine/core";
 import classes from "./About.module.css";
-import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
 export function About() {
@@ -21,7 +20,7 @@ export function About() {
       <Container size="lg">
         <Title order={1} ta={"center"} className={classes.title}>
           {/* We Are a Professional Website Design & Development Agency */}
-          About us Section
+          Who We Are
         </Title>
         <Grid>
           {/* left section of the about page */}
