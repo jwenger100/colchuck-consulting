@@ -76,8 +76,15 @@
   height: 100%;
   width: 100%;
 }
+/* Override the active state style for links inside the drawer */
+.drawerContent .link[data-active]::after {
+  /* TODO: figure this out later */
+  /* Prevent the active state from showing in the drawer */
+  /* transform: scaleX(0); Override to not show the active state indicator */
+}
 
 .drawerContent a {
+  font-size: rem(24px);
   visibility: hidden; /* Hide the element but still take up space */
   opacity: 0;
   animation: cascadeFadeIn 0.5s ease forwards;
@@ -111,6 +118,7 @@
 }
 
 .socialIcon {
+  color: var(--mantine-color-gray-7);
   &:hover {
     color: var(--cc-green);
   }

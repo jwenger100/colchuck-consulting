@@ -1,15 +1,13 @@
 import {
-  Menu,
   Group,
-  Center,
   Burger,
   Container,
   Drawer,
   Box,
-  ActionIcon,
   rem,
   Text,
   Portal,
+  Anchor,
 } from "@mantine/core";
 import { useDisclosure, useHeadroom, useWindowScroll } from "@mantine/hooks";
 import { useState } from "react";
@@ -172,41 +170,33 @@ export function HeaderMenu() {
                 className={classes.cascadeFadeInSocialIcons}
               >
                 {/* Facebook */}
-                <ActionIcon
-                  size="lg"
-                  color="black"
-                  variant="subtle"
-                  // change this to the actual link
-                  component="a"
+                <Anchor
                   href="https://www.facebook.com/people/Colchuck-Consulting/100092182747710/"
-                  aria-label="Open in a new tab"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={classes.socialIcon}
                 >
                   <IconBrandFacebook
-                    style={{ width: rem(24), height: rem(24) }}
+                    style={{ width: rem(32), height: rem(32) }}
                     stroke={1.5}
-                  ></IconBrandFacebook>
-                </ActionIcon>
+                  />
+                </Anchor>
                 {/* LinkedIn */}
-                <ActionIcon
-                  size="lg"
-                  color="black"
-                  variant="subtle"
-                  // change this to the actual link
-                  component="a"
+                <Anchor
                   href="https://www.linkedin.com/company/colchuck-consulting"
-                  aria-label="Open in a new tab"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={classes.socialIcon}
                 >
                   <IconBrandLinkedin
-                    style={{ width: rem(24), height: rem(24) }}
+                    style={{
+                      width: rem(32),
+                      height: rem(32),
+                      marginLeft: "5px",
+                    }}
                     stroke={1.5}
-                  ></IconBrandLinkedin>
-                </ActionIcon>
+                  />
+                </Anchor>
               </Box>
             </>
           )}
