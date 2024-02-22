@@ -1,4 +1,4 @@
-import { Text, Title, Container, Grid, Card, rem } from "@mantine/core";
+import { Text, Title, Container, Grid, Card, rem, Box } from "@mantine/core";
 import {
   SourceCode,
   Server2,
@@ -11,6 +11,7 @@ import {
   Settings,
 } from "tabler-icons-react";
 import classes from "./Services.module.css";
+import { Carousel } from "@mantine/carousel";
 
 export const MOCKDATA = [
   {
@@ -80,31 +81,58 @@ export function Services() {
         UI/UX design, cutting-edge coding practices, and thorough performance
         testing for seamless user experiences.
       </Text>
-      <Grid>
-        {MOCKDATA.map((feature, index) => (
-          // each child in a list should have a unique "key" prop
-          <Grid.Col span={{ md: 6, lg: 4 }} key={index}>
-            <Card
-              key={feature.title}
-              shadow="md"
-              radius="md"
-              className={classes.card}
-              padding="xl"
-            >
-              <feature.icon
-                style={{ width: rem(50), height: rem(50) }}
-                color={"var(--cc-green)"}
-              />
-              <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-                {feature.title}
-              </Text>
-              <Text fz="sm" c="dimmed" mt="sm">
-                {feature.description}
-              </Text>
-            </Card>
-          </Grid.Col>
-        ))}
-      </Grid>
+      <Box display={{ base: "none", sm: "block" }}>
+        <Grid>
+          {MOCKDATA.map((feature, index) => (
+            // each child in a list should have a unique "key" prop
+            <Grid.Col span={{ md: 6, lg: 4 }} key={index}>
+              <Card
+                key={feature.title}
+                shadow="md"
+                radius="md"
+                className={classes.card}
+                padding="xl"
+              >
+                <feature.icon
+                  style={{ width: rem(50), height: rem(50) }}
+                  color={"var(--cc-green)"}
+                />
+                <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+                  {feature.title}
+                </Text>
+                <Text fz="sm" c="dimmed" mt="sm">
+                  {feature.description}
+                </Text>
+              </Card>
+            </Grid.Col>
+          ))}
+        </Grid>
+      </Box>
+      <Box display={{ base: "block", sm: "none" }} ta={"center"}>
+        <Carousel loop>
+          {MOCKDATA.map((feature, index) => (
+            <Carousel.Slide key={index}>
+              <Card
+                shadow="md"
+                radius="md"
+                className={classes.card}
+                padding="xl"
+              >
+                <feature.icon
+                  style={{ width: rem(50), height: rem(50), margin: "0 auto" }}
+                  color={"var(--cc-green)"}
+                />
+                <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+                  {feature.title}
+                </Text>
+                <Text fz="sm" c="dimmed" mt="sm">
+                  {feature.description}
+                </Text>
+              </Card>
+            </Carousel.Slide>
+          ))}
+        </Carousel>
+      </Box>
     </Container>
   );
 }
