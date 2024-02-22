@@ -64,7 +64,7 @@ export function ContactUs() {
   ));
 
   return (
-    <Box className={classes.wrapper}>
+    <Box className={classes.wrapper} id="contact">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
         <Box>
           <Title className={classes.title}>Contact us</Title>

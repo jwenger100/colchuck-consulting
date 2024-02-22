@@ -9,8 +9,9 @@ import {
   ActionIcon,
   rem,
   Text,
+  Portal,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useHeadroom, useWindowScroll } from "@mantine/hooks";
 import { useState } from "react";
 import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./HeaderMenu.module.css";
@@ -22,7 +23,7 @@ const links = [
   { link: "/#about", label: "About" },
   { link: "/#services", label: "Our Services" },
   { link: "/#portfolio", label: "Our Work" },
-  { link: "/", label: "Contact" },
+  { link: "/#contact", label: "Contact" },
   // strucutre of the links for the DROPDOWN menu
   // {
   //   link: "#1",
@@ -39,7 +40,8 @@ const links = [
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(-1);
-
+  const pinned = useHeadroom({ fixedAt: 120 });
+  const [scroll] = useWindowScroll(); // Get the current scroll position
   const items = links.map((link, index) => {
     // This is the code for the DROPDOWN menu
 
@@ -89,36 +91,56 @@ export function HeaderMenu() {
 
   return (
     <>
-      <header className={classes.header}>
-        <Container size="lg">
-          <div className={classes.inner}>
-            <Link
-              href="/"
-              onClick={() => {
-                setActive(-1);
-              }}
-            >
-              <Image
-                src="/cc-main-logo-green.svg"
-                alt="Colchuck Consulting Logo"
-                width={120}
-                height={30}
-                className={classes.logo}
-                style={{ marginTop: "7px" }}
+      <Portal>
+        <header
+          className={classes.header}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: rem(56),
+            zIndex: 1,
+            // transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
+            // Combine both conditions: hide when at the top OR based on the pinned state
+            transform:
+              scroll.y <= 80
+                ? `translate3d(0, ${rem(-110)}, 0)`
+                : `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
+            transition: "transform 400ms ease",
+            backgroundColor: "var(--mantine-color-body)",
+          }}
+        >
+          <Container size="lg">
+            <div className={classes.inner}>
+              <Link
+                href="/"
+                onClick={() => {
+                  setActive(-1);
+                }}
+              >
+                <Image
+                  src="/cc-main-logo-green.svg"
+                  alt="Colchuck Consulting Logo"
+                  width={120}
+                  height={30}
+                  className={classes.logo}
+                  style={{ marginTop: "7px" }}
+                />
+              </Link>
+              <Group gap={0} justify="flex-end" visibleFrom="sm">
+                {items}
+              </Group>
+              <Burger
+                opened={opened}
+                onClick={toggle}
+                size="sm"
+                hiddenFrom="sm"
               />
-            </Link>
-            <Group gap={0} justify="flex-end" visibleFrom="sm">
-              {items}
-            </Group>
-            <Burger
-              opened={opened}
-              onClick={toggle}
-              size="sm"
-              hiddenFrom="sm"
-            />
-          </div>
-        </Container>
-      </header>
+            </div>
+          </Container>
+        </header>
+      </Portal>
       <Drawer
         opened={opened}
         onClose={toggle}

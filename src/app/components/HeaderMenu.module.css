@@ -17,7 +17,6 @@
 }
 
 .header {
-  height: rem(56px);
   /* margin-bottom: rem(120px); */
   background-color: var(--mantine-color-body);
   border-bottom: rem(1px) solid
@@ -65,6 +64,11 @@
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
 }
 
 .link[data-active]::after {
