@@ -10,7 +10,6 @@ import {
   Box,
 } from "@mantine/core";
 import { IconQuote } from "@tabler/icons-react";
-import { Tex } from "tabler-icons-react";
 
 // Mock data for the testimonials
 const testimonials = [
@@ -40,11 +39,21 @@ const testimonials = [
 export function Testimonials() {
   return (
     <Container>
-      <Title order={1} ta={"center"} c={"var(--cc-text-color)"}>
+      <Title ta={"center"} c={"var(--cc-text-color)"} mt={"xl"}>
         Testimonials
       </Title>
-      <Text ta={"center"} mb={"100px"} c={"var(--cc-text-color)"}>
+      <Text ta={"center"} c={"var(--cc-text-color)"}>
         See what our clients have to say about us
+      </Text>
+      <Text ta={"center"} mb={"100px"}>
+        Read all our reviews{" "}
+        <a
+          rel="noopener"
+          target="_blank"
+          href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
+        >
+          here
+        </a>
       </Text>
       <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
         {testimonials.map((testimonial) => (
@@ -81,16 +90,6 @@ export function Testimonials() {
           </Paper>
         ))}
       </SimpleGrid>
-      <Text ta={"center"}>
-        Read all our reviews{" "}
-        <a
-          rel="noopener"
-          target="_blank"
-          href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
-        >
-          here
-        </a>
-      </Text>
     </Container>
   );
 }

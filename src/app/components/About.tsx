@@ -31,8 +31,8 @@ export function About() {
             <Title
               className={classes.title}
               c={"var(--cc-text-color)"}
-              fw={600}
               ta={"center"}
+              mt={"md"}
             >
               Who We Are{" "}
             </Title>
@@ -62,8 +62,6 @@ export function About() {
           {/* right section of the about page */}
           <Grid.Col span={{ xs: 12 }} className={classes.rightSection}>
             <Title
-              className={classes.title}
-              fw={600}
               c={"var(--cc-text-color)"}
               mb={{ base: "-55px", sm: "-120px" }}
               ta={"center"}

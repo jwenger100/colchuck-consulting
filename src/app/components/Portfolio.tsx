@@ -14,6 +14,8 @@ import {
   Image,
   rem,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
@@ -144,14 +146,16 @@ const PortfolioCard = ({ article }: { article: any }) => {
   const autoplay = useRef(Autoplay({ delay: 2000 }));
   const TRANSITION_DURATION = 300;
   const [embla, setEmbla] = useState<Embla | null>(null);
+  const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
   useAnimationOffsetEffect(embla, TRANSITION_DURATION);
 
   return (
     <>
       <Modal
-        size={"70%"}
+        size={"100%"}
         opened={opened}
+        fullScreen={isSmallScreen} // Apply based on screen size
         transitionProps={{ duration: TRANSITION_DURATION }}
         onClose={close}
         ta={"center"}
@@ -245,7 +249,7 @@ const PortfolioCard = ({ article }: { article: any }) => {
           pr={"var(--mantine-spacing-md)"}
           ta={"center"}
         >
-          <Title fw={"bold"} order={3}>
+          <Title fw={"bold"} c={"var(--cc-text-color)"} order={3}>
             {article.title}
           </Title>
           <Text c="dimmed" size="xs" fw={700}>
@@ -268,7 +272,7 @@ export function Portfolio() {
   return (
     <Box className={classes.projects} id="portfolio">
       <Container size={"lg"}>
-        <Title order={2} ta={"center"} c={"var(--cc-text-color)"}>
+        <Title ta={"center"} c={"var(--cc-text-color)"}>
           Projects
         </Title>
         <Container

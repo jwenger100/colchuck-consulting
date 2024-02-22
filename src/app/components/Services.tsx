@@ -73,7 +73,7 @@ export const MOCKDATA = [
 export function Services() {
   return (
     <Container id="services" className={classes.wrapper} size="lg">
-      <Title className={classes.title} c={"var(--cc-text-color)"} ta={"center"}>
+      <Title c={"var(--cc-text-color)"} ta={"center"} mb={"sm"}>
         Our Services
       </Title>
       <Text size="sm" mb={"sm"} ta={"center"} pl={"md"} pr={"md"}>
