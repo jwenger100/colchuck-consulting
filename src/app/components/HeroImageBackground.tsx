@@ -1,5 +1,5 @@
-import cx from "clsx";
-import { Title, Text, Container, Button, Overlay, Box } from "@mantine/core";
+"use client";
+import { Title, Text, Container, Overlay, Box } from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
 import Image from "next/image";
 import {
@@ -8,11 +8,55 @@ import {
   IconMailFilled,
   IconPhoneFilled,
 } from "@tabler/icons-react";
+import React, { useEffect, useState } from "react";
+
 import { TypewriterComponent } from "./TypewriterComponent";
 
 export function HeroImageBackground() {
+  // List of image URLs
+  const images = [
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/aasgard-pass.jpg`,
+    // `${process.env.NEXT_PUBLIC_BASE_PATH}/colchuck-lake-1.jpeg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/colchuck-lake-2.jpg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-1.jpg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-2.jpg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-goats-1.jpg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-goats-2.webp`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-1.jpeg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-2.jpg`,
+  ];
+
+  const [backgroundImageUrl, setBackgroundImageUrl] = useState("");
+
+  useEffect(() => {
+    // Retrieve the current index from localStorage, default to -1 if not found
+    const currentIndex = parseInt(
+      localStorage.getItem("currentIndex") ?? "-1",
+      10
+    );
+
+    // Calculate the next index, looping back to 0 if at the last image
+    const nextIndex = (currentIndex + 1) % images.length;
+
+    // Update the background image URL with the next image
+    const newImage = images[nextIndex];
+    setBackgroundImageUrl(newImage);
+
+    // Update the current index in localStorage
+    localStorage.setItem("currentIndex", nextIndex.toString());
+  }, []); // Empty dependency array to run only once on mount
+
   return (
     <Box className={classes.wrapper}>
+      <Image
+        src={backgroundImageUrl}
+        alt="Colchuck Lake"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        unoptimized
+        className={classes.bgImage}
+      />
       <Overlay color="#000" backgroundOpacity={0.45} zIndex={1} />
       <Box className={classes.inner}>
         <Box className={classes.titleContainer}>

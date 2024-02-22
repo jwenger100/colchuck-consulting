@@ -1,16 +1,16 @@
 .wrapper {
   position: relative;
   padding-top: rem(100px);
-  background-image: url("/aasgard-pass.jpg");
-  background-size: cover;
-  background-position: center;
-  /* subtract 56px for the header */
   min-height: calc(100vh); /* Added 56px to the 100vh */
   font-family: var(--font-poppins);
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: rem(80px);
     padding-bottom: rem(50px);
   }
+}
+.bgImage {
+  background-size: cover;
+  background-position: center;
 }
 .socialLink {
   color: #ffffff;
