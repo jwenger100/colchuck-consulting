@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
   /* subtract 56px for the header */
-  min-height: calc(100vh - 56px); /* Added 56px to the 100vh */
+  min-height: calc(100vh); /* Added 56px to the 100vh */
   font-family: var(--font-poppins);
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: rem(80px);

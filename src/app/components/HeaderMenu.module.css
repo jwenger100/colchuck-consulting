@@ -5,19 +5,7 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .header {
-  /* margin-bottom: rem(120px); */
   background-color: var(--mantine-color-body);
   border-bottom: rem(1px) solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
@@ -115,6 +103,15 @@
   animation-delay: 0.6s;
 }
 
-.fadeInSocialIcons {
-  animation: fadeIn 1s ease-out;
+.cascadeFadeInSocialIcons {
+  visibility: hidden;
+  opacity: 0;
+  animation: cascadeFadeIn 0.75s ease forwards;
+  animation-delay: 0.75s;
+}
+
+.socialIcon {
+  &:hover {
+    color: var(--cc-green);
+  }
 }

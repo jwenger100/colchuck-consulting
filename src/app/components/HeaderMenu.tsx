@@ -169,7 +169,7 @@ export function HeaderMenu() {
                 ta="center"
                 mt={"md"}
                 pb={"sm"}
-                className={classes.fadeInSocialIcons}
+                className={classes.cascadeFadeInSocialIcons}
               >
                 {/* Facebook */}
                 <ActionIcon
@@ -182,6 +182,7 @@ export function HeaderMenu() {
                   aria-label="Open in a new tab"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={classes.socialIcon}
                 >
                   <IconBrandFacebook
                     style={{ width: rem(24), height: rem(24) }}
@@ -199,6 +200,7 @@ export function HeaderMenu() {
                   aria-label="Open in a new tab"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={classes.socialIcon}
                 >
                   <IconBrandLinkedin
                     style={{ width: rem(24), height: rem(24) }}
