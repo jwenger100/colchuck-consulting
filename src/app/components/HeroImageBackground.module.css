@@ -1,7 +1,12 @@
 .wrapper {
+  display: flex; /* Make the wrapper a flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Align children with space between them */
   position: relative;
   padding-top: rem(100px);
-  min-height: calc(100vh); /* Added 56px to the 100vh */
+  min-height: calc(
+    100vh
+  ); /* Ensures the container takes full viewport height */
   font-family: var(--font-poppins);
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: rem(80px);
@@ -19,6 +24,8 @@
   transition: transform 0.3s ease-in-out;
   font-size: 1.15rem;
   color: #ffffff;
+  width: rem(24);
+  height: rem(24);
 }
 .socialIcon:hover {
   transform: scale(1.2);
@@ -40,7 +47,7 @@
 }
 
 .title {
-  font-size: rem(80px);
+  font-size: rem(100px);
   letter-spacing: rem(-1px);
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
@@ -54,14 +61,14 @@
 }
 
 .subtitle {
-  font-size: rem(71px);
+  font-size: rem(90px);
   color: var(--mantine-color-gray-0);
   text-align: center;
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   margin-bottom: var(--mantine-spacing-lg);
   font-family: var(--font-poppins);
-  margin-top: -40px;
+  margin-top: -55px;
   color: var(--cc-green);
 
   @media (max-width: $mantine-breakpoint-sm) {
@@ -84,10 +91,9 @@
 .contactInfoContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: bottom;
-  margin-top: 50%;
+  justify-content: space-around;
+  margin-top: 10%;
   @media (max-width: $mantine-breakpoint-sm) {
-    margin-top: 55%;
+    margin-top: 25%;
   }
 }

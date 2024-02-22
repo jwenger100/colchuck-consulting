@@ -7,7 +7,7 @@ import classes from "./TypewriterComponent.module.css";
 const TypewriterComponent = () => {
   return (
     <div className={classes.typewriterWrapper}>
-      <Text fz="40px" c="var(--cc-green)" ff="var(--font-poppins)" fw={"600"}>
+      <Text fz="40px" c="white" ff="var(--font-poppins)" fw={"600"}>
         {/* Style will be inherited from the parent element */}
         <Typewriter
           // WEBDEVELOPMENT -> Full Stack Software Development
@@ -37,13 +37,13 @@ const TypewriterComponent = () => {
             "AGILE",
             "SCRUM",
           ]}
-          loop={5}
+          loop={false}
           cursor
           cursorStyle="|"
           typeSpeed={150}
           deleteSpeed={150}
           delaySpeed={1000}
-          cursorColor="var(--cc-green)"
+          cursorColor="white"
         />
       </Text>
     </div>

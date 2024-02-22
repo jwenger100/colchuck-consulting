@@ -144,7 +144,9 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
       mb={"var(--mantine-spacing-xl)"}
       className={classes.wrapper}
     >
-      <Title ta="center">Technologies we work with!</Title>
+      <Title ta="center" c={"var(--cc-text-color)"}>
+        Technologies we work with!
+      </Title>
       <Text
         size="sm"
         ta="center"

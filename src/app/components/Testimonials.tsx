@@ -40,10 +40,10 @@ const testimonials = [
 export function Testimonials() {
   return (
     <Container>
-      <Title order={1} ta={"center"}>
+      <Title order={1} ta={"center"} c={"var(--cc-text-color)"}>
         Testimonials
       </Title>
-      <Text ta={"center"} mb={"100px"}>
+      <Text ta={"center"} mb={"100px"} c={"var(--cc-text-color)"}>
         See what our clients have to say about us
       </Text>
       <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">

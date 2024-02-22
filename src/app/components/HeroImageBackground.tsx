@@ -1,5 +1,5 @@
 "use client";
-import { Title, Text, Container, Overlay, Box } from "@mantine/core";
+import { Title, Text, Container, Overlay, Box, Anchor } from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
 import Image from "next/image";
 import {
@@ -74,16 +74,15 @@ export function HeroImageBackground() {
               business into the future.
             </Text>
           </Container>
-          {/* 
+
           <Box ta={"center"} mt={"60px"} mb={"60px"}>
             <TypewriterComponent />
-          </Box> */}
-          {/* Parent box for horizontal row alignment */}
-
+          </Box>
+          {/* Parent box for contact info */}
           <Box className={classes.contactInfoContainer}>
             {/* Box for icons (aligned left) */}
             <Box>
-              <a
+              <Anchor
                 href="https://www.facebook.com/people/Colchuck-Consulting/100092182747710/"
                 target="_blank"
                 className={classes.socialLink}
@@ -91,15 +90,19 @@ export function HeroImageBackground() {
                 <IconBrandFacebook
                   style={{ marginRight: "5px" }}
                   className={classes.socialIcon}
+                  stroke={1.5}
                 />
-              </a>
-              <a
+              </Anchor>
+              <Anchor
                 href="https://www.linkedin.com/company/colchuck-consulting"
                 target="_blank"
                 className={classes.socialLink}
               >
-                <IconBrandLinkedin className={classes.socialIcon} />
-              </a>
+                <IconBrandLinkedin
+                  className={classes.socialIcon}
+                  stroke={1.5}
+                />
+              </Anchor>
             </Box>
             {/* Box for contact information (aligned right), now also with flex layout for horizontal alignment */}
             <Box
@@ -118,16 +121,17 @@ export function HeroImageBackground() {
                 Contact:
               </Text>
               <Box display={{ base: "none", sm: "block" }}>
-                <a
+                <Anchor
                   href="tel:3603164900"
+                  underline="always"
                   rel="noopener"
                   style={{ color: "white" }}
                 >
                   (360) 316-4900
-                </a>
+                </Anchor>
               </Box>
               <Box display={{ base: "block", sm: "none" }}>
-                <a
+                <Anchor
                   href="tel:3603164900"
                   rel="noopener"
                   style={{ color: "white" }}
@@ -136,18 +140,19 @@ export function HeroImageBackground() {
                     size={"1.15rem"}
                     className={classes.socialIcon}
                   />
-                </a>
+                </Anchor>
               </Box>
               <Box display={{ base: "none", sm: "block" }}>
-                <a
+                <Anchor
                   href="mailto:info@colchuckconsulting.com?Subject=General%20Inquiry"
                   style={{ color: "white" }}
+                  underline="always"
                 >
                   info@colchuckconsulting.com
-                </a>
+                </Anchor>
               </Box>
               <Box display={{ xs: "block", sm: "none" }}>
-                <a
+                <Anchor
                   href="mailto:info@colchuckconsulting.com?Subject=General%20Inquiry"
                   style={{ color: "white" }}
                 >
@@ -155,7 +160,7 @@ export function HeroImageBackground() {
                     size={"1.15rem"}
                     className={classes.socialIcon}
                   />
-                </a>
+                </Anchor>
               </Box>
             </Box>
           </Box>

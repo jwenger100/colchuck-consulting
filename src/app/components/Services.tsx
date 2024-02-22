@@ -72,10 +72,10 @@ export const MOCKDATA = [
 export function Services() {
   return (
     <Container id="services" className={classes.wrapper} size="lg">
-      <Title className={classes.title} ta={"center"}>
+      <Title className={classes.title} c={"var(--cc-text-color)"} ta={"center"}>
         Our Services
       </Title>
-      <Text size="sm" mb={"sm"} ta={"center"}>
+      <Text size="sm" mb={"sm"} ta={"center"} pl={"md"} pr={"md"}>
         Mastering the digital sphere with exceptional web development, intuitive
         UI/UX design, cutting-edge coding practices, and thorough performance
         testing for seamless user experiences.

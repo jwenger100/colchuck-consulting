@@ -162,6 +162,7 @@ const PortfolioCard = ({ article }: { article: any }) => {
           mt={"var(--mantine-spacing-sm)"}
           mb={"var(--mantine-spacing-lg)"}
           ta={"center"}
+          c={"var(--cc-text-color)"}
         >
           {article.title}
         </Title>
@@ -194,11 +195,21 @@ const PortfolioCard = ({ article }: { article: any }) => {
             </Carousel.Slide>
           ))}
         </Carousel>
-        <Title order={3} ta={"left"} mt={"var(--mantine-spacing-lg)"}>
+        <Title
+          order={3}
+          ta={"left"}
+          mt={"var(--mantine-spacing-lg)"}
+          c={"var(--cc-text-color)"}
+        >
           Description
         </Title>
         <Text ta={"left"}>{article.modalDescription} </Text>
-        <Title order={3} ta={"left"} mt={"var(--mantine-spacing-lg)"}>
+        <Title
+          order={3}
+          ta={"left"}
+          mt={"var(--mantine-spacing-lg)"}
+          c={"var(--cc-text-color)"}
+        >
           Technologies
         </Title>
         <Box className={classes.technologyIcons} ta={"left"}>
@@ -257,7 +268,7 @@ export function Portfolio() {
   return (
     <Box className={classes.projects} id="portfolio">
       <Container size={"lg"}>
-        <Title order={2} ta={"center"}>
+        <Title order={2} ta={"center"} c={"var(--cc-text-color)"}>
           Projects
         </Title>
         <Container
