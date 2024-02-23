@@ -9,7 +9,7 @@ import { HeaderMenu } from "./components/HeaderMenu";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
 import { Testimonials } from "./components/Testimonials";
-import { Portfolio } from "./components/Portfolio";
+import { Projects } from "./components/Projects";
 import { TechnologyGrid } from "./components/TechnologyGrid";
 import { ContactUs } from "./components/ContactUs";
 import { HeroImageBackground } from "./components/HeroImageBackground";
@@ -51,7 +51,7 @@ remove 56px???? */}
       <About />
       <Services />
       <TechnologyGrid />
-      <Portfolio />
+      <Projects />
       <Testimonials />
       <ContactUs />
     </main>

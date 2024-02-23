@@ -13,12 +13,6 @@
   }
 }
 
-.title {
-  font-family: Greycliff CF, var(--mantine-font-family);
-  color: var(--mantine-color-white);
-  line-height: 1;
-}
-
 .description {
   color: var(--mantine-color-blue-0);
   max-width: rem(300px);

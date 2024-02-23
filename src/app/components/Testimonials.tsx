@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Title,
   Box,
+  Anchor,
 } from "@mantine/core";
 import { IconQuote } from "@tabler/icons-react";
 
@@ -45,15 +46,15 @@ export function Testimonials() {
       <Text ta={"center"} c={"var(--cc-text-color)"}>
         See what our clients have to say about us
       </Text>
-      <Text ta={"center"} mb={"100px"}>
+      <Text ta={"center"} mb={"60px"}>
         Read all our reviews{" "}
-        <a
+        <Anchor
           rel="noopener"
           target="_blank"
           href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
         >
           here
-        </a>
+        </Anchor>
       </Text>
       <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
         {testimonials.map((testimonial) => (
@@ -62,11 +63,16 @@ export function Testimonials() {
             radius="md"
             withBorder
             p="lg"
+            mb={"var(--mantine-spacing-xl)"}
             bg="var(--mantine-color-body)"
             style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between", // Adjusts content spacing
+              minHeight: "320px", // Ensures consistent height
+              borderTop: "3px solid var(--cc-green)",
               position: "relative",
               paddingTop: "60px",
-              minHeight: "300px",
             }}
           >
             <Box
@@ -77,16 +83,25 @@ export function Testimonials() {
                 transform: "translateX(-50%)",
               }}
             >
-              <Avatar color="var(--cc-green)" size={80} radius={80}>
+              <Avatar
+                color="#FFFFFF"
+                size={80}
+                radius={80}
+                variant="filled"
+                style={{ border: "1px solid #ccc" }}
+              >
                 <IconQuote size={60} color="var(--cc-green)" />
               </Avatar>
             </Box>
             <Text ta="center" mb="lg" c="dimmed" mt={"30px"}>
               {testimonial.description}
             </Text>
-            <Text ta="center" fz="lg" fw={500} mt="50px">
+            <Box ta="center" fz="lg" fw={500} mt="50px">
               {testimonial.name}
-            </Text>
+              <Text ta="center" c="dimmed">
+                {testimonial.organization}
+              </Text>
+            </Box>
           </Paper>
         ))}
       </SimpleGrid>

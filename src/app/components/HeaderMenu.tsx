@@ -20,7 +20,7 @@ import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
 const links = [
   { link: "/#about", label: "About" },
   { link: "/#services", label: "Our Services" },
-  { link: "/#portfolio", label: "Our Work" },
+  { link: "/#projects", label: "Our Work" },
   { link: "/#contact", label: "Contact" },
   // strucutre of the links for the DROPDOWN menu
   // {
