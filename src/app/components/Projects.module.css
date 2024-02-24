@@ -3,12 +3,20 @@
   border: 0.75px solid #cccccc;
   transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transform and box-shadow */
   cursor: pointer;
+  @media (max-width: $mantine-breakpoint-sm) {
+    cursor: default;
+    box-shadow: none;
+  }
 }
 
 .card:hover {
   transform: scale(1.04); /* Slightly larger scale for zoom effect */
   box-shadow: var(--cc-green) 0px 0px 10px 0px;
   border: 0.75px solid var(--cc-green);
+  @media (max-width: $mantine-breakpoint-sm) {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .cardImage {

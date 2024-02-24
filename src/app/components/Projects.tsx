@@ -445,11 +445,22 @@ export function Projects() {
             in our field.
           </Text>
         </Container>
-        <SimpleGrid cols={{ base: 1, sm: 2 }}>
-          {mockdata.map((article) => (
-            <ProjectsCard key={article.title} article={article} />
-          ))}
-        </SimpleGrid>
+        <Box display={{ base: "none", sm: "block" }} ta={"center"}>
+          <SimpleGrid cols={{ base: 1, sm: 2 }}>
+            {mockdata.map((article) => (
+              <ProjectsCard key={article.title} article={article} />
+            ))}
+          </SimpleGrid>
+        </Box>
+        <Box display={{ base: "block", sm: "none" }} ta={"center"}>
+          <Carousel loop>
+            {mockdata.map((article) => (
+              <Carousel.Slide key={article.title}>
+                <ProjectsCard article={article} />
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </Box>
       </Container>
     </Box>
   );
