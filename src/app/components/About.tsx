@@ -70,7 +70,10 @@ export function About() {
             </Title>
             <div className={classes.videoContainer}>
               <video autoPlay loop muted className={classes.videoControls}>
-                <source src="/app-process.mp4" type="video/mp4" />
+                <source
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app-process.mp4`}
+                  type="video/mp4"
+                />
               </video>
             </div>
             <Text

@@ -10,7 +10,9 @@ import {
   Box,
   Anchor,
 } from "@mantine/core";
-import { IconQuote } from "@tabler/icons-react";
+import { IconQuote, IconExternalLink } from "@tabler/icons-react";
+import Image from "next/image";
+import classes from "./Testimonials.module.css";
 
 // Mock data for the testimonials
 const testimonials = [
@@ -37,74 +39,112 @@ const testimonials = [
   },
 ];
 
+const clientLogos = [
+  `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/mas-logo-1.png`,
+  `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/boost-baseball-logo-3.svg`,
+  `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/pastor-stays-logo.png`,
+];
+
 export function Testimonials() {
   return (
-    <Container>
-      <Title ta={"center"} c={"var(--cc-text-color)"} mt={"xl"}>
-        Testimonials
-      </Title>
-      <Text ta={"center"} c={"var(--cc-text-color)"}>
-        See what our clients have to say about us
-      </Text>
-      <Text ta={"center"} mb={"60px"}>
-        Read all our reviews{" "}
-        <Anchor
-          rel="noopener"
-          target="_blank"
-          href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
-        >
-          here
-        </Anchor>
-      </Text>
-      <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
-        {testimonials.map((testimonial) => (
-          <Paper
-            key={testimonial.id}
-            radius="md"
-            withBorder
-            p="lg"
-            mb={"var(--mantine-spacing-xl)"}
-            bg="var(--mantine-color-body)"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between", // Adjusts content spacing
-              minHeight: "320px", // Ensures consistent height
-              borderTop: "3px solid var(--cc-green)",
-              position: "relative",
-              paddingTop: "60px",
-            }}
+    <>
+      {/* New Banner Section for Our Clients */}
+      <Box className={classes.clientLogosContainer}>
+        <Box pt="sm" ta="center">
+          <Title mb="xs" mt="xl" c="white">
+            Our Clients
+          </Title>
+          <Text c="white">
+            Some of the companies we have had the pleasure of working with
+          </Text>
+          <Box className={classes.clientLogosImagesContainer}>
+            {clientLogos.map((logo, index) => (
+              <Box key={index} p="md">
+                {/* For Mantine v3.0 or later, use Image component */}
+                <Image
+                  src={logo}
+                  unoptimized
+                  alt={`Client ${index + 1}`}
+                  height={100}
+                  width={150}
+                  className={classes.clientLogo}
+                />
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+      <Container>
+        <Title ta={"center"} c={"var(--cc-text-color)"} mt={"xl"}>
+          Testimonials
+        </Title>
+        <Text ta={"center"} c={"var(--cc-text-color)"}>
+          See what our clients have to say about us
+        </Text>
+        <Text ta={"center"} mb={"60px"}>
+          Read all our reviews{" "}
+          <Anchor
+            rel="noopener"
+            target="_blank"
+            href="https://www.google.com/search?q=colchuck+consulting&oq=colchuck+consulting&aqs=chrome..69i57j69i65j69i61l2j69i65l2.8310j0j7&sourceid=chrome&ie=UTF-8#lrd=0x6cf17a09d3b42db3:0xe6c50446bd1d0a83,1,,,,"
           >
-            <Box
+            here
+            <IconExternalLink
+              size={16}
+              style={{ marginLeft: "2px", marginBottom: "-3px" }}
+            />
+          </Anchor>
+        </Text>
+        <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
+          {testimonials.map((testimonial) => (
+            <Paper
+              key={testimonial.id}
+              radius="md"
+              withBorder
+              p="lg"
+              mb={"var(--mantine-spacing-xl)"}
+              bg="var(--mantine-color-body)"
               style={{
-                position: "absolute",
-                top: "-45px",
-                left: "50%",
-                transform: "translateX(-50%)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between", // Adjusts content spacing
+                minHeight: "320px", // Ensures consistent height
+                borderTop: "3px solid var(--cc-green)",
+                position: "relative",
+                paddingTop: "60px",
               }}
             >
-              <Avatar
-                color="#FFFFFF"
-                size={80}
-                radius={80}
-                variant="filled"
-                style={{ border: "1px solid #ccc" }}
+              <Box
+                style={{
+                  position: "absolute",
+                  top: "-45px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
               >
-                <IconQuote size={60} color="var(--cc-green)" />
-              </Avatar>
-            </Box>
-            <Text ta="center" mb="lg" c="dimmed" mt={"30px"}>
-              {testimonial.description}
-            </Text>
-            <Box ta="center" fz="lg" fw={500} mt="50px">
-              {testimonial.name}
-              <Text ta="center" c="dimmed">
-                {testimonial.organization}
+                <Avatar
+                  color="#FFFFFF"
+                  size={80}
+                  radius={80}
+                  variant="filled"
+                  style={{ border: "1px solid #ccc" }}
+                >
+                  <IconQuote size={60} color="var(--cc-green)" />
+                </Avatar>
+              </Box>
+              <Text ta="center" mb="lg" c="dimmed" mt={"30px"}>
+                {testimonial.description}
               </Text>
-            </Box>
-          </Paper>
-        ))}
-      </SimpleGrid>
-    </Container>
+              <Box ta="center" fz="lg" fw={500} mt="50px">
+                {testimonial.name}
+                <Text ta="center" c="dimmed">
+                  {testimonial.organization}
+                </Text>
+              </Box>
+            </Paper>
+          ))}
+        </SimpleGrid>
+      </Container>
+    </>
   );
 }

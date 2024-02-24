@@ -118,10 +118,11 @@ export function HeaderMenu() {
                 }}
               >
                 <Image
-                  src="/cc-main-logo-green.svg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/cc-main-logo-green.svg`}
                   alt="Colchuck Consulting Logo"
                   width={120}
                   height={30}
+                  priority={true} // Load this image before others
                   className={classes.logo}
                   style={{ marginTop: "7px" }}
                 />

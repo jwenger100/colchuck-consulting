@@ -124,7 +124,7 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
         {category.services.map((item) => (
           <UnstyledButton key={item.title} className={classes.item}>
             <Image
-              src={item.src}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}${item.src}`}
               width={50}
               height={50}
               alt={`${item.title} logo`}

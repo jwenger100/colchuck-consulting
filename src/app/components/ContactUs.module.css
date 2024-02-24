@@ -66,3 +66,9 @@
     background-color: var(--cc-light-green);
   }
 }
+
+.footerIconGroup {
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}

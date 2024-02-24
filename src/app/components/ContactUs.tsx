@@ -144,14 +144,25 @@ export function ContactUs() {
       <Group display={{ base: "flex", sm: "none" }} mt="xl" justify="center">
         {icons}
       </Group>
-      <Group mt="xl" justify="center">
-        <Text c="white" size="sm">
-          © {new Date().getFullYear()}
+      <Group
+        mt="xl"
+        justify="center"
+        flex={"row"}
+        className={classes.footerIconGroup}
+      >
+        <Text c="white" size="sm" mb={{ base: "-12px", sm: 0 }}>
+          Copyright {new Date().getFullYear()}
         </Text>
-        <Text c="white" size="sm">
+        <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
           •
         </Text>
-        <Text c="white" size="sm" fw={600} ff={"var(--font-poppins)"}>
+        <Text
+          c="white"
+          size="sm"
+          fw={600}
+          mt={{ sm: "-2px" }}
+          ff={"var(--font-poppins)"}
+        >
           Colchuck
         </Text>
         <Text
@@ -159,14 +170,15 @@ export function ContactUs() {
           size="sm"
           fw={400}
           ff={"var(--font-poppins)"}
-          ml={"-12px"}
+          ml={{ base: 0, sm: "-12px" }}
+          mt={{ base: "-20px", sm: "-2px" }}
         >
           Consulting
         </Text>
-        <Text c="white" size="sm">
+        <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
           •
         </Text>
-        <Text c="white" size="sm">
+        <Text c="white" size="sm" mt={{ base: "-12px", sm: 0 }}>
           All rights reserved
         </Text>
       </Group>

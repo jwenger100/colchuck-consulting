@@ -109,7 +109,21 @@ export function Services() {
         </Grid>
       </Box>
       <Box display={{ base: "block", sm: "none" }} ta={"center"}>
-        <Carousel loop>
+        <Carousel
+          previousControlProps={{
+            style: {
+              backgroundColor: "var(--cc-green)",
+              color: "white",
+            },
+          }}
+          nextControlProps={{
+            style: {
+              backgroundColor: "var(--cc-green)",
+              color: "white",
+            },
+          }}
+          loop
+        >
           {MOCKDATA.map((feature, index) => (
             <Carousel.Slide key={index}>
               <Card

@@ -323,14 +323,12 @@ const ProjectsCard = ({ article }: { article: any }) => {
           previousControlProps={{
             style: {
               backgroundColor: "var(--cc-green)",
-              // border: "1px solid var(--cc-light-green)",
               color: "white",
             },
           }}
           nextControlProps={{
             style: {
               backgroundColor: "var(--cc-green)",
-              // border: "1px solid var(--cc-light-green)",
               color: "white",
             },
           }}
@@ -338,7 +336,7 @@ const ProjectsCard = ({ article }: { article: any }) => {
           {article.modalImages?.map((image: any, index: any) => (
             <Carousel.Slide key={index}>
               <Image
-                src={image}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}${image}`}
                 w={{ base: rem(400), sm: rem(500) }}
                 style={{
                   height: rem(400),
@@ -392,7 +390,7 @@ const ProjectsCard = ({ article }: { article: any }) => {
         }}
       >
         <Image
-          src={article.image}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH}${article.image}`}
           alt={article.title}
           className={classes.cardImage}
         />
@@ -453,7 +451,21 @@ export function Projects() {
           </SimpleGrid>
         </Box>
         <Box display={{ base: "block", sm: "none" }} ta={"center"}>
-          <Carousel loop>
+          <Carousel
+            previousControlProps={{
+              style: {
+                backgroundColor: "var(--cc-green)",
+                color: "white",
+              },
+            }}
+            nextControlProps={{
+              style: {
+                backgroundColor: "var(--cc-green)",
+                color: "white",
+              },
+            }}
+            loop
+          >
             {mockdata.map((article) => (
               <Carousel.Slide key={article.title}>
                 <ProjectsCard article={article} />

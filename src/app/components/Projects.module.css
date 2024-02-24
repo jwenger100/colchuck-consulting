@@ -9,6 +9,10 @@
   }
 }
 
+.card:last-child {
+  margin-bottom: 30px;
+}
+
 .card:hover {
   transform: scale(1.04); /* Slightly larger scale for zoom effect */
   box-shadow: var(--cc-green) 0px 0px 10px 0px;
@@ -16,6 +20,7 @@
   @media (max-width: $mantine-breakpoint-sm) {
     transform: none;
     box-shadow: none;
+    border: 0.75px solid #cccccc;
   }
 }
 
