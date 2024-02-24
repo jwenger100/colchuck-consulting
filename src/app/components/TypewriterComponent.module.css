@@ -1,0 +1,6 @@
+.typewriterWrapper {
+  height: 200px;
+  span {
+    position: relative;
+  }
+}

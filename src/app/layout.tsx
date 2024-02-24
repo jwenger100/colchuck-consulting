@@ -1,8 +1,40 @@
 import "./globals.css";
+// Mantine core styles
+import "@mantine/core/styles.css";
+import ThemeProvider from "./theme-provider";
+import type { Metadata } from "next";
+import { Poppins, Montserrat, Raleway, Varta } from "next/font/google";
 
-export const metadata = {
+// font for COLCHUCK CONSULTING text
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  subsets: ["latin", "latin-ext", "devanagari"],
+  variable: "--font-poppins",
+});
+
+// for for headings
+const montserrat = Montserrat({
+  weight: "variable",
+  display: "swap",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-montserrat",
+});
+
+// font for body text
+const varta = Varta({
+  weight: "variable",
+  display: "swap",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-varta",
+});
+
+export const metadata: Metadata = {
   title: "Colchuck Consulting",
   description: "The Colchuck Differnce",
+  icons: {
+    icon: "icon-white.ico", // facivon.ico -> icon.ico 👍
+  },
 };
 
 export default function RootLayout({
@@ -11,12 +43,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        {/* favicon issue: https://stackoverflow.com/questions/61836949/why-is-my-favicon-not-working-in-my-next-js-app */}
-        <link rel="icon" href="/images/favicon.ico" sizes="any" />
-      </head>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${montserrat.variable} ${varta.variable}`}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

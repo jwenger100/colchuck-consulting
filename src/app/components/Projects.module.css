@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  border: 0.75px solid #cccccc;
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transform and box-shadow */
+  cursor: pointer;
+  @media (max-width: $mantine-breakpoint-sm) {
+    cursor: default;
+    box-shadow: none;
+  }
+}
+
+.card:last-child {
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  transform: scale(1.04); /* Slightly larger scale for zoom effect */
+  box-shadow: var(--cc-green) 0px 0px 10px 0px;
+  border: 0.75px solid var(--cc-green);
+  @media (max-width: $mantine-breakpoint-sm) {
+    transform: none;
+    box-shadow: none;
+    border: 0.75px solid #cccccc;
+  }
+}
+
+.cardImage {
+  position: relative;
+  object-fit: inherit;
+  min-height: 300px;
+}
+
+.viewProjectbutton {
+  background-color: var(--cc-green);
+  width: 250px;
+  &:hover {
+    background-color: var(--cc-light-green);
+  }
+}
+
+.closeButton {
+  width: 250px;
+  background-color: var(--cc-green);
+  &:hover {
+    background-color: var(--cc-light-green);
+  }
+}
+
+/* for image carousel */
+.indicator {
+  background-color: var(--cc-green);
+  width: rem(12px);
+  height: rem(4px);
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: rem(40px);
+  }
+}

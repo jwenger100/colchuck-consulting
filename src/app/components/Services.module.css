@@ -1,0 +1,45 @@
+.wrapper {
+  min-height: 100vh;
+  margin-top: 50px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-bottom: 100px;
+    min-height: auto;
+  }
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 150ms ease, box-shadow 100ms ease;
+  padding: 25px;
+  padding-left: 15px;
+  height: 100%;
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding-left: none;
+  }
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--cc-green) 0px 0px 10px 0px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+.cardTitle {
+  &::after {
+    content: "";
+    display: block;
+    background-color: var(--cc-green);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+    @media (max-width: $mantine-breakpoint-sm) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
