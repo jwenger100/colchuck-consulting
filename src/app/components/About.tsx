@@ -17,10 +17,14 @@ import classes from "./About.module.css";
 
 export function About() {
   return (
-    // Need to account for header bar height 56px
     <Box id="about" className={classes.wrapper}>
       <Container size="lg">
-        <Title order={1} ta={"center"} className={classes.title}></Title>
+        <Title
+          order={1}
+          ta={"center"}
+          mt={"34px"}
+          className={classes.title}
+        ></Title>
         <Grid>
           {/* left section of the about page */}
           <Grid.Col

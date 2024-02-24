@@ -8,6 +8,8 @@ import {
   Container,
   Title,
   Box,
+  Divider,
+  rem,
 } from "@mantine/core";
 import Image from "next/image";
 import classes from "./TechnologyGrid.module.css";
@@ -20,6 +22,7 @@ interface TechnologyItem {
 interface TechnologyCategory {
   category: string;
   services: TechnologyItem[];
+  bgColor?: string;
 }
 
 // Placeholder for future props. Currently unused.
@@ -47,6 +50,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Less.js", src: "/tech-icons/Less.js.svg" },
       { title: "Vue.js", src: "/tech-icons/Vue.js.svg" },
     ],
+    bgColor: "rgba(29, 185, 84, 0.3)",
   },
   {
     category: "Web Backend",
@@ -67,6 +71,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Stripe", src: "/tech-icons/Stripe.svg" },
       { title: "Amity", src: "/tech-icons/Amity.svg" },
     ],
+    bgColor: "rgba(173, 216, 230, 0.3)",
   },
   {
     category: "DevOps & Cloud",
@@ -77,6 +82,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "GitHub Actions", src: "/tech-icons/GitHub-Actions.svg" },
       { title: "Terraform", src: "/tech-icons/Terraform.svg" },
     ],
+    bgColor: "rgba(255, 255, 224, 0.3)",
   },
   {
     category: "Testing",
@@ -87,6 +93,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Mocha", src: "/tech-icons/Mocha.svg" },
       { title: "Chai", src: "/tech-icons/Chai.svg" },
     ],
+    bgColor: "rgba(216, 191, 216, 0.3)",
   },
   {
     category: "Tools",
@@ -102,6 +109,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Asana", src: "/tech-icons/Asana.svg" },
       { title: "GitHub", src: "/tech-icons/GitHub.svg" },
     ],
+    bgColor: "rgba(255, 222, 173, 0.3)",
   },
 ];
 
@@ -113,16 +121,29 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
       <Title
         order={4}
         mb={"var(--mantine-spacing-xs)"}
-        mt={"var(--mantine-spacing-xs)"}
+        mt={"var(--mantine-spacing-sm)"}
         fw={"600"}
         ta={"center"}
         className={classes.categoryTitle}
       >
         {category.category}
+        <Divider
+          orientation="horizontal"
+          w={"45px"}
+          m="auto"
+          mb={"var(--mantine-spacing-md)"}
+          mt={"var(--mantine-spacing-sm)"}
+          size="sm"
+          color={"var(--cc-green)"}
+        />
       </Title>
       <SimpleGrid cols={{ base: 2, sm: 2, lg: 5 }}>
         {category.services.map((item) => (
-          <UnstyledButton key={item.title} className={classes.item}>
+          <UnstyledButton
+            key={item.title}
+            className={classes.item}
+            style={{ backgroundColor: category.bgColor || "" }}
+          >
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH}${item.src}`}
               width={50}

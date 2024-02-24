@@ -16,6 +16,7 @@ import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
+import { useEffect } from "react";
 
 const links = [
   { link: "/#about", label: "About" },
@@ -40,6 +41,23 @@ export function HeaderMenu() {
   const [active, setActive] = useState(-1);
   const pinned = useHeadroom({ fixedAt: 120 });
   const [scroll] = useWindowScroll(); // Get the current scroll position
+  const [forceUnpin, setForceUnpin] = useState(false);
+
+  // Inside your component
+  useEffect(() => {
+    const handleScroll = () => {
+      setForceUnpin(false); // Reset forceUnpin when the user scrolls
+    };
+
+    if (forceUnpin) {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [forceUnpin]); // Dependency array ensures this effect runs only when forceUnpin changes
+
   const items = links.map((link, index) => {
     // This is the code for the DROPDOWN menu
 
@@ -80,6 +98,7 @@ export function HeaderMenu() {
         className={classes.link}
         onClick={() => {
           setActive(index);
+          setForceUnpin(true); // Force unpin the header when a link is clicked
         }}
       >
         {link.label}
@@ -102,7 +121,7 @@ export function HeaderMenu() {
             // transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
             // Combine both conditions: hide when at the top OR based on the pinned state
             transform:
-              scroll.y <= 80
+              forceUnpin || scroll.y <= 80
                 ? `translate3d(0, ${rem(-110)}, 0)`
                 : `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
             transition: "transform 400ms ease",

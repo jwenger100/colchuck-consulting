@@ -44,8 +44,6 @@ export default function Home() {
   }
   return (
     <main className={classes.main}>
-      {/* The height of the header bar needs to be account for with the hero image background
-remove 56px???? */}
       <HeaderMenu />
       <HeroImageBackground />
       <About />

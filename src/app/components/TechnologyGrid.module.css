@@ -9,18 +9,6 @@
   );
 }
 
-.categoryTitle {
-  &::after {
-    /* content: "";
-    display: block;
-    background-color: var(--cc-green);
-    width: rem(45px);
-    height: rem(2px);
-    margin-top: var(--mantine-spacing-sm);
-    text-align: center; */
-  }
-}
-
 .item {
   display: flex;
   flex-direction: column;

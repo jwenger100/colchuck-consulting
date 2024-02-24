@@ -34,3 +34,18 @@
     height: 100px;
   }
 }
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  border-top: 3px solid var(--cc-green);
+  position: relative;
+  padding-top: 60px;
+  transition: transform 150ms ease, box-shadow 100ms ease;
+  &:hover {
+    box-shadow: var(--cc-green) 0px 0px 10px 0px;
+    transform: scale(1.03);
+  }
+}

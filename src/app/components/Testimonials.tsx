@@ -98,21 +98,15 @@ export function Testimonials() {
         <SimpleGrid cols={{ sm: 1, lg: 3 }} spacing="lg">
           {testimonials.map((testimonial) => (
             <Paper
+              className={classes.testimonialCard}
               key={testimonial.id}
               radius="md"
               withBorder
+              shadow="md"
               p="lg"
               mb={"var(--mantine-spacing-xl)"}
               bg="var(--mantine-color-body)"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between", // Adjusts content spacing
-                minHeight: "320px", // Ensures consistent height
-                borderTop: "3px solid var(--cc-green)",
-                position: "relative",
-                paddingTop: "60px",
-              }}
+              style={{}}
             >
               <Box
                 style={{
