@@ -20,6 +20,7 @@ import {
 } from "@tabler/icons-react";
 import { ContactIconsList } from "./ContactIcons";
 import classes from "./ContactUs.module.css";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const socialMedia = [
   {
@@ -69,119 +70,127 @@ export function ContactUs() {
   return (
     <Box className={classes.wrapper} id="contact">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
-        <Box>
-          <Title c="white" ta={{ base: "center", sm: "left" }}>
-            Contact us
-          </Title>
-          <Text
-            className={classes.description}
-            mt="sm"
-            ta={{ base: "center", sm: "left" }}
-            mb={{ base: 0, sm: 30 }}
-          >
-            Leave your email and we will get back to you within 24 hours
-          </Text>
+        <Slide direction="left" duration={1000}>
+          <Box>
+            <Title c="white" ta={{ base: "center", sm: "left" }}>
+              Contact us
+            </Title>
+            <Text
+              className={classes.description}
+              mt="sm"
+              ta={{ base: "center", sm: "left" }}
+              mb={{ base: 0, sm: 30 }}
+            >
+              Leave your email and we will get back to you within 24 hours
+            </Text>
 
-          <ContactIconsList />
+            <ContactIconsList />
 
-          <Group display={{ base: "none", sm: "block" }} mt="xl">
-            {icons}
-          </Group>
-        </Box>
-        <Box className={classes.form}>
-          <form action="https://usebasin.com/f/9c7384101449" method="POST">
-            <Autocomplete
-              value={value}
-              data={data}
-              onChange={handleChange}
-              rightSection={
-                loading ? <Loader size="1rem" color="var(--cc-green)" /> : null
-              }
-              label="Email"
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            />
-            <TextInput
-              label="Name"
-              name="name"
-              placeholder="Thomas Carlyle"
-              required
-              mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            />
-            <TextInput
-              label="Subject"
-              placeholder="Subject"
-              name="subject"
-              required
-              mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            />
-            <Textarea
-              required
-              label="Your message"
-              name="message"
-              placeholder="Hello, I would like to discuss..."
-              minRows={4}
-              mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            />
-            <Box className={classes.buttonContainer} mt={"md"}>
-              <Button className={classes.control} type="submit">
-                Send message
-                <IconBrandTelegram
-                  style={{ marginLeft: "5px" }}
-                  size={"1.25rem"}
-                />
-              </Button>
-            </Box>
-          </form>
-        </Box>
+            <Group display={{ base: "none", sm: "block" }} mt="xl">
+              {icons}
+            </Group>
+          </Box>
+        </Slide>
+        <Slide direction="right" duration={1000}>
+          <Box className={classes.form}>
+            <form action="https://usebasin.com/f/9c7384101449" method="POST">
+              <Autocomplete
+                value={value}
+                data={data}
+                onChange={handleChange}
+                rightSection={
+                  loading ? (
+                    <Loader size="1rem" color="var(--cc-green)" />
+                  ) : null
+                }
+                label="Email"
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                classNames={{ input: classes.input, label: classes.inputLabel }}
+              />
+              <TextInput
+                label="Name"
+                name="name"
+                placeholder="Thomas Carlyle"
+                required
+                mt="md"
+                classNames={{ input: classes.input, label: classes.inputLabel }}
+              />
+              <TextInput
+                label="Subject"
+                placeholder="Subject"
+                name="subject"
+                required
+                mt="md"
+                classNames={{ input: classes.input, label: classes.inputLabel }}
+              />
+              <Textarea
+                required
+                label="Your message"
+                name="message"
+                placeholder="Hello, I would like to discuss..."
+                minRows={4}
+                mt="md"
+                classNames={{ input: classes.input, label: classes.inputLabel }}
+              />
+              <Box className={classes.buttonContainer} mt={"md"}>
+                <Button className={classes.control} type="submit">
+                  Send message
+                  <IconBrandTelegram
+                    style={{ marginLeft: "5px" }}
+                    size={"1.25rem"}
+                  />
+                </Button>
+              </Box>
+            </form>
+          </Box>
+        </Slide>
       </SimpleGrid>
       <Group display={{ base: "flex", sm: "none" }} mt="xl" justify="center">
         {icons}
       </Group>
-      <Group
-        mt="xl"
-        justify="center"
-        flex={"row"}
-        className={classes.footerIconGroup}
-      >
-        <Text c="white" size="sm" mb={{ base: "-12px", sm: 0 }}>
-          Copyright {new Date().getFullYear()}
-        </Text>
-        <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
-          •
-        </Text>
-        <Text
-          c="white"
-          size="sm"
-          fw={600}
-          mt={{ sm: "-2px" }}
-          ff={"var(--font-poppins)"}
+      <Fade duration={1000} direction="up">
+        <Group
+          mt="xl"
+          justify="center"
+          flex={"row"}
+          className={classes.footerIconGroup}
         >
-          Colchuck
-        </Text>
-        <Text
-          c="white"
-          size="sm"
-          fw={400}
-          ff={"var(--font-poppins)"}
-          ml={{ base: 0, sm: "-12px" }}
-          mt={{ base: "-20px", sm: "-2px" }}
-        >
-          Consulting
-        </Text>
-        <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
-          •
-        </Text>
-        <Text c="white" size="sm" mt={{ base: "-12px", sm: 0 }}>
-          All rights reserved
-        </Text>
-      </Group>
+          <Text c="white" size="sm" mb={{ base: "-12px", sm: 0 }}>
+            Copyright {new Date().getFullYear()}
+          </Text>
+          <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
+            •
+          </Text>
+          <Text
+            c="white"
+            size="sm"
+            fw={600}
+            mt={{ sm: "-2px" }}
+            ff={"var(--font-poppins)"}
+          >
+            Colchuck
+          </Text>
+          <Text
+            c="white"
+            size="sm"
+            fw={400}
+            ff={"var(--font-poppins)"}
+            ml={{ base: 0, sm: "-12px" }}
+            mt={{ base: "-20px", sm: "-2px" }}
+          >
+            Consulting
+          </Text>
+          <Text c="white" size="sm" display={{ base: "none", sm: "block" }}>
+            •
+          </Text>
+          <Text c="white" size="sm" mt={{ base: "-12px", sm: 0 }}>
+            All rights reserved
+          </Text>
+        </Group>
+      </Fade>
     </Box>
   );
 }

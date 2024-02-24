@@ -4,21 +4,17 @@
   align-items: center;
   min-height: 100vh;
 
-  /* background-image: linear-gradient(
-    45deg,
-    rgb(29, 185, 84) 0%,
-    rgb(30, 215, 96) 100%
-  ); */
-
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
-    /* margin-bottom: rem(50); */
   }
 }
 
 .list {
   b {
     color: black;
+  }
+  li {
+    margin-bottom: 16px;
   }
 }
 

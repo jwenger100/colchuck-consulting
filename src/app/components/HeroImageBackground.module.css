@@ -4,6 +4,7 @@
   justify-content: space-between; /* Align children with space between them */
   position: relative;
   padding-top: rem(100px);
+  padding-bottom: rem(30px);
   min-height: calc(
     100vh
   ); /* Ensures the container takes full viewport height */

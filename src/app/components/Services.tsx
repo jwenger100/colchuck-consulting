@@ -12,6 +12,7 @@ import {
 } from "tabler-icons-react";
 import classes from "./Services.module.css";
 import { Carousel } from "@mantine/carousel";
+import { Fade, Slide, Zoom, Flip } from "react-awesome-reveal";
 
 export const MOCKDATA = [
   {
@@ -73,37 +74,43 @@ export const MOCKDATA = [
 export function Services() {
   return (
     <Container id="services" className={classes.wrapper} size="lg">
-      <Title c={"var(--cc-text-color)"} ta={"center"} mb={"sm"}>
-        Our Services
-      </Title>
-      <Text size="sm" mb={"sm"} ta={"center"} pl={"md"} pr={"md"}>
-        Mastering the digital sphere with exceptional web development, intuitive
-        UI/UX design, cutting-edge coding practices, and thorough performance
-        testing for seamless user experiences.
-      </Text>
+      <Fade duration={750}>
+        <Title c={"var(--cc-text-color)"} ta={"center"} mb={"sm"}>
+          Our Services
+        </Title>
+      </Fade>
+      <Slide direction="up" duration={1000}>
+        <Text size="sm" mb={"sm"} ta={"center"} pl={"md"} pr={"md"}>
+          Mastering the digital sphere with exceptional web development,
+          intuitive UI/UX design, cutting-edge coding practices, and thorough
+          performance testing for seamless user experiences.
+        </Text>
+      </Slide>
       <Box display={{ base: "none", sm: "block" }}>
         <Grid>
           {MOCKDATA.map((feature, index) => (
             // each child in a list should have a unique "key" prop
             <Grid.Col span={{ md: 6, lg: 4 }} key={index}>
-              <Card
-                key={feature.title}
-                shadow="md"
-                radius="md"
-                className={classes.card}
-                padding="xl"
-              >
-                <feature.icon
-                  style={{ width: rem(50), height: rem(50) }}
-                  color={"var(--cc-green)"}
-                />
-                <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-                  {feature.title}
-                </Text>
-                <Text fz="sm" c="dimmed" mt="sm">
-                  {feature.description}
-                </Text>
-              </Card>
+              <Zoom duration={750} style={{ height: "100%" }}>
+                <Card
+                  key={feature.title}
+                  shadow="md"
+                  radius="md"
+                  className={classes.card}
+                  padding="xl"
+                >
+                  <feature.icon
+                    style={{ width: rem(50), height: rem(50) }}
+                    color={"var(--cc-green)"}
+                  />
+                  <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+                    {feature.title}
+                  </Text>
+                  <Text fz="sm" c="dimmed" mt="sm">
+                    {feature.description}
+                  </Text>
+                </Card>
+              </Zoom>
             </Grid.Col>
           ))}
         </Grid>
@@ -126,23 +133,29 @@ export function Services() {
         >
           {MOCKDATA.map((feature, index) => (
             <Carousel.Slide key={index}>
-              <Card
-                shadow="md"
-                radius="md"
-                className={classes.card}
-                padding="xl"
-              >
-                <feature.icon
-                  style={{ width: rem(50), height: rem(50), margin: "0 auto" }}
-                  color={"var(--cc-green)"}
-                />
-                <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-                  {feature.title}
-                </Text>
-                <Text fz="sm" c="dimmed" mt="sm">
-                  {feature.description}
-                </Text>
-              </Card>
+              <Flip direction="horizontal" duration={750}>
+                <Card
+                  shadow="md"
+                  radius="md"
+                  className={classes.card}
+                  padding="xl"
+                >
+                  <feature.icon
+                    style={{
+                      width: rem(50),
+                      height: rem(50),
+                      margin: "0 auto",
+                    }}
+                    color={"var(--cc-green)"}
+                  />
+                  <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+                    {feature.title}
+                  </Text>
+                  <Text fz="sm" c="dimmed" mt="sm">
+                    {feature.description}
+                  </Text>
+                </Card>
+              </Flip>
             </Carousel.Slide>
           ))}
         </Carousel>

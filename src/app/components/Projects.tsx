@@ -17,8 +17,8 @@ import { useMediaQuery } from "@mantine/hooks";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
+import { Fade, Slide } from "react-awesome-reveal";
 
-// import Image from "next/image";
 import classes from "./Projects.module.css";
 import {
   SiReact,
@@ -424,30 +424,34 @@ export function Projects() {
   return (
     <Box className={classes.projects} id="projects">
       <Container size={"lg"}>
-        <Title ta={"center"} c={"var(--cc-text-color)"}>
-          Projects
-        </Title>
-        <Container
-          size="lg"
-          mb={"var(--mantine-spacing-lg)"}
-          mt={"var(--mantine-spacing-sm)"}
-        >
-          <Text size="sm">
-            We are proud to showcase a diverse portfolio of projects,
-            demonstrating our extensive experience and collaborative success
-            across multiple industries. Our team has partnered with clients to
-            deliver innovative, custom-tailored solutions that meet the unique
-            needs of their businesses. Through a commitment to excellence and a
-            client-centric approach, we have navigated complex challenges and
-            achieved remarkable outcomes, reinforcing our reputation as leaders
-            in our field.
-          </Text>
-        </Container>
+        <Fade duration={800} direction="left">
+          <Title ta={"center"} c={"var(--cc-text-color)"}>
+            Projects
+          </Title>
+          <Container
+            size="lg"
+            mb={"var(--mantine-spacing-lg)"}
+            mt={"var(--mantine-spacing-sm)"}
+          >
+            <Text size="sm">
+              We are proud to showcase a diverse portfolio of projects,
+              demonstrating our extensive experience and collaborative success
+              across multiple industries. Our team has partnered with clients to
+              deliver innovative, custom-tailored solutions that meet the unique
+              needs of their businesses. Through a commitment to excellence and
+              a client-centric approach, we have navigated complex challenges
+              and achieved remarkable outcomes, reinforcing our reputation as
+              leaders in our field.
+            </Text>
+          </Container>
+        </Fade>
         <Box display={{ base: "none", sm: "block" }} ta={"center"}>
           <SimpleGrid cols={{ base: 1, sm: 2 }}>
-            {mockdata.map((article) => (
-              <ProjectsCard key={article.title} article={article} />
-            ))}
+            <Slide direction="right" duration={800} triggerOnce>
+              {mockdata.map((article) => (
+                <ProjectsCard key={article.title} article={article} />
+              ))}
+            </Slide>
           </SimpleGrid>
         </Box>
         <Box display={{ base: "block", sm: "none" }} ta={"center"}>
@@ -468,7 +472,9 @@ export function Projects() {
           >
             {mockdata.map((article) => (
               <Carousel.Slide key={article.title}>
-                <ProjectsCard article={article} />
+                <Slide direction="right" duration={800} triggerOnce>
+                  <ProjectsCard article={article} />
+                </Slide>
               </Carousel.Slide>
             ))}
           </Carousel>

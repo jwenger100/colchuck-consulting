@@ -9,10 +9,10 @@ import {
   Title,
   Box,
   Divider,
-  rem,
 } from "@mantine/core";
 import Image from "next/image";
 import classes from "./TechnologyGrid.module.css";
+import { Fade, Bounce, Slide } from "react-awesome-reveal";
 
 interface TechnologyItem {
   title: string;
@@ -118,42 +118,49 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
 
   const items = mockdata.map((category) => (
     <Box key={category.category}>
-      <Title
-        order={4}
-        mb={"var(--mantine-spacing-xs)"}
-        mt={"var(--mantine-spacing-sm)"}
-        fw={"600"}
-        ta={"center"}
-        className={classes.categoryTitle}
-      >
-        {category.category}
-        <Divider
-          orientation="horizontal"
-          w={"45px"}
-          m="auto"
-          mb={"var(--mantine-spacing-md)"}
+      <Fade duration={1000} delay={300}>
+        <Title
+          order={4}
+          mb={"var(--mantine-spacing-xs)"}
           mt={"var(--mantine-spacing-sm)"}
-          size="sm"
-          color={"var(--cc-green)"}
-        />
-      </Title>
+          fw={"600"}
+          ta={"center"}
+          className={classes.categoryTitle}
+        >
+          {category.category}
+          <Divider
+            orientation="horizontal"
+            w={"45px"}
+            m="auto"
+            mb={"var(--mantine-spacing-md)"}
+            mt={"var(--mantine-spacing-sm)"}
+            size="sm"
+            color={"var(--cc-green)"}
+          />
+        </Title>
+      </Fade>
       <SimpleGrid cols={{ base: 2, sm: 2, lg: 5 }}>
         {category.services.map((item) => (
-          <UnstyledButton
-            key={item.title}
-            className={classes.item}
-            style={{ backgroundColor: category.bgColor || "" }}
-          >
-            <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH}${item.src}`}
-              width={50}
-              height={50}
-              alt={`${item.title} logo`}
-            />
-            <Title size="xs" mt={7}>
-              {item.title}
-            </Title>
-          </UnstyledButton>
+          <Bounce key={item.title} duration={1000} damping={1}>
+            {" "}
+            {/* Apply the custom animation class here */}{" "}
+            {/* Apply the custom animation class here */}
+            <UnstyledButton
+              key={item.title}
+              className={classes.item}
+              style={{ backgroundColor: category.bgColor || "" }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}${item.src}`}
+                width={50}
+                height={50}
+                alt={`${item.title} logo`}
+              />
+              <Title size="xs" mt={7}>
+                {item.title}
+              </Title>
+            </UnstyledButton>
+          </Bounce>
         ))}
       </SimpleGrid>
     </Box>
@@ -165,19 +172,23 @@ export function TechnologyGrid(/* props: TechnologyGridProps */) {
       mb={"var(--mantine-spacing-xl)"}
       className={classes.wrapper}
     >
-      <Title ta="center" c={"var(--cc-text-color)"}>
-        Technologies we work with!
-      </Title>
-      <Text
-        size="sm"
-        ta="center"
-        mb="var(--mantine-spacing-lg)"
-        mt="var(--mantine-spacing-md)"
-      >
-        Our expertise encompasses various technologies that we constantly expand
-        depending on our Clients’ needs. Take a look at just a few of those we
-        work with.
-      </Text>
+      <Slide direction="left" duration={1000}>
+        <Title ta="center" c={"var(--cc-text-color)"}>
+          Technologies we work with!
+        </Title>
+      </Slide>
+      <Slide direction="right" duration={1000}>
+        <Text
+          size="sm"
+          ta="center"
+          mb="var(--mantine-spacing-lg)"
+          mt="var(--mantine-spacing-md)"
+        >
+          Our expertise encompasses various technologies that we constantly
+          expand depending on our Clients’ needs. Take a look at just a few of
+          those we work with.
+        </Text>
+      </Slide>
       <Card withBorder radius="md" className={classes.card}>
         {items}
       </Card>
