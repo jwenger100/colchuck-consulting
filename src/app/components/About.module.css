@@ -16,9 +16,11 @@
   }
 }
 
-/* .leftSection {
-  background-color: var(--cc-green);
-} */
+.list {
+  b {
+    color: black;
+  }
+}
 
 .videoContainer {
   display: flex; /* Enables flexbox */

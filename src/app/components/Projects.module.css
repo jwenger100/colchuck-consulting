@@ -1,15 +1,14 @@
 .card {
   position: relative;
-  /* border: 0.75px solid #cccccc; */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+  border: 0.75px solid #cccccc;
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transform and box-shadow */
   cursor: pointer;
 }
 
 .card:hover {
-  /* Enhance zoom effect on hover */
-  transform: scale(1.03); /* Slightly larger scale for zoom effect */
-  box-shadow: none; /* Optionally remove the box-shadow for focus on the border animation */
-  border: 1px solid var(--cc-green);
+  transform: scale(1.04); /* Slightly larger scale for zoom effect */
+  box-shadow: var(--cc-green) 0px 0px 10px 0px;
+  border: 0.75px solid var(--cc-green);
 }
 
 .cardImage {
@@ -36,6 +35,7 @@
 
 /* for image carousel */
 .indicator {
+  background-color: var(--cc-green);
   width: rem(12px);
   height: rem(4px);
   transition: width 250ms ease;

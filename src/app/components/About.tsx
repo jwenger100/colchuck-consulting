@@ -36,7 +36,7 @@ export function About() {
             >
               Who We Are{" "}
             </Title>
-            <Text c="#414042" mt="md" ff={"var(--font-varta)"}>
+            <Text c="var(--cc-text-color)" mt="md" ff={"var(--font-varta)"}>
               Our company was envisioned during a trip to{" "}
               <Anchor
                 href="https://earth.google.com/web/search/Colchuck+Lake,+Leavenworth,+WA/@47.4984306,-120.8333841,1702.27471821a,686.05166596d,35y,0h,45t,0r/data=CokBGl8SWQolMHg1NDlhNDUwMzM0MzU2MmYzOjB4Y2FjM2E0MDRiMWM0OThkNxmvKeuSzL9HQCFooEMqVjVewCoeQ29sY2h1Y2sgTGFrZSwgTGVhdmVud29ydGgsIFdBGAIgASImCiQJkgGtdGnAR0ARThROffS0R0AZnKRRKqssXsAh0LA3KDs1XsAoAg"
@@ -73,17 +73,23 @@ export function About() {
                 <source src="/app-process.mp4" type="video/mp4" />
               </video>
             </div>
-            <Text size="sm" mb={"sm"} mt={{ base: "-50px", sm: "-110px" }}>
-              At <b>Colchuck Consulting,</b> we navigate the complex digital
-              landscape so you don't have to. Our expertise stretches from the
-              initial spark of an idea to the triumphant launch of your web
-              presence. It is broken down into a seamless, six-step process that
-              includes:
+            <Text
+              c="var(--cc-text-color)"
+              mb={"sm"}
+              mt={{ base: "-50px", sm: "-110px" }}
+            >
+              At <b style={{ color: "var(--cc-green)" }}>Colchuck Consulting</b>
+              , we navigate the complex digital landscape so you don't have to.
+              Our expertise stretches from the initial spark of an idea to the
+              triumphant launch of your web presence. It is broken down into a
+              seamless, six-step process that includes:
             </Text>
             <List
               spacing="xs"
               size="sm"
+              className={classes.list}
               center
+              c={"var(--cc-text-color)"}
               icon={
                 <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
                   <IconCircleCheck

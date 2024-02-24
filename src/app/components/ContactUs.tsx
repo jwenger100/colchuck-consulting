@@ -13,10 +13,13 @@ import {
   Autocomplete,
   Loader,
 } from "@mantine/core";
-import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
+import {
+  IconBrandFacebook,
+  IconBrandLinkedin,
+  IconBrandTelegram,
+} from "@tabler/icons-react";
 import { ContactIconsList } from "./ContactIcons";
 import classes from "./ContactUs.module.css";
-import { Tex } from "tabler-icons-react";
 
 const socialMedia = [
   {
@@ -126,12 +129,15 @@ export function ContactUs() {
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
-
-            <Group justify="flex-end" mt="md">
+            <Box className={classes.buttonContainer} mt={"md"}>
               <Button className={classes.control} type="submit">
                 Send message
+                <IconBrandTelegram
+                  style={{ marginLeft: "5px" }}
+                  size={"1.25rem"}
+                />
               </Button>
-            </Group>
+            </Box>
           </form>
         </Box>
       </SimpleGrid>

@@ -51,6 +51,15 @@
   color: var(--mantine-color-black);
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @media (max-width: $mantine-breakpoint-sm) {
+    justify-content: center;
+  }
+}
+
 .control {
   background-color: var(--cc-green);
   &:hover {

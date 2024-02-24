@@ -6,13 +6,10 @@ import {
   Text,
   Container,
   Card,
-  AspectRatio,
   SimpleGrid,
   Button,
-  TextInput,
   Modal,
   Image,
-  rem,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -40,7 +37,8 @@ import {
   SiMantine,
   SiGithubpages,
   SiPostcss,
-  SiNpm,
+  SiMaterialdesignicons,
+  SiNodemon,
 } from "@icons-pack/react-simple-icons";
 import React from "react";
 const mockdata = [
@@ -137,7 +135,79 @@ const mockdata = [
     description:
       "Boost Baseball provides a digital platform for showcasing baseball players' profiles, including their statistics and rankings.",
     modalDescription:
-      "The Boost Baseball application supports scouting and evaluation efforts with features for filtering and sorting players by various key metrics, including their playing position and graduation year. This platform serves as a comprehensive resource for recruiters, coaches, and sports enthusiasts looking to track and discover baseball talent.",
+      "The Boost Baseball application is designed to revolutionize the way scouts, recruiters, coaches, and baseball enthusiasts approach the talent scouting and evaluation process. By integrating advanced filtering and sorting capabilities, users can effortlessly navigate through a vast database of players, pinpointing those who meet specific criteria such as playing position, graduation year, and other key metrics. This platform stands out as an invaluable tool in the competitive sports landscape, enabling users to uncover hidden gems and track the progress of rising stars in the baseball world.",
+    modalTechnologies: [
+      <SiMui
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiPrisma
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiReact
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiTypescript
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiCss3
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiYarn
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiReacthookform
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiAmazons3
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiReactquery
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiAmazonaws
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiMaterialdesignicons
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiNodemon
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+    ],
+    modalImages: [
+      "/client-projects/boost-baseball/boost-baseball-2.png",
+      "/client-projects/boost-baseball/boost-baseball-3.png",
+      "/client-projects/boost-baseball/boost-baseball-4.png",
+      "/client-projects/boost-baseball/boost-baseball-5.png",
+      "/client-projects/boost-baseball/boost-baseball-6.png",
+      "/client-projects/boost-baseball/boost-baseball-7.png",
+      "/client-projects/boost-baseball/boost-baseball-8.png",
+      "/client-projects/boost-baseball/boost-baseball-9.png",
+    ],
   },
   {
     title: "Hope Gives",
@@ -245,6 +315,20 @@ const ProjectsCard = ({ article }: { article: any }) => {
           onMouseLeave={autoplay.current.reset}
           // make it classNames instead of classes for the carousel indicator class
           classNames={classes}
+          previousControlProps={{
+            style: {
+              backgroundColor: "var(--cc-green)",
+              border: "1px solid var(--cc-light-green)",
+              color: "white",
+            },
+          }}
+          nextControlProps={{
+            style: {
+              backgroundColor: "var(--cc-green)",
+              border: "1px solid var(--cc-light-green)",
+              color: "white",
+            },
+          }}
         >
           {article.modalImages?.map((image: any, index: any) => (
             <Carousel.Slide key={index}>
@@ -252,7 +336,8 @@ const ProjectsCard = ({ article }: { article: any }) => {
                 src={image}
                 style={{
                   width: "100%",
-                  objectFit: "cover",
+                  objectFit: "contain",
+                  maxHeight: "400px",
                 }}
               />
             </Carousel.Slide>
