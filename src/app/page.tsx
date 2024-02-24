@@ -3,38 +3,21 @@
 import { PuffLoader } from "react-spinners";
 
 // css styling
-// import styles from "./page.module.css";
-import { createStyles } from "@mantine/core";
+import classes from "./page.module.css";
 // local components
-import { HeaderMegaMenu } from "./components/HeaderResponsive";
+import { HeaderMenu } from "./components/HeaderMenu";
 import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { Contact } from "./components/Contact";
+import { Services } from "./components/Services";
+import { Testimonials } from "./components/Testimonials";
+import { Projects } from "./components/Projects";
+import { TechnologyGrid } from "./components/TechnologyGrid";
+import { ContactUs } from "./components/ContactUs";
 import { HeroImageBackground } from "./components/HeroImageBackground";
 
 import { useState, useEffect } from "react";
-
-const useStyles = createStyles((theme) => ({
-  main: {
-    // minHeight: "100vh",
-  },
-  /* container for everything below the landing page HeroImageBackground */
-  contentContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-  },
-  sectionsContainer: {
-    position: "absolute",
-    top: "100vh",
-    width: "100%",
-  },
-}));
+import { Box } from "@mantine/core";
 
 export default function Home() {
-  const { classes } = useStyles();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(false);
@@ -42,7 +25,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div
+      <Box
         style={{
           display: "flex",
           justifyContent: "center",
@@ -51,28 +34,24 @@ export default function Home() {
         }}
       >
         <PuffLoader
-          color="#1db954"
+          color="var(--cc-green)"
           size={100}
           loading={loading}
           aria-label="Loading Spinner"
         />
-      </div>
+      </Box>
     );
   }
   return (
     <main className={classes.main}>
+      <HeaderMenu />
       <HeroImageBackground />
-      <HeaderMegaMenu />
-      <div className={classes.contentContainer}>
-        <div className={classes.sectionsContainer}>
-          <About />
-          <Skills
-            title="Skills"
-            description="Mastering the digital sphere with exceptional web development, intuitive UI/UX design, cutting-edge coding practices, and thorough performance testing for seamless user experiences."
-          />
-          <Contact />
-        </div>
-      </div>
+      <About />
+      <Services />
+      <TechnologyGrid />
+      <Projects />
+      <Testimonials />
+      <ContactUs />
     </main>
   );
 }

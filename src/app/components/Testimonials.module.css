@@ -1,0 +1,52 @@
+.clientLogosContainer {
+  /* Layered background images: top-most layer first */
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to right, var(--cc-green), var(--cc-light-green));
+
+  /* Specify the size of the "noise" texture patterns */
+  background-size: 15px 15px, 15px 15px, auto;
+
+  /* Position the texture patterns; the linear gradient covers the entire element */
+  background-position: 0 0, 7.5px 7.5px, 0 0;
+
+  /* Repeat the texture patterns */
+  background-repeat: repeat, repeat, no-repeat;
+}
+
+.clientLogosImagesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clientLogo {
+  width: 150px;
+  height: 150px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.testimonialCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  border-top: 3px solid var(--cc-green);
+  position: relative;
+  padding-top: 60px;
+  height: 100%;
+  transition: transform 150ms ease, box-shadow 100ms ease;
+  &:hover {
+    box-shadow: var(--cc-green) 0px 0px 10px 0px;
+    transform: scale(1.03);
+  }
+}

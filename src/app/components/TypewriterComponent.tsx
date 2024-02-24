@@ -1,41 +1,49 @@
 import React from "react";
 
 import { Typewriter } from "react-simple-typewriter"; // https://www.npmjs.com/package/react-simple-typewriter
-import { Text, createStyles } from "@mantine/core";
-
-const useStyles = createStyles(() => ({
-  typewriterWrapper: {
-    span: {
-      position: "relative",
-    },
-  },
-}));
+import { Text } from "@mantine/core";
+import classes from "./TypewriterComponent.module.css";
 
 const TypewriterComponent = () => {
-  const { classes, cx } = useStyles();
-
   return (
     <div className={classes.typewriterWrapper}>
-      <Text fz="xl" color="white">
+      <Text fz="40px" c="white" ff="var(--font-poppins)" fw={"600"}>
         {/* Style will be inherited from the parent element */}
         <Typewriter
+          // WEBDEVELOPMENT -> Full Stack Software Development
+          // FULLSTACK
+          // DEVOPS
+          // TRANSFORMINGIDEAS -> Transforming ideas into digital reality
+          // DIGITALBRIDGES -> Building digital bridges for your business
+          // REACHCUSTOMERS -> Helping you reach your customers
+          // words={[
+          //   "Full Stack Software Development",
+          //   "Transforming ideas into digital reality",
+          //   "Building digital bridges for your business",
+          //   "Helping you reach your customers",
+          //   "Creating a digital presence for your business",
+          //   "Driving growth through technology",
+          //   "Delivering unparalleled web services",
+          //   "Driving innovation, one website at a time",
+          // ]}
           words={[
-            "Full Stack Software Development",
-            "Transforming ideas into digital reality",
-            "Building digital bridges for your business",
-            "Helping you reach your customers",
-            "Creating a digital presence for your business",
-            "Driving growth through technology",
-            "Delivering unparalleled web services",
-            "Driving innovation, one website at a time",
+            "WEB DEVELOPMENT",
+            "FULL STACK",
+            "DEVOPS",
+            "CLOUD INFRASTRUCTURE",
+            "UI/UX DESIGN",
+            "MOBILE APP DEVELOPMENT",
+            "API DEVELOPMENT",
+            "AGILE",
+            "SCRUM",
           ]}
-          loop={5}
+          loop={false}
           cursor
           cursorStyle="|"
-          typeSpeed={50}
-          deleteSpeed={50}
+          typeSpeed={150}
+          deleteSpeed={150}
           delaySpeed={1000}
-          cursorColor="#FFFFFF"
+          cursorColor="white"
         />
       </Text>
     </div>
