@@ -10,6 +10,7 @@ import {
   Button,
   Modal,
   Image,
+  rem,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -127,6 +128,9 @@ const mockdata = [
       "/client-projects/pastor-stays/pastor-stays-4.png",
       "/client-projects/pastor-stays/pastor-stays-5.png",
       "/client-projects/pastor-stays/pastor-stays-6.png",
+      "/client-projects/pastor-stays/pastor-stays-7.png",
+      "/client-projects/pastor-stays/pastor-stays-8.png",
+      "/client-projects/pastor-stays/pastor-stays-9.png",
     ],
   },
   {
@@ -271,9 +275,9 @@ const mockdata = [
 ];
 
 const ProjectsCard = ({ article }: { article: any }) => {
+  const TRANSITION_DURATION = 300;
   const [opened, { open, close }] = useDisclosure(false);
   const autoplay = useRef(Autoplay({ delay: 2000 }));
-  const TRANSITION_DURATION = 300;
   const [embla, setEmbla] = useState<Embla | null>(null);
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
@@ -287,6 +291,7 @@ const ProjectsCard = ({ article }: { article: any }) => {
         fullScreen={isSmallScreen} // Apply based on screen size
         transitionProps={{ duration: TRANSITION_DURATION }}
         onClose={close}
+        p={"0"}
         ta={"center"}
       >
         {/* Modal content */}
@@ -305,9 +310,9 @@ const ProjectsCard = ({ article }: { article: any }) => {
         {/* my marginTop marginBottom */}
         {/* MODAL IMAGE */}
         <Carousel
-          maw={600}
+          // maw={600}
           withIndicators
-          style={{ margin: "0 auto" }}
+          // style={{ margin: "0 auto" }}
           loop
           getEmblaApi={setEmbla}
           plugins={[autoplay.current]}
@@ -318,14 +323,14 @@ const ProjectsCard = ({ article }: { article: any }) => {
           previousControlProps={{
             style: {
               backgroundColor: "var(--cc-green)",
-              border: "1px solid var(--cc-light-green)",
+              // border: "1px solid var(--cc-light-green)",
               color: "white",
             },
           }}
           nextControlProps={{
             style: {
               backgroundColor: "var(--cc-green)",
-              border: "1px solid var(--cc-light-green)",
+              // border: "1px solid var(--cc-light-green)",
               color: "white",
             },
           }}
@@ -334,10 +339,11 @@ const ProjectsCard = ({ article }: { article: any }) => {
             <Carousel.Slide key={index}>
               <Image
                 src={image}
+                w={{ base: rem(400), sm: rem(500) }}
                 style={{
-                  width: "100%",
+                  height: rem(400),
                   objectFit: "contain",
-                  maxHeight: "400px",
+                  margin: "0 auto",
                 }}
               />
             </Carousel.Slide>
