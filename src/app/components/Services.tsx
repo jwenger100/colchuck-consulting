@@ -74,7 +74,7 @@ export const MOCKDATA = [
 export function Services() {
   return (
     <Container id="services" className={classes.wrapper} size="lg">
-      <Fade duration={750}>
+      <Fade duration={1000}>
         <Title c={"var(--cc-text-color)"} ta={"center"} mb={"sm"}>
           Our Services
         </Title>

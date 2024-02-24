@@ -108,7 +108,7 @@ export function About() {
                 </ThemeIcon>
               }
             >
-              <Fade cascade damping={0.1} duration={1100}>
+              <Fade cascade damping={0.1} duration={1000}>
                 <List.Item>
                   <b>Analysis</b> - We initiate by conducting a comprehensive
                   analysis of your project. Our team delves into the specifics
