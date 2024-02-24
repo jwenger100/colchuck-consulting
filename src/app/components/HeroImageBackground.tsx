@@ -16,7 +16,6 @@ export function HeroImageBackground() {
   // List of image URLs
   const images = [
     `${process.env.NEXT_PUBLIC_BASE_PATH}/aasgard-pass.jpg`,
-    // `${process.env.NEXT_PUBLIC_BASE_PATH}/colchuck-lake-1.jpeg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/colchuck-lake-2.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-1.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-2.jpg`,
@@ -48,15 +47,17 @@ export function HeroImageBackground() {
 
   return (
     <Box className={classes.wrapper}>
-      <Image
-        src={backgroundImageUrl}
-        alt="Colchuck Lake"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        unoptimized
-        className={classes.bgImage}
-      />
+      {backgroundImageUrl && ( // Only render the Image component if backgroundImageUrl is not an empty string
+        <Image
+          src={backgroundImageUrl}
+          alt="Colchuck Lake"
+          fill={true}
+          quality={100}
+          priority={true} // Load this image before others
+          unoptimized
+          className={classes.bgImage}
+        />
+      )}
       <Overlay color="#000" backgroundOpacity={0.45} zIndex={1} />
       <Box className={classes.inner}>
         <Box className={classes.titleContainer}>
