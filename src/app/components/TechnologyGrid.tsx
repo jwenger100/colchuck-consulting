@@ -105,7 +105,7 @@ const mockdata: TechnologyCategory[] = [
       { title: "Notion", src: "/tech-icons/Notion.svg" },
       { title: "Google Meet", src: "/tech-icons/Google-Meet.svg" },
       { title: "Figma", src: "/tech-icons/Figma.svg" },
-      { title: "Bitbucket", src: "/tech-icons/Bitbucket.svg" },
+      { title: "Bitbucket", src: "/tech-icons/BitBucket.svg" },
       { title: "Asana", src: "/tech-icons/Asana.svg" },
       { title: "GitHub", src: "/tech-icons/GitHub.svg" },
     ],
