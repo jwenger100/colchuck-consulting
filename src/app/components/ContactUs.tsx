@@ -81,7 +81,7 @@ export function ContactUs() {
               ta={{ base: "center", sm: "left" }}
               mb={{ base: 0, sm: 30 }}
             >
-              Leave your email and we will get back to you within 24 hours
+              Send us an email or give us a call, we cant wait to connect with you and talk about making your dreams a reality!
             </Text>
 
             <ContactIconsList />
