@@ -20,7 +20,6 @@ export function HeroImageBackground() {
     `${process.env.NEXT_PUBLIC_BASE_PATH}/colchuck-lake-2.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-1.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-2.jpg`,
-    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-goats-1.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-1.jpeg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-2.jpg`,
   ];

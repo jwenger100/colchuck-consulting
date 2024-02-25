@@ -140,6 +140,8 @@ export function Services() {
                   radius="md"
                   className={classes.card}
                   padding="xl"
+                  ml={"26px"}
+                  mr={"26px"}
                 >
                   <feature.icon
                     style={{

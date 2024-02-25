@@ -139,10 +139,16 @@ export function Testimonials() {
                     <IconQuote size={60} color="var(--cc-green)" />
                   </Avatar>
                 </Box>
-                <Text ta="center" mb="lg" c="dimmed" mt={"30px"}>
+                <Text ta="center" mb="lg" c="var(--cc-text-color)" mt={"35px"}>
                   {testimonial.description}
                 </Text>
-                <Box ta="center" fz="lg" fw={500} mt="50px">
+                <Box
+                  ta="center"
+                  fz="lg"
+                  c="var(--cc-text-color)"
+                  fw={500}
+                  mt="50px"
+                >
                   {testimonial.name}
                   <Text ta="center" c="dimmed">
                     {testimonial.organization}
