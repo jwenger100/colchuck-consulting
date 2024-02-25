@@ -37,25 +37,24 @@ export function About() {
                   Who We Are{" "}
                 </Title>
                 <Text c="var(--cc-text-color)" mt="md" ff={"var(--font-varta)"}>
-                  Our company was envisioned during a trip to{" "}
+                  We are driven by the belief that technology should be an
+                  enabler of unlocking potential, making complex tasks simple,
+                  and unlocking new possibilities for growth.{" "}
+                  <b>Colchuck Consulting</b> was envisioned during a trip to{" "}
                   <Anchor
                     href="https://earth.google.com/web/search/Colchuck+Lake,+Leavenworth,+WA/@47.4984306,-120.8333841,1702.27471821a,686.05166596d,35y,0h,45t,0r/data=CokBGl8SWQolMHg1NDlhNDUwMzM0MzU2MmYzOjB4Y2FjM2E0MDRiMWM0OThkNxmvKeuSzL9HQCFooEMqVjVewCoeQ29sY2h1Y2sgTGFrZSwgTGVhdmVud29ydGgsIFdBGAIgASImCiQJkgGtdGnAR0ARThROffS0R0AZnKRRKqssXsAh0LA3KDs1XsAoAg"
                     target="_blank"
                   >
                     Colchuck Lake
                   </Anchor>
-                  , in the Enchantments of Washington State in 2018. We were
-                  inspired by the beauty of the lake, and the surrounding
-                  mountains. We wanted to bring that same beauty to our
-                  software. Founded by two industry experts, with a combined 40
-                  years of experience, ready to make your dreams a reality.
-                </Text>
-                <Text c="var(--cc-text-color)" mt="md" ff={"var(--font-varta)"}>
-                  Focused on excellence for our clients, we are well
-                  established, with a reputation for great service and a
-                  high-quality product. We are a team of experienced developers
-                  and designers, who are passionate about building beautiful,
-                  easy to use software.
+                  , in the Enchantments of Washington State. We were inspired by
+                  the beauty of the lake, and the surrounding mountains. We want
+                  to bring that same beauty and simplicity to software and
+                  technology solutions. Founded by a collective of seasoned
+                  industry professionals, with a combined 40 years of experience
+                  at Fortune 500 companies, we are ready to bring your ideas to
+                  reality. Our focus on custom, high-quality digital solutions
+                  will drive your business to the next level.
                 </Text>
               </Fade>
               {/* Route this to another page that has team member cards */}
@@ -95,11 +94,10 @@ export function About() {
                 mb={"sm"}
                 mt={{ base: "20px", sm: "20px" }}
               >
-                At{" "}
-                <b style={{ color: "var(--cc-green)" }}>Colchuck Consulting</b>,
-                we navigate the complex digital landscape so you don't have to.
-                Our expertise stretches from the initial spark of an idea to the
-                triumphant launch of your web presence. It is broken down into a
+                By working with <b>Colchuck Consulting</b>, we will navigate the
+                complex digital landscape so you don't have to. Our expertise
+                stretches from the initial spark of an idea to the launch of
+                your web presence or mobile app. It is broken down into a
                 seamless, six-step process that includes:
               </Text>
             </Fade>
@@ -118,61 +116,49 @@ export function About() {
               }
             >
               <Fade cascade damping={0.1} duration={1000}>
-                <List.Item>
-                  <b>Analysis</b> - We initiate by conducting a comprehensive
-                  analysis of your project. Our team delves into the specifics
-                  of your project to identify key requirements and potential
-                  challenges, ensuring a solid foundation for the subsequent
-                  phases.
+                <List.Item className={classes.listItem1}>
+                  <b style={{ color: "white" }}>Analysis</b> - Our expert team
+                  will guide you through a comprehensive analysis of your
+                  project goals, potential challenges and how to maximize your
+                  idea.
                 </List.Item>
-                <List.Item>
-                  <b>Wireframing</b> - In this stage, we transition your vision
-                  into tangible, user-friendly interfaces through meticulous
-                  wireframing. Our approach involves crafting detailed
-                  blueprints that outline the structural layout of your
-                  application or website. This process is critical for
-                  visualizing the user journey and establishing a clear roadmap
-                  for design and development.
+                <List.Item className={classes.listItem2}>
+                  <b style={{ color: "white" }}>Wireframing</b> - In this stage,
+                  we transition your vision into a tangible, digital blueprint
+                  through meticulous wireframing. Our approach involves crafting
+                  detailed blueprints that outline the structural layout of your
+                  application or website.
                 </List.Item>
-                <List.Item>
-                  <b>Design</b> - Our design phase is centered around creating
-                  visually appealing and intuitive layouts that resonate with
-                  your brand identity. We incorporate vibrant graphics, engaging
-                  animations, and user-centric design principles to craft
-                  interfaces that are not only beautiful but also enhance user
-                  experience. This phase ensures that your project stands out in
-                  the digital landscape.
+                <List.Item className={classes.listItem3}>
+                  <b style={{ color: "white" }}>Design</b> - Our design phase is
+                  centered around creating visually appealing and intuitive
+                  layouts that resonate with your brand identity. This phase
+                  ensures that your project stands out in the digital landscape
+                  by incorporating vibrant graphics, animations and user-centric
+                  design.
                 </List.Item>
-                <List.Item>
-                  <b>Development</b> - is the phase where our coding expertise
-                  comes to the forefront. With precision and attention to
-                  detail, our developers write robust code that brings your
-                  project to life. We focus on creating scalable and efficient
-                  applications, utilizing the latest technologies to ensure your
-                  project is not just functional but also future-proof.
+                <List.Item className={classes.listItem4}>
+                  <b style={{ color: "white" }}>Development</b> - This phase is
+                  where our coding expertise comes to the forefront! With
+                  precision and attention to detail, our developers write robust
+                  code that brings your project to life utilizing the latest
+                  technologies to ensure your project is future-proof.
                 </List.Item>
-                <List.Item>
-                  <b>Testing</b> - Before the launch, we rigorously test your
-                  project in a controlled staging environment. This step is
-                  crucial for identifying and addressing any bugs or usability
-                  issues. Our comprehensive testing process includes functional
-                  testing, performance testing, and user acceptance testing
-                  (UAT), ensuring that your project is polished and performs
-                  flawlessly across all devices and platforms.
+                <List.Item className={classes.listItem5}>
+                  <b style={{ color: "white" }}>Testing</b> - Before the launch,
+                  we rigorously test your project in a controlled staging
+                  environment. This step is crucial for identifying and
+                  addressing any bugs or usability issues across multiple
+                  devices and platforms.
                 </List.Item>
-                <List.Item>
-                  <b>Launch</b> - The launch phase is the exciting moment when
-                  your digital project takes flight, introduced to the world
-                  after meticulous planning, design, and testing. As we debut
-                  your project, our focus shifts towards monitoring its
-                  performance closely, ensuring that it operates seamlessly
-                  under real-world conditions. We also establish ongoing
-                  maintenance and support mechanisms to swiftly address any
-                  technical issues that may arise, guaranteeing optimal
-                  functionality and user satisfaction. This stage is not just
-                  about making your project live; it's about ensuring its
-                  longevity and relevance in the digital ecosystem, backed by
-                  our commitment to excellence and your success.
+                <List.Item className={classes.listItem6}>
+                  <b style={{ color: "white" }}>Launch</b> - Your project is now
+                  live! As we debut your project, our focus shifts towards
+                  monitoring its performance, and ensuring that it operates
+                  seamlessly under real-world conditions. We also establish
+                  ongoing maintenance and support mechanisms to swiftly address
+                  any technical issues that may arise, guaranteeing optimal
+                  functionality and user satisfaction.
                 </List.Item>
               </Fade>
             </List>

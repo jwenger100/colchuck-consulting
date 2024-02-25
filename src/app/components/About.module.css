@@ -14,8 +14,36 @@
     color: black;
   }
   li {
+    color: white;
+    padding: 16px;
     margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 150ms ease, opacity 300ms ease;
+    &:hover {
+      transform: scale(1.03);
+      background-color: #007bff;
+    }
   }
+}
+
+.listItem1 {
+  background-color: #007bff;
+}
+.listItem2 {
+  background-color: #0f82ff;
+}
+.listItem3 {
+  background-color: #1e8aff;
+}
+.listItem4 {
+  background-color: #2d92ff;
+}
+.listItem5 {
+  background-color: #3d9aff;
+}
+.listItem6 {
+  background-color: #4ca2ff;
 }
 
 .videoContainer {
