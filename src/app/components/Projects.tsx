@@ -459,12 +459,14 @@ export function Projects() {
               style: {
                 backgroundColor: "var(--cc-green)",
                 color: "white",
+                marginLeft: "-24px",
               },
             }}
             nextControlProps={{
               style: {
                 backgroundColor: "var(--cc-green)",
                 color: "white",
+                marginRight: "-24px",
               },
             }}
             loop

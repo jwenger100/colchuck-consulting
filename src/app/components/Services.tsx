@@ -123,12 +123,14 @@ export function Services() {
               style: {
                 backgroundColor: "var(--cc-green)",
                 color: "white",
+                marginLeft: "-24px",
               },
             }}
             nextControlProps={{
               style: {
                 backgroundColor: "var(--cc-green)",
                 color: "white",
+                marginRight: "-24px",
               },
             }}
             loop
@@ -140,8 +142,6 @@ export function Services() {
                   radius="md"
                   className={classes.card}
                   padding="xl"
-                  ml={"26px"}
-                  mr={"26px"}
                 >
                   <feature.icon
                     style={{
