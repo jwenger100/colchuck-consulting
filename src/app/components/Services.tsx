@@ -117,24 +117,24 @@ export function Services() {
         </Grid>
       </Box>
       <Box display={{ base: "block", sm: "none" }} ta={"center"}>
-        <Carousel
-          previousControlProps={{
-            style: {
-              backgroundColor: "var(--cc-green)",
-              color: "white",
-            },
-          }}
-          nextControlProps={{
-            style: {
-              backgroundColor: "var(--cc-green)",
-              color: "white",
-            },
-          }}
-          loop
-        >
-          {MOCKDATA.map((feature, index) => (
-            <Carousel.Slide key={index}>
-              <Flip direction="horizontal" duration={750}>
+        <Flip direction="horizontal" duration={750}>
+          <Carousel
+            previousControlProps={{
+              style: {
+                backgroundColor: "var(--cc-green)",
+                color: "white",
+              },
+            }}
+            nextControlProps={{
+              style: {
+                backgroundColor: "var(--cc-green)",
+                color: "white",
+              },
+            }}
+            loop
+          >
+            {MOCKDATA.map((feature, index) => (
+              <Carousel.Slide key={index}>
                 <Card
                   shadow="md"
                   radius="md"
@@ -156,10 +156,10 @@ export function Services() {
                     {feature.description}
                   </Text>
                 </Card>
-              </Flip>
-            </Carousel.Slide>
-          ))}
-        </Carousel>
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </Flip>
       </Box>
     </Container>
   );
