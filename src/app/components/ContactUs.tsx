@@ -81,8 +81,8 @@ export function ContactUs() {
               ta={{ base: "center", sm: "left" }}
               mb={{ base: 0, sm: 30 }}
             >
-              Send us an email or give us a call, we can&#39;t wait to connect with
-              you and talk about making your dreams a reality!
+              Send us an email or give us a call, we can&#39;t wait to connect
+              with you and talk about making your dreams a reality!
             </Text>
 
             <ContactIconsList />
@@ -149,9 +149,11 @@ export function ContactUs() {
           </Box>
         </Slide>
       </SimpleGrid>
-      <Group display={{ base: "flex", sm: "none" }} mt="xl" justify="center">
-        {icons}
-      </Group>
+      <Fade duration={1000} direction="up">
+        <Group display={{ base: "flex", sm: "none" }} mt="xl" justify="center">
+          {icons}
+        </Group>
+      </Fade>
       <Fade duration={1000} direction="up">
         <Group
           mt="xl"

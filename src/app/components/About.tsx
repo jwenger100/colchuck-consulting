@@ -63,14 +63,16 @@ export function About() {
             </Grid.Col>
           </Slide>
           <Grid.Col span={{ xs: 12 }} className={classes.rightSection}>
-            <Slide direction="right">
+            <Slide direction="right" style={{ marginBottom: "45px" }}>
               <Title
                 c={"var(--cc-text-color)"}
-                mb={{ base: "-55px", sm: "-120px" }}
+                mb={{ base: "-35px" }}
                 ta={"center"}
               >
                 Elevate Your Digital Presence
               </Title>
+            </Slide>
+            <Slide direction="right">
               <div className={classes.videoContainer}>
                 <video
                   autoPlay
@@ -83,6 +85,7 @@ export function About() {
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app-process.mp4`}
                     type="video/mp4"
                   />
+                  Your browser does not support the video tag.
                 </video>
               </div>
             </Slide>
@@ -90,7 +93,7 @@ export function About() {
               <Text
                 c="var(--cc-text-color)"
                 mb={"sm"}
-                mt={{ base: "-50px", sm: "-110px" }}
+                mt={{ base: "20px", sm: "20px" }}
               >
                 At{" "}
                 <b style={{ color: "var(--cc-green)" }}>Colchuck Consulting</b>,
@@ -141,7 +144,7 @@ export function About() {
                   the digital landscape.
                 </List.Item>
                 <List.Item>
-                  <b>Development</b> is the phase where our coding expertise
+                  <b>Development</b> - is the phase where our coding expertise
                   comes to the forefront. With precision and attention to
                   detail, our developers write robust code that brings your
                   project to life. We focus on creating scalable and efficient

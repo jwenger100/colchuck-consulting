@@ -21,7 +21,6 @@ export function HeroImageBackground() {
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-1.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-2.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-goats-1.jpg`,
-    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-goats-2.webp`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-1.jpeg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-2.jpg`,
   ];
@@ -63,32 +62,44 @@ export function HeroImageBackground() {
       </Fade>
       <Overlay color="#000" backgroundOpacity={0.45} zIndex={1} />
       <Box className={classes.inner}>
-        <Fade cascade damping={0.1} duration={1400} delay={200}>
-          <Box className={classes.titleContainer}>
+        <Box className={classes.titleContainer}>
+          <Fade
+            cascade
+            damping={0.1}
+            direction="up"
+            duration={1000}
+            delay={600}
+          >
             <Title className={classes.title} fw={"600"}>
               COLCHUCK
             </Title>
             <Title order={3} className={classes.subtitle} fw={"400"}>
               CONSULTING
             </Title>
-          </Box>
-        </Fade>
+          </Fade>
+        </Box>
         <Container size={640}>
-          <Fade cascade damping={0.1} duration={1500} delay={300}>
-            <Container size={400}>
+          <Container size={400}>
+            <Fade
+              cascade
+              damping={0.1}
+              duration={1000}
+              direction="up"
+              delay={600}
+            >
               <Text size="lg" ta={"center"} className={classes.description}>
                 Your gateway to bespoke technology solutions that propel your
                 business into the future.
               </Text>
-            </Container>
-          </Fade>
-          <Zoom duration={1600}>
+            </Fade>
+          </Container>
+          <Zoom duration={1600} delay={600}>
             <Box ta={"center"} mt={"60px"} mb={"60px"}>
               <TypewriterComponent />
             </Box>
           </Zoom>
           {/* Parent box for contact info */}
-          <Slide direction="up" duration={1700}>
+          <Slide direction="up" duration={1000} delay={600}>
             <Box className={classes.contactInfoContainer}>
               {/* Box for icons (aligned left) */}
               <Box>
