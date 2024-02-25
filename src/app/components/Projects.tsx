@@ -43,96 +43,6 @@ import {
 } from "@icons-pack/react-simple-icons";
 const mockdata = [
   {
-    title: "Pastor Stays",
-    image: "/client-projects/pastor-stays/pastor-stays-2.png",
-    date: "August 18, 2022",
-    description:
-      "Pastor Stays offers tailored lodging for pastors, primarily vacation homes, with a focus on community support.",
-    modalDescription:
-      "Pastor Stays is a website dedicated to providing accommodation options for pastors, offering a variety of lodgings such as vacation condos, homes, shared homes, resorts, retreat centers, and more unique options like treehouses and boathouses. It aims to serve pastors seeking rest and retreat opportunities, facilitating a supportive community environment through various types of stays. The site includes sections for home and pastor logins, indicating a platform where hosts can offer their spaces and pastors can find suitable accommodations. Additionally, there's an option for visitors to donate, suggesting a non-profit component to their operations.",
-    modalTechnologies: [
-      <SiReact
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiTypescript
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiCss3
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiNextdotjs
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiMui
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiPrisma
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiAmazonaws
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiReactquery
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiAmazons3
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiSharp
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiGooglemaps
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiNodedotjs
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiReacthookform
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-      <SiYarn
-        size={25}
-        color={"var(--cc-green)"}
-        style={{ marginLeft: "3px" }}
-      />,
-    ],
-    modalImages: [
-      "/client-projects/pastor-stays/pastor-stays-3.png",
-      "/client-projects/pastor-stays/pastor-stays-4.png",
-      "/client-projects/pastor-stays/pastor-stays-5.png",
-      "/client-projects/pastor-stays/pastor-stays-6.png",
-      "/client-projects/pastor-stays/pastor-stays-7.png",
-      "/client-projects/pastor-stays/pastor-stays-8.png",
-      "/client-projects/pastor-stays/pastor-stays-9.png",
-    ],
-  },
-  {
     title: "Boost Baseball",
     image: "/client-projects/boost-baseball/boost-baseball-1.png",
     description:
@@ -269,6 +179,96 @@ const mockdata = [
       "/client-projects/hope-gives/hope-gives-5.png",
       "/client-projects/hope-gives/hope-gives-6.png",
       "/client-projects/hope-gives/hope-gives-7.png",
+    ],
+  },
+  {
+    title: "Pastor Stays",
+    image: "/client-projects/pastor-stays/pastor-stays-2.png",
+    date: "August 18, 2022",
+    description:
+      "Pastor Stays offers tailored lodging for pastors, primarily vacation homes, with a focus on community support.",
+    modalDescription:
+      "Pastor Stays is a website dedicated to providing accommodation options for pastors, offering a variety of lodgings such as vacation condos, homes, shared homes, resorts, retreat centers, and more unique options like treehouses and boathouses. It aims to serve pastors seeking rest and retreat opportunities, facilitating a supportive community environment through various types of stays. The site includes sections for home and pastor logins, indicating a platform where hosts can offer their spaces and pastors can find suitable accommodations. Additionally, there's an option for visitors to donate, suggesting a non-profit component to their operations.",
+    modalTechnologies: [
+      <SiReact
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiTypescript
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiCss3
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiNextdotjs
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiMui
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiPrisma
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiAmazonaws
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiReactquery
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiAmazons3
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiSharp
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiGooglemaps
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiNodedotjs
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiReacthookform
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+      <SiYarn
+        size={25}
+        color={"var(--cc-green)"}
+        style={{ marginLeft: "3px" }}
+      />,
+    ],
+    modalImages: [
+      "/client-projects/pastor-stays/pastor-stays-3.png",
+      "/client-projects/pastor-stays/pastor-stays-4.png",
+      "/client-projects/pastor-stays/pastor-stays-5.png",
+      "/client-projects/pastor-stays/pastor-stays-6.png",
+      "/client-projects/pastor-stays/pastor-stays-7.png",
+      "/client-projects/pastor-stays/pastor-stays-8.png",
+      "/client-projects/pastor-stays/pastor-stays-9.png",
     ],
   },
 ];
