@@ -3,11 +3,15 @@
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between; /* Align children with space between them */
   position: relative;
+  padding-top: rem(50px);
   padding-bottom: rem(100px);
   min-height: calc(
     100vh
   ); /* Ensures the container takes full viewport height */
   font-family: var(--font-poppins);
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding-top: rem(25px);
+  }
 }
 .bgImage {
   background-size: cover;

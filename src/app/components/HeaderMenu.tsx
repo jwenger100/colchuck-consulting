@@ -44,18 +44,36 @@ export function HeaderMenu() {
   const [scroll] = useWindowScroll(); // Get the current scroll position
   const [forceUnpin, setForceUnpin] = useState(false);
 
-  // Inside your component
+  function debounce(func, wait) {
+    let timeout;
+
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setForceUnpin(false); // Reset forceUnpin when the user scrolls
     };
 
+    // Wrap the handleScroll function with the debounce function
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+
     if (forceUnpin) {
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("scroll", debouncedHandleScroll, {
+        passive: true,
+      });
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debouncedHandleScroll);
     };
   }, [forceUnpin]); // Dependency array ensures this effect runs only when forceUnpin changes
 
