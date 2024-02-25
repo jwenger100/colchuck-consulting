@@ -81,7 +81,7 @@ export function ContactUs() {
               ta={{ base: "center", sm: "left" }}
               mb={{ base: 0, sm: 30 }}
             >
-              Send us an email or give us a call, we can't wait to connect with
+              Send us an email or give us a call, we can&#39;t wait to connect with
               you and talk about making your dreams a reality!
             </Text>
 
