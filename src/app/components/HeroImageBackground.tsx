@@ -1,14 +1,14 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import { Title, Text, Container, Overlay, Box, Anchor } from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
 import Image from "next/image";
 import {
   IconBrandFacebook,
   IconBrandLinkedin,
-  IconMailFilled,
-  IconPhoneFilled,
+  IconMail,
+  IconPhone,
 } from "@tabler/icons-react";
-import React, { useEffect, useState } from "react";
 import { Fade, Zoom, Slide } from "react-awesome-reveal";
 
 import { TypewriterComponent } from "./TypewriterComponent";
@@ -100,18 +100,15 @@ export function HeroImageBackground() {
                   <IconBrandFacebook
                     style={{ marginRight: "5px" }}
                     className={classes.socialIcon}
-                    stroke={1.5}
                   />
                 </Anchor>
                 <Anchor
                   href="https://www.linkedin.com/company/colchuck-consulting"
                   target="_blank"
                   className={classes.socialLink}
+                  ml={"5px"}
                 >
-                  <IconBrandLinkedin
-                    className={classes.socialIcon}
-                    stroke={1.5}
-                  />
+                  <IconBrandLinkedin className={classes.socialIcon} />
                 </Anchor>
               </Box>
               {/* Box for contact information (aligned right), now also with flex layout for horizontal alignment */}
@@ -146,10 +143,7 @@ export function HeroImageBackground() {
                     rel="noopener"
                     style={{ color: "white" }}
                   >
-                    <IconPhoneFilled
-                      size={"1.15rem"}
-                      className={classes.socialIcon}
-                    />
+                    <IconPhone className={classes.socialIcon} />
                   </Anchor>
                 </Box>
                 <Box display={{ base: "none", sm: "block" }}>
@@ -166,10 +160,7 @@ export function HeroImageBackground() {
                     href="mailto:info@colchuckconsulting.com?Subject=General%20Inquiry"
                     style={{ color: "white" }}
                   >
-                    <IconMailFilled
-                      size={"1.15rem"}
-                      className={classes.socialIcon}
-                    />
+                    <IconMail className={classes.socialIcon} />
                   </Anchor>
                 </Box>
               </Box>

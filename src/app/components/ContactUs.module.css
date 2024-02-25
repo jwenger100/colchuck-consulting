@@ -31,10 +31,16 @@
 
 .social {
   color: var(--mantine-color-white);
+  transition: transform 0.3s ease-in-out;
+}
 
-  @mixin hover {
-    color: var(--mantine-color-blue-1);
-  }
+.social:last-of-type {
+  /* margin-left: var(--mantine-spacing-md); */
+}
+
+.social:hover {
+  transform: scale(1.25);
+  cursor: pointer;
 }
 
 .input {

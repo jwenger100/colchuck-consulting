@@ -80,11 +80,11 @@
   width: 100%;
 }
 /* Override the active state style for links inside the drawer */
-.drawerContent .link[data-active]::after {
-  /* TODO: figure this out later */
-  /* Prevent the active state from showing in the drawer */
-  /* transform: scaleX(0); Override to not show the active state indicator */
-}
+/* .drawerContent .link[data-active]::after { */
+/* TODO: figure this out later */
+/* Prevent the active state from showing in the drawer */
+/* transform: scaleX(0); Override to not show the active state indicator */
+/* } */
 
 .drawerContent a {
   font-size: rem(24px);

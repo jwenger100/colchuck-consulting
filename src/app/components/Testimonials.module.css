@@ -50,3 +50,15 @@
     transform: scale(1.03);
   }
 }
+
+.testimonialCardAnimation {
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: 45px;
+  }
+}
+
+.testimonialCardAnimation:first-of-type {
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: 0;
+  }
+}

@@ -105,7 +105,12 @@ export function Testimonials() {
           mb={"var(--mantine-spacing-xl)"}
         >
           {testimonials.map((testimonial) => (
-            <Zoom key={testimonial.id} duration={1000}>
+            <Zoom
+              key={testimonial.id}
+              duration={1000}
+              damping={3}
+              className={classes.testimonialCardAnimation}
+            >
               <Paper
                 className={classes.testimonialCard}
                 key={testimonial.id}
@@ -115,7 +120,6 @@ export function Testimonials() {
                 p="lg"
                 mb={"var(--mantine-spacing-xl)"}
                 bg="var(--mantine-color-body)"
-                style={{}}
               >
                 <Box
                   style={{

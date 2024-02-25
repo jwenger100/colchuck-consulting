@@ -1,5 +1,5 @@
+import React from "react";
 import {
-  Image,
   Title,
   Text,
   rem,
@@ -50,7 +50,7 @@ export function About() {
                   software. Founded by two industry experts, with a combined 40
                   years of experience, ready to make your dreams a reality.
                 </Text>
-                <Text c="#414042" mt="md" ff={"var(--font-varta)"}>
+                <Text c="var(--cc-text-color)" mt="md" ff={"var(--font-varta)"}>
                   Focused on excellence for our clients, we are well
                   established, with a reputation for great service and a
                   high-quality product. We are a team of experienced developers
@@ -126,14 +126,6 @@ export function About() {
                   for design and development.
                 </List.Item>
                 <List.Item>
-                  <b>Development</b> is the phase where our coding expertise
-                  comes to the forefront. With precision and attention to
-                  detail, our developers write robust code that brings your
-                  project to life. We focus on creating scalable and efficient
-                  applications, utilizing the latest technologies to ensure your
-                  project is not just functional but also future-proof.
-                </List.Item>
-                <List.Item>
                   <b>Design</b> - Our design phase is centered around creating
                   visually appealing and intuitive layouts that resonate with
                   your brand identity. We incorporate vibrant graphics, engaging
@@ -141,6 +133,14 @@ export function About() {
                   interfaces that are not only beautiful but also enhance user
                   experience. This phase ensures that your project stands out in
                   the digital landscape.
+                </List.Item>
+                <List.Item>
+                  <b>Development</b> is the phase where our coding expertise
+                  comes to the forefront. With precision and attention to
+                  detail, our developers write robust code that brings your
+                  project to life. We focus on creating scalable and efficient
+                  applications, utilizing the latest technologies to ensure your
+                  project is not just functional but also future-proof.
                 </List.Item>
                 <List.Item>
                   <b>Testing</b> - Before the launch, we rigorously test your

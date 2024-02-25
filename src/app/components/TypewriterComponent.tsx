@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Typewriter } from "react-simple-typewriter"; // https://www.npmjs.com/package/react-simple-typewriter
 import { Text } from "@mantine/core";
 import classes from "./TypewriterComponent.module.css";

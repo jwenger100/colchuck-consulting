@@ -1,3 +1,4 @@
+import React from "react";
 import { Text, Title, Container, Grid, Card, rem, Box } from "@mantine/core";
 import {
   SourceCode,

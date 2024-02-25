@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useDisclosure } from "@mantine/hooks";
 import {
   Title,
@@ -41,7 +41,6 @@ import {
   SiMaterialdesignicons,
   SiNodemon,
 } from "@icons-pack/react-simple-icons";
-import React from "react";
 const mockdata = [
   {
     title: "Pastor Stays",

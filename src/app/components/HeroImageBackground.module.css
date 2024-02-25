@@ -3,8 +3,8 @@
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between; /* Align children with space between them */
   position: relative;
-  padding-top: rem(100px);
-  padding-bottom: rem(30px);
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
   min-height: calc(
     100vh
   ); /* Ensures the container takes full viewport height */
@@ -42,8 +42,8 @@
 }
 
 .titleContainer:hover {
-  transform: scale(1.03); /* Slightly increase the size */
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adjust color and blur to fit your design */
+  transform: scale(1.05); /* Slightly increase the size */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Light white text shadow */
 }
 
 .title {
@@ -78,9 +78,15 @@
 }
 
 .description {
-  color: var(--mantine-color-gray-0);
+  color: white;
   text-align: center;
   font-family: var(--font-montserrat);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+  &:hover {
+    color: var(--cc-green); /* Change to your accent color */
+    transform: translateY(-5px); /* Slightly raises the text */
+  }
 
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: var(--mantine-font-size-md);

@@ -61,8 +61,8 @@ export function ContactUs() {
 
   const icons = socialMedia.map((item, index) => (
     <Anchor key={index} href={item.link} target="_blank" underline="never">
-      <ActionIcon size={28} className={classes.social} variant="transparent">
-        <item.Icon size="1.4rem" stroke={1.5} />
+      <ActionIcon className={classes.social} variant="transparent">
+        <item.Icon size={"28px"} />
       </ActionIcon>
     </Anchor>
   ));
@@ -81,7 +81,8 @@ export function ContactUs() {
               ta={{ base: "center", sm: "left" }}
               mb={{ base: 0, sm: 30 }}
             >
-              Send us an email or give us a call, we can't wait to connect with you and talk about making your dreams a reality!
+              Send us an email or give us a call, we can't wait to connect with
+              you and talk about making your dreams a reality!
             </Text>
 
             <ContactIconsList />

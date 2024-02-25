@@ -1,3 +1,4 @@
+import React from "react";
 import { Text, Box, Stack, rem, Tooltip } from "@mantine/core";
 import {
   IconSun,
