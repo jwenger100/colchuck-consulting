@@ -3,19 +3,19 @@
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between; /* Align children with space between them */
   position: relative;
-  padding-top: rem(40px);
-  padding-bottom: rem(40px);
+  padding-bottom: rem(100px);
   min-height: calc(
     100vh
   ); /* Ensures the container takes full viewport height */
   font-family: var(--font-poppins);
-  @media (max-width: $mantine-breakpoint-xs) {
-    padding-bottom: rem(50px);
-  }
 }
 .bgImage {
   background-size: cover;
   background-position: center;
+  @media (max-width: $mantine-breakpoint-sm) {
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 .socialLink {
   color: #ffffff;
