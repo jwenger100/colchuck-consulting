@@ -44,10 +44,10 @@ export function HeaderMenu() {
   const [scroll] = useWindowScroll(); // Get the current scroll position
   const [forceUnpin, setForceUnpin] = useState(false);
 
-  function debounce(func, wait) {
-    let timeout;
+  function debounce(func: any, wait: any) {
+    let timeout: any;
 
-    return function executedFunction(...args) {
+    return function executedFunction(...args: any) {
       const later = () => {
         clearTimeout(timeout);
         func(...args);
