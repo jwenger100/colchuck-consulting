@@ -72,7 +72,13 @@ export function About() {
                 Elevate Your Digital Presence
               </Title>
               <div className={classes.videoContainer}>
-                <video autoPlay loop muted className={classes.videoControls}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline // This ensures inline playback on iOS Safari
+                  className={classes.videoControls}
+                >
                   <source
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH}/app-process.mp4`}
                     type="video/mp4"
