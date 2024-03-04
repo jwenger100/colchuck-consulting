@@ -35,7 +35,6 @@ export function About() {
                   className={classes.title}
                   c={"var(--cc-text-color)"}
                   ta={"center"}
-                  mt={"md"}
                 >
                   Who We Are{" "}
                 </Title>

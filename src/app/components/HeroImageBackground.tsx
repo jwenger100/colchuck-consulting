@@ -22,6 +22,8 @@ export function HeroImageBackground() {
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-alpine-lakes-2.jpg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-1.jpeg`,
     `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-mtn-2.jpg`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-larches-1.png`,
+    `${process.env.NEXT_PUBLIC_BASE_PATH}/enchantments-larches-2.png`,
   ];
 
   const [backgroundImageUrl, setBackgroundImageUrl] = useState("");
