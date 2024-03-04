@@ -13,7 +13,10 @@ import {
   rem,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-
+import {
+  IconArrowsDiagonal,
+  IconArrowsDiagonalMinimize,
+} from "@tabler/icons-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, Embla, useAnimationOffsetEffect } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
@@ -376,6 +379,10 @@ const ProjectsCard = ({ article }: { article: any }) => {
           className={classes.closeButton}
         >
           Close
+          <IconArrowsDiagonalMinimize
+            size={14}
+            style={{ marginLeft: "8px", marginBottom: "3px" }}
+          />
         </Button>
       </Modal>
 
@@ -412,6 +419,10 @@ const ProjectsCard = ({ article }: { article: any }) => {
             className={classes.viewProjectbutton}
           >
             View Project
+            <IconArrowsDiagonal
+              size={14}
+              style={{ marginLeft: "8px", marginBottom: "3px" }}
+            />
           </Button>
         </Box>
       </Card>
