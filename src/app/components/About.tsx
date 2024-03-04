@@ -10,7 +10,15 @@ import {
   List,
   ThemeIcon,
 } from "@mantine/core";
-import { IconCircleCheck } from "@tabler/icons-react";
+import {
+  IconCircleCheck,
+  IconFrame,
+  IconAnalyze,
+  IconLayoutGrid,
+  IconTerminal,
+  IconZoomCode,
+  IconRocket,
+} from "@tabler/icons-react";
 import classes from "./About.module.css";
 import { Fade, Slide } from "react-awesome-reveal";
 
@@ -116,20 +124,45 @@ export function About() {
               }
             >
               <Fade cascade damping={0.1} duration={1000}>
-                <List.Item className={classes.listItem1}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconAnalyze
+                        style={{ width: rem(16), height: rem(16) }}
+                      />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem1}
+                >
                   <b style={{ color: "white" }}>Analysis</b> - Our expert team
                   will guide you through a comprehensive analysis of your
                   project goals, potential challenges and how to maximize your
                   idea.
                 </List.Item>
-                <List.Item className={classes.listItem2}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconFrame style={{ width: rem(16), height: rem(16) }} />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem2}
+                >
                   <b style={{ color: "white" }}>Wireframing</b> - In this stage,
                   we transition your vision into a tangible, digital blueprint
                   through meticulous wireframing. Our approach involves crafting
                   detailed blueprints that outline the structural layout of your
                   application or website.
                 </List.Item>
-                <List.Item className={classes.listItem3}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconLayoutGrid
+                        style={{ width: rem(16), height: rem(16) }}
+                      />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem3}
+                >
                   <b style={{ color: "white" }}>Design</b> - Our design phase is
                   centered around creating visually appealing and intuitive
                   layouts that resonate with your brand identity. This phase
@@ -137,21 +170,46 @@ export function About() {
                   by incorporating vibrant graphics, animations and user-centric
                   design.
                 </List.Item>
-                <List.Item className={classes.listItem4}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconTerminal
+                        style={{ width: rem(16), height: rem(16) }}
+                      />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem4}
+                >
                   <b style={{ color: "white" }}>Development</b> - This phase is
                   where our coding expertise comes to the forefront! With
                   precision and attention to detail, our developers write robust
                   code that brings your project to life utilizing the latest
                   technologies to ensure your project is future-proof.
                 </List.Item>
-                <List.Item className={classes.listItem5}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconZoomCode
+                        style={{ width: rem(16), height: rem(16) }}
+                      />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem5}
+                >
                   <b style={{ color: "white" }}>Testing</b> - Before the launch,
                   we rigorously test your project in a controlled staging
                   environment. This step is crucial for identifying and
                   addressing any bugs or usability issues across multiple
                   devices and platforms.
                 </List.Item>
-                <List.Item className={classes.listItem6}>
+                <List.Item
+                  icon={
+                    <ThemeIcon color="var(--cc-green)" size={24} radius="xl">
+                      <IconRocket style={{ width: rem(16), height: rem(16) }} />
+                    </ThemeIcon>
+                  }
+                  className={classes.listItem6}
+                >
                   <b style={{ color: "white" }}>Launch</b> - Your project is now
                   live! As we debut your project, our focus shifts towards
                   monitoring its performance, and ensuring that it operates
