@@ -15,6 +15,7 @@ import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
+import { Fade } from "react-awesome-reveal";
 
 const links = [
   { link: "/#about", label: "About" },
@@ -101,17 +102,9 @@ export function HeaderMenu() {
   return (
     <>
       <header
-        className={classes.header}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: rem(56),
-          zIndex: 2,
-          transition: "transform 400ms ease",
-          backgroundColor: "var(--mantine-color-body)",
-        }}
+        className={`${classes.header} ${
+          showHeader ? classes.headerVisible : ""
+        }`}
       >
         <Container size="lg">
           <div className={classes.inner}>
