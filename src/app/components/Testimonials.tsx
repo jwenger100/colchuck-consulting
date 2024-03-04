@@ -42,7 +42,7 @@ const testimonials = [
 const clientLogos = [
   `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/mas-logo-1.png`,
   `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/boost-baseball-logo-3.svg`,
-  `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/pastor-stays-logo.png`,
+  `${process.env.NEXT_PUBLIC_BASE_PATH}/client-logos/PastorStays-ff2-01.png`,
 ];
 
 export function Testimonials() {
@@ -66,8 +66,8 @@ export function Testimonials() {
                     src={logo}
                     unoptimized
                     alt={`Client ${index + 1}`}
-                    height={100}
-                    width={150}
+                    height={200}
+                    width={200}
                     className={classes.clientLogo}
                   />
                 </Box>

@@ -27,11 +27,9 @@
 }
 
 .clientLogo {
-  max-width: 200px;
-  max-height: 150px;
   @media (max-width: $mantine-breakpoint-sm) {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
   }
 }
 
