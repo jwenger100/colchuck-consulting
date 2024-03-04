@@ -157,7 +157,6 @@ export function HeaderMenu() {
             height={30}
             priority={true} // Load this image before others
             className={classes.logo}
-            style={{ marginTop: "7px" }}
           />
         }
         onClick={toggle}
