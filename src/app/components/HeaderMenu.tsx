@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Group,
   Burger,
@@ -10,18 +10,12 @@ import {
   Anchor,
 } from "@mantine/core";
 import { useDisclosure, useWindowScroll } from "@mantine/hooks";
+import { useState } from "react";
 import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
-
-// next/dynamic is used to import the StickyHeadroom component dynamically
-// This is done to prevent the component from being rendered on the server, which would cause an error.
-const StickyHeadroom = dynamic(
-  () => import("@integreat-app/react-sticky-headroom")
-);
 
 const links = [
   { link: "/#about", label: "About" },
@@ -45,14 +39,16 @@ export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(-1);
   const [scroll] = useWindowScroll(); // Get the current scroll position
-  const [showHeader, setShowHeader] = useState(false); // State to control the visibility of the header.
+  const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {
-    // Check if the page has been scrolled (i.e., scroll.y > 300), and update showHeader accordingly.
-    setShowHeader(scroll.y > 300);
-  }, [scroll.y]);
+    // Check if the user has scrolled down 200px and update showHeader accordingly
+    const handleScroll = () => setShowHeader(scroll.y > 300);
+    handleScroll(); // Call it on component mount
 
-  if (!showHeader) return null; // Do not render the header if showHeader is false.
+    // Since useWindowScroll hook provides scroll position reactively,
+    // there's no need to add a separate event listener for scroll events.
+  }, [scroll.y]);
 
   const items = links.map((link, index) => {
     // This is the code for the DROPDOWN menu
@@ -101,41 +97,53 @@ export function HeaderMenu() {
     );
   });
 
+  if (!showHeader) return null; // Do not render the header if the user hasn't scrolled down 200px yet
+
   return (
     <>
-      <StickyHeadroom scrollHeight={56} zIndex={2} pinStart={300}>
-        <header className={classes.header}>
-          <Container size="lg">
-            <div className={classes.inner}>
-              <Link
-                href="/"
-                onClick={() => {
-                  setActive(-1);
-                }}
-              >
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/cc-main-logo-green.svg`}
-                  alt="Colchuck Consulting Logo"
-                  width={120}
-                  height={30}
-                  priority={true} // Load this image before others
-                  className={classes.logo}
-                  style={{ marginTop: "7px" }}
-                />
-              </Link>
-              <Group gap={0} justify="flex-end" visibleFrom="sm">
-                {items}
-              </Group>
-              <Burger
-                opened={opened}
-                onClick={toggle}
-                size="sm"
-                hiddenFrom="sm"
+      <header
+        className={classes.header}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: rem(56),
+          zIndex: 2,
+          transition: "transform 400ms ease",
+          backgroundColor: "var(--mantine-color-body)",
+        }}
+      >
+        <Container size="lg">
+          <div className={classes.inner}>
+            <Link
+              href="/"
+              onClick={() => {
+                setActive(-1);
+              }}
+            >
+              <Image
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/cc-main-logo-green.svg`}
+                alt="Colchuck Consulting Logo"
+                width={120}
+                height={30}
+                priority={true} // Load this image before others
+                className={classes.logo}
+                style={{ marginTop: "7px" }}
               />
-            </div>
-          </Container>
-        </header>
-      </StickyHeadroom>
+            </Link>
+            <Group gap={0} justify="flex-end" visibleFrom="sm">
+              {items}
+            </Group>
+            <Burger
+              opened={opened}
+              onClick={toggle}
+              size="sm"
+              hiddenFrom="sm"
+            />
+          </div>
+        </Container>
+      </header>
       <Drawer
         opened={opened}
         onClose={toggle}
