@@ -14,8 +14,14 @@ import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./HeaderMenu.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
-import StickyHeadroom from "@integreat-app/react-sticky-headroom";
+
+// next/dynamic is used to import the StickyHeadroom component dynamically
+// This is done to prevent the component from being rendered on the server, which would cause an error.
+const StickyHeadroom = dynamic(
+  () => import("@integreat-app/react-sticky-headroom")
+);
 
 const links = [
   { link: "/#about", label: "About" },
