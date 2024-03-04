@@ -50,13 +50,13 @@
 }
 
 .testimonialCardAnimation {
-  @media (max-width: $mantine-breakpoint-sm) {
+  @media (max-width: $mantine-breakpoint-lg) {
     margin-top: 45px;
   }
 }
 
 .testimonialCardAnimation:first-of-type {
-  @media (max-width: $mantine-breakpoint-sm) {
+  @media (max-width: $mantine-breakpoint-lg) {
     margin-top: 0;
   }
 }
