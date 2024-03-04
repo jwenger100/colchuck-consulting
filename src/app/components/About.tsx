@@ -26,12 +26,7 @@ export function About() {
   return (
     <Box id="about" className={classes.wrapper}>
       <Container size="lg">
-        <Title
-          order={1}
-          ta={"center"}
-          mt={"34px"}
-          className={classes.title}
-        ></Title>
+        <Title order={1} ta={"center"} className={classes.title}></Title>
         <Grid>
           <Slide direction="left">
             <Grid.Col span={{ xs: 12 }}>
