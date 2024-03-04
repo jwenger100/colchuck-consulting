@@ -6,7 +6,6 @@ import {
   Drawer,
   Box,
   rem,
-  Text,
   Anchor,
 } from "@mantine/core";
 import { useDisclosure, useWindowScroll } from "@mantine/hooks";
@@ -151,14 +150,15 @@ export function HeaderMenu() {
         padding="md"
         size="100%"
         title={
-          <Text c="var(--cc-green)" fw={800}>
-            <Box ff={"var(--font-poppins)"} fw={"600"} ta="center">
-              Colchuck
-            </Box>
-            <Box ff={"var(--font-poppins)"} fw={"400"} mt={"-10px"} fz={"14px"}>
-              Consulting
-            </Box>
-          </Text>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/cc-main-logo-green.svg`}
+            alt="Colchuck Consulting Logo"
+            width={120}
+            height={30}
+            priority={true} // Load this image before others
+            className={classes.logo}
+            style={{ marginTop: "7px" }}
+          />
         }
         onClick={toggle}
       >
