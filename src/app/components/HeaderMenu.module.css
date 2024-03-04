@@ -5,9 +5,30 @@
   }
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.headerVisible {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: rem(56);
+  z-index: 2;
+  animation: slideDown 0.5s ease-out forwards;
   background-color: var(--mantine-color-body);
-  height: rem(56px);
   border-bottom: rem(1px) solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
