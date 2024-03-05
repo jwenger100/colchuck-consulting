@@ -33,6 +33,9 @@ const varta = Varta({
 export const metadata: Metadata = {
   title: "Colchuck Consulting",
   description: "The Colchuck Difference",
+  robots: { follow: true, index: true },
+  category: "technology",
+  authors: [{ name: "Colchuck Consulting" }],
   icons: {
     icon: "icon-white.ico", // facivon.ico -> icon.ico 👍
   },

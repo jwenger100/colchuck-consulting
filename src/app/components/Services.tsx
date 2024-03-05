@@ -20,25 +20,25 @@ export const MOCKDATA = [
     icon: SourceCode,
     title: "Custom Web Applications",
     description:
-      "Our professional web application development company takes pride in delivering top-notch custom web solutions, meticulously crafted from concept to launch. We engage in a thorough discovery process to understand your unique business requirements, enabling us to design and develop bespoke web applications that align perfectly with your objectives. Our expert team employs the latest technologies and agile methodologies to ensure a scalable, secure, and high-performing final product. From initial wireframing and design to development, testing, and deployment, we provide comprehensive support and maintenance, ensuring your web application evolves with your business needs.",
+      "Our web development company crafts custom web solutions tailored to meet your business goals. We follow a detailed process to ensure your web application is scalable, secure, and high-performing, from design to deployment, with ongoing support for future needs.",
   },
   {
     icon: Devices,
     title: "Responsive Web Design",
     description:
-      "Our responsive web design services ensure that your website delivers an exceptional user experience on every device, be it a mobile phone, tablet, or desktop. We start by adopting a mobile-first approach, recognizing the importance of optimizing for smaller screens and then scaling up to larger displays. Our design process involves flexible grids and layouts, responsive images, and media queries to ensure that your website automatically adjusts to the user's device, providing optimal layout and performance.",
+      "Our responsive web design services optimize your website for an excellent user experience across devices, from mobile to desktop. We adopt a mobile-first approach, using flexible grids, responsive images, and media queries to ensure your site adjusts perfectly to any screen size, offering optimal layout and performance.",
   },
   {
     icon: Server2,
     title: "Hosting and Maintenance",
     description:
-      "Our hosting and maintenance services are designed to offer you peace of mind and ensure your website operates at peak efficiency around the clock. We provide reliable, secure hosting solutions tailored to your website's specific needs, whether it's a high-traffic e-commerce site or a content-driven informational portal. Our hosting solutions feature high uptime, fast load times, and scalable resources to handle any volume of traffic. In addition to hosting, we offer comprehensive maintenance services, including regular updates to web content, security patches, and performance optimizations.",
+      "Our hosting and maintenance services ensure your website runs smoothly 24/7. We offer secure, reliable hosting tailored to your site's needs, ensuring high uptime, quick load times, and scalability for any traffic volume. Our maintenance includes updates to content, security patches, and performance optimizations for peace of mind and peak efficiency.",
   },
   {
     icon: CloudComputing,
     title: "Robust Web Services",
     description:
-      "Specializing in scalable web services on major cloud platforms like AWS, Azure, and Google Cloud, we ensure high availability and seamless scalability. Our expertise spans RESTful APIs, microservices, and serverless computing, tailored to your business needs for cost-efficiency and robust security, leveraging the best of cloud technologies.",
+      "We specialize in scalable web services on AWS, Azure, and Google Cloud, focusing on high availability and seamless scalability. Our expertise in RESTful APIs, microservices, and serverless computing is tailored to offer cost-efficiency and robust security, leveraging cutting-edge cloud technologies.",
   },
   {
     icon: Books,
@@ -50,25 +50,25 @@ export const MOCKDATA = [
     icon: ArrowsDoubleSwNe,
     title: "CI/CD",
     description:
-      "Our Continuous Integration/Continuous Deployment (CI/CD) services are at the forefront of modern development practices, designed to streamline the process of software delivery. By automating the integration of code changes from multiple contributors into a shared repository, we significantly reduce integration issues and improve software quality. Our CI/CD pipeline is optimized for efficiency, reducing errors, increasing team productivity, and enabling a faster feedback loop with end-users.",
+      "Our CI/CD services streamline software delivery by automating code integration and deployment, reducing integration issues, and enhancing software quality. This optimized pipeline improves team productivity, minimizes errors, and accelerates feedback from end-users.",
   },
   {
     icon: Users,
     title: "Customer Focused",
     description:
-      "At the heart of our mission is a 100% commitment to our clients' success. We prioritize transparent communication, tailoring our solutions to meet the unique needs and goals of each customer. Our approach involves close collaboration with our clients at every stage of the project, from initial consultation to final delivery and beyond, ensuring not just satisfaction but delight with the end result. We believe in building lasting relationships, offering ongoing support, and adapting our services to help our clients grow and thrive in an ever-evolving digital landscape.",
+      "Our mission centers on our clients' success, prioritizing transparent communication and customized solutions. We collaborate closely from consultation to delivery and beyond, aiming for client delight. With a focus on lasting relationships, we offer ongoing support and adapt our services for client growth in the digital landscape.",
   },
   {
     icon: DeviceMobile,
     title: "Progressive Web Applications",
     description:
-      "Transform your web presence with Progressive Web Applications (PWA). We specialize in developing PWAs that provide a native app-like experience, offering offline capabilities, fast loading times, and push notifications. Our PWAs are designed to ensure a seamless, engaging user experience across all platforms, significantly improving user retention and performance on both desktop and mobile devices.",
+      "Elevate your web presence with our Progressive Web App (PWA) development, offering a native app-like experience with offline use, fast loading, and push notifications. Our PWAs deliver a seamless user experience on all devices, boosting user retention and performance across desktop and mobile.",
   },
   {
     icon: Settings,
     title: "Testing",
     description:
-      "Our quality assurance and testing services are designed to ensure your web applications meet the highest standards of quality and performance. We utilize a suite of advanced testing frameworks, including Cypress for modern end-to-end testing, Selenium for browser-based automation, and Mocha with Chai for flexible and powerful testing of JavaScript applications. By integrating these tools, we provide a robust testing strategy that identifies and resolves issues efficiently, ensuring a seamless, user experience across all platforms and devices.",
+      "Our quality assurance and testing services guarantee top-quality and performance for your web applications. Using advanced tools like Cypress, Selenium, and Mocha with Chai, we offer comprehensive testing to quickly identify and fix issues, ensuring a seamless user experience across all devices.",
   },
 ];
 
@@ -107,7 +107,7 @@ export function Services() {
                   <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
                     {feature.title}
                   </Text>
-                  <Text fz="sm" c="dimmed" mt="sm">
+                  <Text fz="sm" mt="sm">
                     {feature.description}
                   </Text>
                 </Card>
