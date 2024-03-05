@@ -154,7 +154,7 @@ export function Services() {
                   <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
                     {feature.title}
                   </Text>
-                  <Text fz="sm" c="dimmed" mt="sm">
+                  <Text fz="sm" mt="sm">
                     {feature.description}
                   </Text>
                 </Card>
