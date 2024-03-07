@@ -4,7 +4,8 @@ import "./globals.css";
 import "@mantine/core/styles.css";
 import ThemeProvider from "./theme-provider";
 import type { Metadata } from "next";
-import { Poppins, Montserrat, Raleway, Varta } from "next/font/google";
+import { Poppins, Montserrat, Varta } from "next/font/google";
+import Script from "next/script";
 
 // font for COLCHUCK CONSULTING text
 const poppins = Poppins({
@@ -51,6 +52,17 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${montserrat.variable} ${varta.variable}`}
     >
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-K9W9L574G9"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-K9W9L574G9');
+        `}
+      </Script>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
