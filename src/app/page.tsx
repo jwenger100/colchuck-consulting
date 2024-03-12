@@ -1,6 +1,7 @@
 // https://stackoverflow.com/questions/74965849/youre-importing-a-component-that-needs-usestate-it-only-works-in-a-client-comp
 "use client"; // This is a client component 👈🏽
 import { PuffLoader } from "react-spinners";
+import { useState, useEffect } from "react";
 
 // css styling
 import classes from "./page.module.css";
@@ -13,8 +14,8 @@ import { Projects } from "./components/Projects";
 import { TechnologyGrid } from "./components/TechnologyGrid";
 import { ContactUs } from "./components/ContactUs";
 import { HeroImageBackground } from "./components/HeroImageBackground";
+import { Awards } from "./components/Awards";
 
-import { useState, useEffect } from "react";
 import { Box } from "@mantine/core";
 
 export default function Home() {
@@ -51,6 +52,7 @@ export default function Home() {
       <TechnologyGrid />
       <Projects />
       <Testimonials />
+      <Awards />
       <ContactUs />
     </main>
   );
